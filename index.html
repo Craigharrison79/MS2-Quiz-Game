@@ -7,10 +7,43 @@
     <title>Quiz Game</title>
 </head>
 <body>
+    <div class="main-conatainer">
     <!-- game -->
+        <div id="game">
     <!-- QUESTION NUMBER HUB / WHICH QUESTION YOU ARE ON -->
+            <div id="question-number-hub">
+                <div id="question-circle">
+                    <h2 id="question-num"></h2>
+                </div>
+            </div>
     <!-- QUESTION HUB / SHOW THE QUESTION  & IMAGE -->
+            <div id="question-hub">
+                <div id="question-container">
+                    <h2 id="question"></h2>    
+                </div>
+                <div id="image-container">
+                    <div id="image"></div>
+                </div>
+            </div>
     <!-- ANSWER HUB / ANSWER TO CHOOSE -->
+            <div id="answer-hub">
+                <div id="select-container">
+                    <div class="btn" data-type="A"></div>
+                    <div class="btn" data-type="B"></div>
+                    <div class="btn" data-type="C"></div>
+                    <div class="btn" data-type="D"></div>
+                </div>
+            </div>
     <!-- TIMER HUB / COUNT DOWN TIMER AND GAUGE -->
+            <div id="timer-hub">
+                <div id="clock-container">
+                    <p id="counter"></p>
+                </div>
+                <div id="clock-gauge">
+                    <div id="progress-clock-gauge"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
