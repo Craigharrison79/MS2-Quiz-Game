@@ -57,3 +57,15 @@ function perventQuestion() {
 
 perventQuestion();
 
+function checkAnswer(answer) {
+
+    if (answer == currentAskQuestion.answer) {
+        console.log('yes')
+    } else {
+        console.log('no')
+    }
+    
+}
+
+checkAnswer();
+
