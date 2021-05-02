@@ -64,6 +64,7 @@
     justify-content: space-evenly;
     gap: 8px;
     margin: 20px 100px;
+
 }
 
 .btn {
@@ -76,14 +77,21 @@
     border-radius: 10px;
     color: white;
     border: 1px solid white;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
 }
 
 #image-container {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-#image {
-    height: 100px;
+img {
+    height: 150px;
+}
+
+#select-container {
+    margin-bottom: 20px;
 }
 
 #clock-container {
