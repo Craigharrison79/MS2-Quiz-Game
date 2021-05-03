@@ -36,13 +36,32 @@ const questionsArray = [
     
 ];
 
-function renderQuestion() {
-const pickQ = Math.floor(Math.random()* questionsArray.length);
-currentAskQuestion = questionsArray[pickQ];
-console.log(questionsArray[pickQ]) // to see if the renderQuestion works
+currentAskQuestion = {};
+
+function runGame() {
+    const firstQuestion = questionsArray
+    // new part
+    let btnChecks = document.querySelectorAll('.btn');
+        btnChecks.forEach(function (event) {
+            event.addEventListener('click', myClick);
+        });
+
+        function myClick (event) {
+            if (event.click === 'click') {
+                checkAnswer();
+            };
+            console.log('click', event.target)
+        };
+    
+    renderQuestion(firstQuestion)
 };
 
-renderQuestion();
+function renderQuestion() {
+    const pickQ = Math.floor(Math.random()* questionsArray.length);
+    currentAskQuestion = questionsArray[pickQ];
+    console.log(questionsArray[pickQ]) // to see if the renderQuestion works
+    perventQuestion(currentAskQuestion);
+};
 
 function perventQuestion() {
     question.innerText = currentAskQuestion.question;
@@ -51,21 +70,22 @@ function perventQuestion() {
     answerSelectsB.innerText = currentAskQuestion.choiceB;
     answerSelectsC.innerText = currentAskQuestion.choiceC;
     answerSelectsD.innerText = currentAskQuestion.choiceD;
+    };
     
 
-};
-
-perventQuestion();
-
+// to check the Answer on click
 function checkAnswer(answer) {
-
     if (answer == currentAskQuestion.answer) {
         console.log('yes')
     } else {
         console.log('no')
     }
+
+    renderQuestion()
     
 }
 
-checkAnswer();
+// runGame
+runGame();
+
 
