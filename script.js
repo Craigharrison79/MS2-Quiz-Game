@@ -5,7 +5,7 @@ const answerSelectsB = document.getElementById('B');
 const answerSelectsC = document.getElementById('C');
 const answerSelectsD = document.getElementById('D');
 
-const questionsArray = [
+let questionsArray = [
     {
         question: "Whose flag is it?",
         imgSrc: "https://flagcdn.com/w160/ai.png",
@@ -40,7 +40,7 @@ currentAskQuestion = {};
 
 function runGame() {
     const firstQuestion = questionsArray
-    // new part
+    
     let btnChecks = document.querySelectorAll('.btn');
         btnChecks.forEach(function (event) {
             event.addEventListener('click', myClick);
@@ -56,13 +56,19 @@ function runGame() {
     renderQuestion(firstQuestion)
 };
 
+// to pick a question from the array
 function renderQuestion() {
+    console.log(questionsArray)
     const pickQ = Math.floor(Math.random()* questionsArray.length);
     currentAskQuestion = questionsArray[pickQ];
     console.log(questionsArray[pickQ]) // to see if the renderQuestion works
     perventQuestion(currentAskQuestion);
+
+    // new part https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    questionsArray.splice(pickQ, 1);
 };
 
+// show the question
 function perventQuestion() {
     question.innerText = currentAskQuestion.question;
     questionImg.innerHTML = "<img src="+ currentAskQuestion.imgSrc +">";
@@ -75,15 +81,21 @@ function perventQuestion() {
 
 // to check the Answer on click
 function checkAnswer(answer) {
+    
     if (answer == currentAskQuestion.answer) {
         console.log('yes')
     } else {
         console.log('no')
+        wrongAnswer();
     }
 
     renderQuestion()
     
 }
+
+
+
+
 
 // runGame
 runGame();
