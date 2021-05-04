@@ -1,9 +1,15 @@
+
+
 const question = document.getElementById('question');
 const questionImg = document.getElementById('image');
 const answerSelectsA = document.getElementById('A');
 const answerSelectsB = document.getElementById('B');
 const answerSelectsC = document.getElementById('C');
 const answerSelectsD = document.getElementById('D');
+const btnContainer = document.getElementById('select-container');
+const scoreNumber = document.getElementById('points');
+
+
 
 let questionsArray = [
     {
@@ -33,13 +39,79 @@ let questionsArray = [
         choiceD: "United States Virgin Islands",
         answer: "B"
     },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ao.png",
+        choiceA: "Kyrgyzstan",
+        choiceB: "Libya",
+        choiceC: "Sri Lanka",
+        choiceD: "Angola",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/128x96/aq.png",
+        choiceA: "Cape Verde",
+        choiceB: "United States Virgin Islands",
+        choiceC: "Antarctica",
+        choiceD: "Kosovo",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ag.png",
+        choiceA: "Somalia",
+        choiceB: "Antigua and Barbuda",
+        choiceC: "Palau",
+        choiceD: "Nepal",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/am.png",
+        choiceA: "Armenia",
+        choiceB: "Ethiopia",
+        choiceC: "Colombia",
+        choiceD: "Guinea",
+        answer: "1"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/128x96/aw.png",
+        choiceA: "Togo",
+        choiceB: "Bhutan",
+        choiceC: "Aruba",
+        choiceD: "Guinea",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/bd.png",
+        choiceA: "Palau",
+        choiceB: "Taiwan",
+        choiceC: "Marshall Islands",
+        choiceD: "Bangladesh",
+        answer: "D"
+    },
     
 ];
-
+ 
 currentAskQuestion = {};
+const rightAnswerPoints = 10;
+const TOTAL_QUESTION = 6;
+let questionNumber = 0
+
 
 function runGame() {
-    const firstQuestion = questionsArray
+    document.addEventListener("DOMContentLoaded", function () {
+        
+        
+
+        // starting information
+        score = 0;
+        questionNumber = 0;
+        let counter = 0;
+        const firstQuestion = questionsArray
     
     let btnChecks = document.querySelectorAll('.btn');
         btnChecks.forEach(function (event) {
@@ -50,10 +122,12 @@ function runGame() {
             if (event.click === 'click') {
                 checkAnswer();
             };
-            console.log('click', event.target)
+            //console.log('click', event.target)
         };
     
-    renderQuestion(firstQuestion)
+    renderQuestion()
+    
+});
 };
 
 // to pick a question from the array
@@ -64,9 +138,22 @@ function renderQuestion() {
     console.log(questionsArray[pickQ]) // to see if the renderQuestion works
     perventQuestion(currentAskQuestion);
 
-    // new part https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    
+
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     questionsArray.splice(pickQ, 1);
 };
+
+function nextQuesiton() {
+    if (questionsArray.length === 0 || questionNumber > TOTAL_QUESTION) {
+        return window.location.assign("/score.html");
+    } 
+
+    questionNumber++;
+    
+    
+    renderQuestion();
+}
 
 // show the question
 function perventQuestion() {
@@ -81,17 +168,22 @@ function perventQuestion() {
 
 // to check the Answer on click
 function checkAnswer(answer) {
-    
+    questionNumber++
+       
     if (answer == currentAskQuestion.answer) {
         console.log('yes')
+        score = score + rightAnswerPoints;
+        console.log(score)
+        
     } else {
         console.log('no')
-        wrongAnswer();
     }
+        
 
-    renderQuestion()
-    
-}
+    nextQuesiton();
+
+};
+
 
 
 
