@@ -8,7 +8,7 @@ const answerSelectsC = document.getElementById('C');
 const answerSelectsD = document.getElementById('D');
 const btnContainer = document.getElementById('select-container');
 const scoreNumber = document.getElementById('points');
-
+const questionIndex = document.getElementById('question-num');
 
 
 let questionsArray = [
@@ -102,6 +102,7 @@ const TOTAL_QUESTION = 6;
 let questionNumber = 0
 
 
+
 function runGame() {
     document.addEventListener("DOMContentLoaded", function () {
         
@@ -109,8 +110,9 @@ function runGame() {
 
         // starting information
         score = 0;
-        questionNumber = 0;
+        questionNumber = 1;
         let counter = 0;
+        
         const firstQuestion = questionsArray
     
     let btnChecks = document.querySelectorAll('.btn');
@@ -149,7 +151,7 @@ function nextQuesiton() {
         return window.location.assign("/score.html");
     } 
 
-    questionNumber++;
+    
     
     
     renderQuestion();
@@ -157,6 +159,7 @@ function nextQuesiton() {
 
 // show the question
 function perventQuestion() {
+    questionIndex.innerText = "Q"+ questionNumber
     question.innerText = currentAskQuestion.question;
     questionImg.innerHTML = "<img src="+ currentAskQuestion.imgSrc +">";
     answerSelectsA.innerText = currentAskQuestion.choiceA;
@@ -181,7 +184,6 @@ function checkAnswer(answer) {
         
 
     nextQuesiton();
-
 };
 
 
