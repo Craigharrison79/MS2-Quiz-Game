@@ -9,6 +9,7 @@ const answerSelectsD = document.getElementById('D');
 const btnContainer = document.getElementById('select-container');
 const scoreNumber = document.getElementById('points');
 const questionIndex = document.getElementById('question-num');
+const timerCountdown = document.getElementById('counter');
 
 
 let questionsArray = [
@@ -99,7 +100,8 @@ let questionsArray = [
 currentAskQuestion = {};
 const rightAnswerPoints = 10;
 const TOTAL_QUESTION = 6;
-let questionNumber = 0
+let questionNumber = 0;
+let timer = "";
 
 
 
@@ -112,6 +114,7 @@ function runGame() {
         score = 0;
         questionNumber = 1;
         let counter = 0;
+        timer = 10;
         
         const firstQuestion = questionsArray
     
@@ -141,6 +144,9 @@ function renderQuestion() {
     perventQuestion(currentAskQuestion);
 
     
+    
+
+    
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     questionsArray.splice(pickQ, 1);
@@ -148,13 +154,12 @@ function renderQuestion() {
 
 function nextQuesiton() {
     if (questionsArray.length === 0 || questionNumber > TOTAL_QUESTION) {
+        //https://developer.mozilla.org/en-US/docs/Web/API/Location/assign
         return window.location.assign("/score.html");
     } 
 
-    
-    
-    
     renderQuestion();
+  
 }
 
 // show the question
@@ -166,8 +171,24 @@ function perventQuestion() {
     answerSelectsB.innerText = currentAskQuestion.choiceB;
     answerSelectsC.innerText = currentAskQuestion.choiceC;
     answerSelectsD.innerText = currentAskQuestion.choiceD;
+    timerCountdown.innerText = timer +"s"
     };
     
+function countDown() {
+    setInterval (function () {
+        if (timer <= 0 || timer < 1) {
+            questionNumber++
+            nextQuesiton(); // Maybe need to show answer first.
+            clearInterval(timer = 0);
+        }
+        timer--;
+        timerCountdown.innerText = timer +"s"
+    }, 1000);
+}; // need to fix timer starting and going into neg number + resetting each time
+
+
+
+
 
 // to check the Answer on click
 function checkAnswer(answer) {
