@@ -74,8 +74,8 @@
     width: 100%;
     padding: 15px;
     background-color:rgb(67, 201, 118);
+    color: black;
     border-radius: 10px;
-    color: white;
     border: 1px solid white;
     padding: 15px;
     width: 100%;
@@ -115,4 +115,6 @@ img {
     color: white;
 }
 
-
+.right {
+    background-color: chocolate;
+}

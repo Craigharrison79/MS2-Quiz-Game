@@ -74,7 +74,7 @@ let questionsArray = [
         choiceB: "Ethiopia",
         choiceC: "Colombia",
         choiceD: "Guinea",
-        answer: "1"
+        answer: "C"
     },
     {
         question: "Whose flag is it?",
@@ -101,7 +101,7 @@ currentAskQuestion = {};
 const rightAnswerPoints = 10;
 const TOTAL_QUESTION = 6;
 let questionNumber = 0;
-let timer = "";
+let timer = 10;
 
 
 
@@ -114,8 +114,7 @@ function runGame() {
         score = 0;
         questionNumber = 1;
         let counter = 0;
-        timer = 10;
-        
+         
         const firstQuestion = questionsArray
     
     let btnChecks = document.querySelectorAll('.btn');
@@ -131,6 +130,7 @@ function runGame() {
         };
     
     renderQuestion()
+    countDown()
     
 });
 };
@@ -176,15 +176,19 @@ function perventQuestion() {
     
 function countDown() {
     setInterval (function () {
-        if (timer <= 0 || timer < 1) {
-            questionNumber++
-            nextQuesiton(); // Maybe need to show answer first.
-            clearInterval(timer = 0);
-        }
-        timer--;
-        timerCountdown.innerText = timer +"s"
-    }, 1000);
-}; // need to fix timer starting and going into neg number + resetting each time
+        
+            if (timer <= 0 || timer < 1) {
+                questionNumber++
+                nextQuesiton(); // Maybe need to show answer first.
+                clearInterval(timer = 10 + 1);  // + 1 help give a break 
+            } 
+                timer--;
+                timerCountdown.innerText = timer +"s"
+            }, 1000);
+
+            
+    
+}
 
 
 
@@ -196,18 +200,37 @@ function checkAnswer(answer) {
        
     if (answer == currentAskQuestion.answer) {
         console.log('yes')
+        showAnswer();
         score = score + rightAnswerPoints;
         console.log(score)
         
     } else {
         console.log('no')
+        showAnswer();
     }
+    
         
 
-    nextQuesiton();
+    
 };
 
 
+function showAnswer() {
+        document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'blue';
+        reset();
+};
+
+
+function reset () {
+        setTimeout(() => {
+            document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(67, 201, 118)'
+            nextQuesiton();
+        }, 1000);
+        clearInterval(timer = 10 + 1);
+};
+
+
+    
 
 
 
