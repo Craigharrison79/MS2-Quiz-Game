@@ -182,6 +182,7 @@ function countDown() {
                 nextQuesiton(); // Maybe need to show answer first.
                 clearInterval(timer = 10 + 1);  // + 1 help give a break 
             } 
+            
                 timer--;
                 timerCountdown.innerText = timer +"s"
             }, 1000);
@@ -216,14 +217,14 @@ function checkAnswer(answer) {
 
 
 function showAnswer() {
-        document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'blue';
+        document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
         reset();
 };
 
 
 function reset () {
         setTimeout(() => {
-            document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(67, 201, 118)'
+            document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)'
             nextQuesiton();
         }, 1000);
         clearInterval(timer = 10 + 1);
