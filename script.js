@@ -12,7 +12,9 @@ const timerCountdown = document.getElementById('counter');
 const welcomePage = document.getElementById('landing-page-container');
 const playGame = document.getElementById('play-game');
 const game = document.getElementById('game');
-
+const instructionsBtn = document.getElementById('instructions');
+const model = document.getElementById('modal-hub');
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
 
 let questionsArray = [
     {
@@ -106,13 +108,26 @@ let questionNumber = 0;
 let timer = 10;
 
 document.addEventListener("DOMContentLoaded", function () {
+    
     playGame.addEventListener('click', function (e) {
         runGame();
         console.log(this.click)
     });
+
+    instructionsBtn.addEventListener('click', function (e) {
+        model.style.display = 'block'; 
+
+    });
+});
+
+closeModalButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+        model.style.display = 'none';
+    });
 });
 
 function runGame() {
+
    // document.addEventListener("DOMContentLoaded", function () {
         
         // display
@@ -140,23 +155,18 @@ function runGame() {
         };
     
     renderQuestion()
-    countDown()
-    
-//});
+    countDown()   
+
 };
 
 // to pick a question from the array
 function renderQuestion() {
+
     console.log(questionsArray)
     const pickQ = Math.floor(Math.random()* questionsArray.length);
     currentAskQuestion = questionsArray[pickQ];
     console.log(questionsArray[pickQ]) // to see if the renderQuestion works
     perventQuestion(currentAskQuestion);
-
-    
-    
-
-    
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     questionsArray.splice(pickQ, 1);
@@ -168,12 +178,12 @@ function nextQuesiton() {
         return window.location.assign("/score.html");
     } 
 
-    renderQuestion();
-  
+    renderQuestion(); 
 }
 
 // show the question
 function perventQuestion() {
+
     questionIndex.innerText = "Q"+ questionNumber
     question.innerText = currentAskQuestion.question;
     questionImg.innerHTML = "<img src="+ currentAskQuestion.imgSrc +">";
@@ -182,7 +192,7 @@ function perventQuestion() {
     answerSelectsC.innerText = currentAskQuestion.choiceC;
     answerSelectsD.innerText = currentAskQuestion.choiceD;
     //timerCountdown.innerText = timer +"s"
-    };
+};
     
 function countDown() {
     setInterval (function () {
@@ -192,17 +202,10 @@ function countDown() {
                 nextQuesiton(); // Maybe need to show answer first.
                 clearInterval(timer = 10 + 1);  // + 1 help give a break 
             } 
-            
                 timer--;
                 timerCountdown.innerText = timer +"s"
-            }, 1000);
-            
-    
+            }, 1000);   
 }
-
-
-
-
 
 // to check the Answer on click
 function checkAnswer(answer) {
@@ -217,19 +220,13 @@ function checkAnswer(answer) {
     } else {
         console.log('no')
         showAnswer();
-    }
-    
-        
-
-    
+    }   
 };
-
 
 function showAnswer() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
         reset();
 };
-
 
 function reset () {
         setTimeout(() => {
@@ -238,14 +235,4 @@ function reset () {
         }, 1000);
         clearInterval(timer = 10 + 1);
 };
-
-
-    
-
-
-
-
-// runGame
-//runGame();
-
 
