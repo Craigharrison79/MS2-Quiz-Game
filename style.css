@@ -1,12 +1,11 @@
-/* --------- temeplate background color help work out containers */
-
-.landing-page-container {
-    background-color: rgba(243, 105, 0, 0.274);
+/* --------- main pages colors */
+#landing-page-container {
+    background-color: rgb(207, 204, 204);
 }
+
 .main-conatainer {
     background-color: rgb(10, 59, 77);
 }
-
 
 /* --------- Global style */
 * {
@@ -23,7 +22,7 @@
     align-items: center;
 }
 
-.landing-page-container {
+#landing-page-container {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -31,11 +30,8 @@
     align-items: center;
 }
 
-.game {
-    width: 75%;  
-}
-
-.margin-center {
+#game {
+    width: 75%; 
     margin: auto 0; 
 }
 
@@ -47,14 +43,21 @@
 #landing-page {
     position: relative;
     height: 80%;
+    width: 60%;
     background-color: rgb(10, 59, 77);
     border-radius: 10%;
+}
+
+#world {
+    padding-left: 30px;
+    padding-top: 30px;
 }
 
 #title {
     text-align: center;
     margin-bottom: 30px;
     color:rgb(243, 105, 0);
+    font-size: 40px;
 }
 
 .start-btn {
@@ -75,7 +78,6 @@
 
 #hands {
     position: absolute;
-    
     transform:translate(-50%, 2%);
     bottom: 0%;
     left: 50%;
@@ -92,10 +94,10 @@
 }
 
 #question-num {
-    position:absolute;
-    transform:translate(-50%,-50%);
-    top:50%;
-    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
     font-size: 30px;
     color: white;
 }
@@ -160,9 +162,9 @@ img {
 
 #counter {
     position:absolute;
-    transform:translate(-50%,-50%);
-    top:50%;
-    left:50%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
     font-size: 20px;
     color: white;
 }

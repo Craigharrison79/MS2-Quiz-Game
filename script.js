@@ -1,5 +1,4 @@
 
-
 const question = document.getElementById('question');
 const questionImg = document.getElementById('image');
 const answerSelectsA = document.getElementById('A');
@@ -10,6 +9,9 @@ const btnContainer = document.getElementById('select-container');
 const scoreNumber = document.getElementById('points');
 const questionIndex = document.getElementById('question-num');
 const timerCountdown = document.getElementById('counter');
+const welcomePage = document.getElementById('landing-page-container');
+const playGame = document.getElementById('play-game');
+const game = document.getElementById('game');
 
 
 let questionsArray = [
@@ -103,13 +105,21 @@ const TOTAL_QUESTION = 6;
 let questionNumber = 0;
 let timer = 10;
 
-
+document.addEventListener("DOMContentLoaded", function () {
+    playGame.addEventListener('click', function (e) {
+        runGame();
+        console.log(this.click)
+    });
+});
 
 function runGame() {
-    document.addEventListener("DOMContentLoaded", function () {
+   // document.addEventListener("DOMContentLoaded", function () {
         
+        // display
+        welcomePage.style.display = 'none';
+        game.style.display = 'block';
+        //document.getElementById('main-conatainer').style.backgroundColor = 'rgb(10, 59, 77)';
         
-
         // starting information
         score = 0;
         questionNumber = 1;
@@ -132,7 +142,7 @@ function runGame() {
     renderQuestion()
     countDown()
     
-});
+//});
 };
 
 // to pick a question from the array
@@ -171,7 +181,7 @@ function perventQuestion() {
     answerSelectsB.innerText = currentAskQuestion.choiceB;
     answerSelectsC.innerText = currentAskQuestion.choiceC;
     answerSelectsD.innerText = currentAskQuestion.choiceD;
-    timerCountdown.innerText = timer +"s"
+    //timerCountdown.innerText = timer +"s"
     };
     
 function countDown() {
@@ -186,7 +196,6 @@ function countDown() {
                 timer--;
                 timerCountdown.innerText = timer +"s"
             }, 1000);
-
             
     
 }
@@ -224,7 +233,7 @@ function showAnswer() {
 
 function reset () {
         setTimeout(() => {
-            document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)'
+            document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
             nextQuesiton();
         }, 1000);
         clearInterval(timer = 10 + 1);
@@ -237,6 +246,6 @@ function reset () {
 
 
 // runGame
-runGame();
+//runGame();
 
 
