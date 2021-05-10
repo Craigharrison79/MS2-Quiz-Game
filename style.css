@@ -30,11 +30,6 @@
     align-items: center;
 }
 
-#game {
-    width: 75%; 
-    margin: auto 0; 
-}
-
 .justify-center {
     display: flex;
     justify-content: center;
@@ -122,7 +117,12 @@
     color: black;
 }
 
-#question-circle {
+#game {
+    width: 75%; 
+    margin: auto 0; 
+}
+/* #question-circle */
+.circle {
     position: relative;
     width: 100px;
     height: 100px;
@@ -132,7 +132,7 @@
     border: 1px solid white;
 }
 
-#question-num {
+.circle-number-text {
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -205,6 +205,37 @@ img {
     top: 50%;
     left: 50%;
     font-size: 20px;
+    color: white;
+}
+
+.score-container {
+    width: 80vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;   
+}
+
+.center {
+margin: 0 auto;
+}
+
+#score-hub {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 160px
+
+}
+
+.btns-hub {
+    flex-direction: column;
+    text-align: center;
+}
+
+#score {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: white;
 }
 
