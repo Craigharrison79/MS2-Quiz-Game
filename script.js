@@ -1,10 +1,10 @@
 
-const question = document.getElementById('question');
-const questionImg = document.getElementById('image');
-const answerSelectsA = document.getElementById('A');
-const answerSelectsB = document.getElementById('B');
-const answerSelectsC = document.getElementById('C');
-const answerSelectsD = document.getElementById('D');
+    /* const question = document.getElementById('question');
+    const questionImg = document.getElementById('image');
+    const answerSelectsA = document.getElementById('A');
+    const answerSelectsB = document.getElementById('B');
+    const answerSelectsC = document.getElementById('C');
+    const answerSelectsD = document.getElementById('D'); */
 const btnContainer = document.getElementById('select-container');
 const scoreNumber = document.getElementById('points');
 const questionIndex = document.getElementById('question-num');
@@ -15,6 +15,7 @@ const game = document.getElementById('game');
 const instructionsBtn = document.getElementById('instructions');
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
+ // const finalScore = document.getElementById('final-score');
 
 let questionsArray = [
     {
@@ -173,16 +174,28 @@ function renderQuestion() {
 };
 
 function nextQuesiton() {
+    const finalScore = document.getElementById('final-score');
+
     if (questionsArray.length === 0 || questionNumber > TOTAL_QUESTION) {
-        //https://developer.mozilla.org/en-US/docs/Web/API/Location/assign
-        return window.location.assign("/score.html");
-    } 
+    
+        game.style.display = 'none';
+        finalScore.style.display = 'block';
+        yourScore ();
+        returnToStartPage ();
+}
 
     renderQuestion(); 
 }
 
 // show the question
 function perventQuestion() {
+    
+const question = document.getElementById('question');
+const questionImg = document.getElementById('image');
+const answerSelectsA = document.getElementById('A');
+const answerSelectsB = document.getElementById('B');
+const answerSelectsC = document.getElementById('C');
+const answerSelectsD = document.getElementById('D');
 
     questionIndex.innerText = "Q"+ questionNumber
     question.innerText = currentAskQuestion.question;
@@ -236,3 +249,15 @@ function reset () {
         clearInterval(timer = 10 + 1);
 };
 
+function yourScore () {
+    localStorage.setItem("yourScore", score);
+        document.getElementById("points").innerHTML = localStorage.getItem("yourScore");
+        document.getElementById("score").innerHTML = "This is your overall score " + score + " points";      
+}
+
+function returnToStartPage ()  {
+    const restartBtn = document.getElementById('restart')
+    restartBtn.addEventListener('click', function (e) {
+        return window.location.assign("/index.html");       
+    });
+}
