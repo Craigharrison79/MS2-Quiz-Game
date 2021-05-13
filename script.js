@@ -16,6 +16,7 @@ const instructionsBtn = document.getElementById('instructions');
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
  // const finalScore = document.getElementById('final-score');
+const HiScoreList = document.getElementById('Highest-score-list');
 
 let questionsArray = [
     {
@@ -184,7 +185,7 @@ function nextQuesiton() {
         yourScore ();
         returnToStartPage ();
 }
-
+ 
     renderQuestion(); 
 }
 
@@ -229,7 +230,7 @@ function checkAnswer(answer) {
         console.log('yes')
         showAnswer();
         score = score + rightAnswerPoints;
-        console.log(score)
+        //console.log(score)
         
     } else {
         console.log('no')
@@ -269,6 +270,14 @@ function yourScore () {
                 
             });
         });
+
+        // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
+        const highestScore = JSON.parse(localStorage.getItem('score')) || [];
+            console.log(score); // see if you score is working.
+        highestScore.map( function (score) {
+            console.log(score); // see if you score is working.
+        })
+        
 
 }
 
