@@ -78,7 +78,7 @@
     left: 50%;
 }
 
-#modal-hub {
+.model-container {
     position: fixed;
     background-color: rgba(118, 163, 157, 1);
     color: white;

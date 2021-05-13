@@ -104,7 +104,7 @@ let questionsArray = [
  
 currentAskQuestion = {};
 const rightAnswerPoints = 10;
-const TOTAL_QUESTION = 6;
+const TOTAL_QUESTION = 2;
 let questionNumber = 0;
 let timer = 10;
 
@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 closeModalButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
         model.style.display = 'none';
+
     });
 });
 
@@ -250,9 +251,25 @@ function reset () {
 };
 
 function yourScore () {
+    // https://www.w3schools.com/jsref/prop_win_localstorage.asp
     localStorage.setItem("yourScore", score);
         document.getElementById("points").innerHTML = localStorage.getItem("yourScore");
         document.getElementById("score").innerHTML = "This is your overall score " + score + " points";      
+        
+        const HighestScoreBtn = document.getElementById('Highest-score');
+        const modelScoreCard = document.getElementById('model-score');
+        HighestScoreBtn.addEventListener('click', function (e) {
+            modelScoreCard.style.display = 'block'; 
+    
+        });
+
+        closeModalButtons.forEach(function (button) {
+            button.addEventListener('click', function (e) {
+                modelScoreCard.style.display = 'none';
+                
+            });
+        });
+
 }
 
 function returnToStartPage ()  {

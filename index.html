@@ -19,7 +19,7 @@
                     <div class="start-btn" id="instructions">Instructions</div>  
                 <div id="hands"><img src="/Group 1 (1).svg" alt=""></div> 
             </div>
-            <div id="modal-hub" style="display: none">
+            <div id="modal-hub" class="model-container" style="display: none">
                 <div class="modal-heading">
                     <h2>Instructions</h2>
                     <!-- use &times for a button - https://www.w3schools.com/charsets/tryit.asp?deci=215&ent=times -->
@@ -71,22 +71,35 @@
                 <div id="clock-container">
                     <p id="counter"></p>
                 </div>
-                <div id="clock-gauge">
+                <!--<div id="clock-gauge">
                     <div id="progress-clock-gauge"></div>
-                </div>
+                </div> -->
             </div>
         </div>
+        <!-- score card -->
         <div class="score-container" style="display: none" id="final-score">
             <div id="score-hub" class="justify-center">
-                <div class="circle center">
-                    <h2 id="points" class="circle-number-text"></h2>
-                </div>  
-                <h2 id="score">This is your score</h2>
+                    <div class="circle center">
+                        <h2 id="points" class="circle-number-text"></h2>
+                    </div>  
+                    <h2 id="score">This is your score</h2>
             </div>
             <div class="btns-hub" class="justify-center">
                 <div class="start-btn" id="restart">Back</div>
+                <div class="start-btn" id="Highest-score">Highest Score</div>
             </div>  
-        </div> 
+            
+            <!-- model score card -->
+            <div id="model-score" style="display: none">
+                <div class="model-heading model-container">
+                    <h2>Instructions</h2>
+                    <button data-close-button class="close-btn">&times;</button>
+                </div>
+                <div class="model-body">
+                    <table></table>
+                </div>
+            </div>
+        </div>
     </div>
     <script src='script.js'></script>
 </body>
