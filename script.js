@@ -268,12 +268,22 @@ function yourScore () {
             button.addEventListener('click', function (e) {
                 modelScoreCard.style.display = 'none';
                 
-            });
+            }); 
         });
 
         // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
         const highestScore = JSON.parse(localStorage.getItem('score')) || [];
-            console.log(score); // see if you score is working.
+            console.log(highestScore); // see if you score is working.
+        
+        const saveScore = document.getElementById('save-score').addEventListener('click', function (e) {
+            console.log(this.click)
+        })
+
+        const playerName = document.getElementById('player-name')
+        playerName.addEventListener('keyup', function (event) {
+                console.log(playerName.value);
+        })
+           
         highestScore.map( function (score) {
             console.log(score); // see if you score is working.
         })
