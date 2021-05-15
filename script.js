@@ -158,7 +158,8 @@ function runGame() {
         };
     
     renderQuestion()
-    countDown()   
+    countDown()  
+     
 
 };
 
@@ -185,10 +186,11 @@ function nextQuesiton() {
         yourScore (); 
         returnToStartPage (); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
     } else {
+        renderQuestion();
+    }
  
-    renderQuestion(); 
-}
-}
+    console.log('error2')
+};
 
 // show the question
 function perventQuestion() {
@@ -221,6 +223,8 @@ function countDown() {
         timerCountdown.innerText = timer +"s"
     }, 1000); 
 
+    
+
 }
 
 // to check the Answer on click
@@ -237,12 +241,13 @@ function checkAnswer(answer) {
         console.log('no')
         showAnswer();
     }   
+    
 };
 
 function showAnswer() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
-        if (questionNumber > TOTAL_QUESTION) {
         reset();
+       
 };
 
 function reset () {
@@ -251,8 +256,9 @@ function reset () {
             nextQuesiton();
         }, 1000);
         clearInterval(timer = 10 + 1);
+       
 };
-}
+
 
 
 // SCORE CARD CODE FOR HIGHSCORE AND SAVING SCORE
