@@ -178,15 +178,16 @@ function renderQuestion() {
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
 
-    if (questionsArray.length === 0 || questionNumber > TOTAL_QUESTION) {
-    
+    if (questionNumber > TOTAL_QUESTION) {
+    //questionsArray.length === 0 || 
         game.style.display = 'none';
         finalScore.style.display = 'block';
-        yourScore ();
-        returnToStartPage ();
-}
+        yourScore (); 
+        returnToStartPage (); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
+    } else {
  
     renderQuestion(); 
+}
 }
 
 // show the question
@@ -211,15 +212,15 @@ const answerSelectsD = document.getElementById('D');
     
 function countDown() {
     setInterval (function () {
-        
-            if (timer <= 0 || timer < 1) {
-                questionNumber++
-                nextQuesiton(); // Maybe need to show answer first.
-                clearInterval(timer = 10 + 1);  // + 1 help give a break 
-            } 
-                timer--;
-                timerCountdown.innerText = timer +"s"
-            }, 1000);   
+     if (timer <= 0 || timer < 1) {
+        questionNumber++
+        nextQuesiton(); // Maybe need to show answer first.
+        clearInterval(timer = 10 + 1);  // + 1 help give a break 
+    } 
+        timer--;
+        timerCountdown.innerText = timer +"s"
+    }, 1000); 
+
 }
 
 // to check the Answer on click
@@ -240,6 +241,7 @@ function checkAnswer(answer) {
 
 function showAnswer() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
+        if (questionNumber > TOTAL_QUESTION) {
         reset();
 };
 
@@ -250,6 +252,10 @@ function reset () {
         }, 1000);
         clearInterval(timer = 10 + 1);
 };
+}
+
+
+// SCORE CARD CODE FOR HIGHSCORE AND SAVING SCORE
 
 function yourScore () {
     // https://www.w3schools.com/jsref/prop_win_localstorage.asp
@@ -275,15 +281,28 @@ function yourScore () {
         const highestScore = JSON.parse(localStorage.getItem('score')) || [];
             console.log(highestScore); // see if you score is working.
         
-        const saveScore = document.getElementById('save-score').addEventListener('click', function (e) {
-            console.log(this.click)
+        const saveScore = document.getElementById('save-score')
+        saveScore.addEventListener('click', function (e) {
+            console.log(saveScore.click)
         })
 
         const playerName = document.getElementById('player-name')
         playerName.addEventListener('keyup', function (event) {
-                console.log(playerName.value);
+                if (playerName.value === "Enter") {
+                    console.log(playerName)
+                }
         })
-           
+
+        let yourstore = {
+            score: score,
+            name: playerName.value,
+        }
+
+        highestScore.push(yourstore);
+        console.log(highestScore)
+            
+        
+ 
         highestScore.map( function (score) {
             console.log(score); // see if you score is working.
         })
@@ -297,3 +316,5 @@ function returnToStartPage ()  {
         return window.location.assign("/index.html");       
     });
 }
+
+
