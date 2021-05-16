@@ -85,8 +85,10 @@
                     <h2 id="score">This is your score</h2>
             </div>
             <div class="btns-hub" class="justify-center">
-                <input type="text" id="player-name" name="player-name">
-                <div class="start-btn" type="submit" id="save-score">Save Score</div>
+                <form id="form-player-score" action="/" method="GET">
+                    <input type="text" id="player-name" name="player-name" required>
+                    <button class="start-btn" type="submit" id="save-score">Save Score</button>
+               </form>
                 <div class="start-btn" id="Highest-score">Highest Score</div>
                 <div class="start-btn" id="restart">Home</div>
             </div>  

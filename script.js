@@ -185,6 +185,7 @@ function nextQuesiton() {
         finalScore.style.display = 'block';
         yourScore (); 
         returnToStartPage (); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
+        
     } else {
         renderQuestion();
     }
@@ -256,6 +257,8 @@ function reset () {
             nextQuesiton();
         }, 1000);
         clearInterval(timer = 10 + 1);
+        
+        
        
 };
 
@@ -271,6 +274,8 @@ function yourScore () {
         
         const HighestScoreBtn = document.getElementById('Highest-score');
         const modelScoreCard = document.getElementById('model-score');
+
+
         HighestScoreBtn.addEventListener('click', function (e) {
             modelScoreCard.style.display = 'block'; 
     
@@ -285,33 +290,42 @@ function yourScore () {
 
         // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
         const highestScore = JSON.parse(localStorage.getItem('score')) || [];
-            console.log(highestScore); // see if you score is working.
-        
-        const saveScore = document.getElementById('save-score')
-        saveScore.addEventListener('click', function (e) {
-            console.log(saveScore.click)
-        })
-
-        const playerName = document.getElementById('player-name')
-        playerName.addEventListener('keyup', function (event) {
-                if (playerName.value === "Enter") {
-                    console.log(playerName)
-                }
-        })
-
-        let yourstore = {
-            score: score,
-            name: playerName.value,
-        }
-
-        highestScore.push(yourstore);
-        console.log(highestScore)
             
         
- 
-        highestScore.map( function (score) {
-            console.log(score); // see if you score is working.
+        const formCard = document.getElementById('form-player-score');
+            formCard.addEventListener('submit', function(e) {
+                e.preventDefault();
+            })
+        
+        const playerName = document.getElementById('player-name')
+            playerName.addEventListener('keydown', function (event) {
+                if (playerName.value === "Enter") {
+                    console.log(playerName.value)
+                }
+            })
+
+
+        const saveScore = document.getElementById('save-score')
+        saveScore.addEventListener('click', function (e) {
+            //console.log(saveScore.click)
+            let yourstore = {
+                score: score,
+                name: playerName.value
+            };
+            if (playerName.value && saveScore.click) {
+                highestScore.push(yourstore);
+            }
+                console.log(yourstore)
+                console.log(highestScore)
         })
+
+        https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
+           highestScore.sort(function (a, b) {
+               return b.yourstore - a.yourstore;
+           });
+           
+           console.log(highestScore)
+       
         
 
 }
