@@ -159,44 +159,45 @@ function runGame() {
     
     renderQuestion()
     countDown()  
-     
+    
 
 };
 
-// to pick a question from the array
+// TO PICK A QUESTION FROM THE ARRAY
 function renderQuestion() {
 
     console.log(questionsArray)
-    const pickQ = Math.floor(Math.random()* questionsArray.length);
+    const pickQ = Math.floor(Math.random()* questionsArray.length); // RANDOM THE PICK
     currentAskQuestion = questionsArray[pickQ];
     console.log(questionsArray[pickQ]) // to see if the renderQuestion works
     perventQuestion(currentAskQuestion);
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-    questionsArray.splice(pickQ, 1);
+    questionsArray.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
 };
 
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
 
-    if (questionNumber > TOTAL_QUESTION) {
+    if (questionNumber > TOTAL_QUESTION) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
     //questionsArray.length === 0 || 
         game.style.display = 'none';
         finalScore.style.display = 'block';
         yourScore (); 
         returnToStartPage (); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
-        
     } else {
         renderQuestion();
+        clearInterval(timer = 10 + 1);
     }
  
-    console.log('error2')
+        
+    //console.log('error2')
 };
 
-// show the question
+// SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
 function perventQuestion() {
     
-const question = document.getElementById('question');
+const question = document.getElementById('question'); 
 const questionImg = document.getElementById('image');
 const answerSelectsA = document.getElementById('A');
 const answerSelectsB = document.getElementById('B');
@@ -209,26 +210,27 @@ const answerSelectsD = document.getElementById('D');
     answerSelectsA.innerText = currentAskQuestion.choiceA;
     answerSelectsB.innerText = currentAskQuestion.choiceB;
     answerSelectsC.innerText = currentAskQuestion.choiceC;
-    answerSelectsD.innerText = currentAskQuestion.choiceD;
-    //timerCountdown.innerText = timer +"s"
+    answerSelectsD.innerText = currentAskQuestion.choiceD; 
+   
 };
-    
+
+// TIMER 
 function countDown() {
     setInterval (function () {
      if (timer <= 0 || timer < 1) {
-        questionNumber++
+        /* questionNumber++
+         was breaking the code
         nextQuesiton(); // Maybe need to show answer first.
-        clearInterval(timer = 10 + 1);  // + 1 help give a break 
+        clearInterval(timer = 10 + 1);  // + 1 help give a break */
     } 
         timer--;
-        timerCountdown.innerText = timer +"s"
+        timerCountdown.innerText = timer +"s" // SHOW THE TIMER ON PAGE
     }, 1000); 
 
     
-
 }
 
-// to check the Answer on click
+// TO CHECK THE ANSWER ON CLICK
 function checkAnswer(answer) {
     questionNumber++
        
@@ -245,20 +247,20 @@ function checkAnswer(answer) {
     
 };
 
+// TO SHOW THE PLAYER THE RIGHT ANSWER
 function showAnswer() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
         reset();
        
 };
 
+// TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR
 function reset () {
         setTimeout(() => {
             document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
             nextQuesiton();
         }, 1000);
-        clearInterval(timer = 10 + 1);
-        
-        
+    
        
 };
 
@@ -300,7 +302,8 @@ function yourScore () {
         const playerName = document.getElementById('player-name')
             playerName.addEventListener('keydown', function (event) {
                 if (playerName.value === "Enter") {
-                    console.log(playerName.value)
+                    //console.log(playerName.value)
+                    return playerName.value
                 }
             })
 
@@ -309,27 +312,38 @@ function yourScore () {
         saveScore.addEventListener('click', function (e) {
             //console.log(saveScore.click)
             let yourstore = {
-                score: score,
+                score: Math.floor(Math.random() * 100),//score,
                 name: playerName.value
             };
+
             if (playerName.value && saveScore.click) {
-                highestScore.push(yourstore);
+                highestScore.push(yourstore); 
             }
                 console.log(yourstore)
                 console.log(highestScore)
-        })
-
-        https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
-           highestScore.sort(function (a, b) {
+        });
+            /* need to finish this
+            //????????????????
+            //????????????????
+            */
+           // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
+           function scoreRankings (yourstore) {
+            highestScore.sort (function (a, b) {
                return b.yourstore - a.yourstore;
            });
            
-           console.log(highestScore)
-       
+          console.log(highestScore)
+           
+        }
+        
+               
+
+
+        
         
 
 }
-
+// GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
     const restartBtn = document.getElementById('restart')
     restartBtn.addEventListener('click', function (e) {
