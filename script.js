@@ -108,6 +108,7 @@ const rightAnswerPoints = 10;
 const TOTAL_QUESTION = 2;
 let questionNumber = 0;
 let timer = 10;
+const hiscoreMaxNum = 3;
 
 document.addEventListener("DOMContentLoaded", function () {
     
@@ -225,10 +226,8 @@ function countDown() {
     } 
         timer--;
         timerCountdown.innerText = timer +"s" // SHOW THE TIMER ON PAGE
-    }, 1000); 
-
-    
-}
+    }, 1000);   
+};//END
 
 // TO CHECK THE ANSWER ON CLICK
 function checkAnswer(answer) {
@@ -243,26 +242,22 @@ function checkAnswer(answer) {
     } else {
         console.log('no')
         showAnswer();
-    }   
-    
-};
+    }      
+}; //END
 
 // TO SHOW THE PLAYER THE RIGHT ANSWER
 function showAnswer() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
-        reset();
-       
-};
+        reset();      
+}; //END
 
 // TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR
 function reset () {
         setTimeout(() => {
             document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
             nextQuesiton();
-        }, 1000);
-    
-       
-};
+        }, 1000);     
+}; // END
 
 
 
@@ -271,84 +266,88 @@ function reset () {
 function yourScore () {
     // https://www.w3schools.com/jsref/prop_win_localstorage.asp
     localStorage.setItem("yourScore", score);
-        document.getElementById("points").innerHTML = localStorage.getItem("yourScore");
-        document.getElementById("score").innerHTML = "This is your overall score " + score + " points";      
+
+    document.getElementById("points").innerHTML = localStorage.getItem("yourScore");
+    document.getElementById("score").innerHTML = "This is your overall score " + score + " points";      
         
-        const HighestScoreBtn = document.getElementById('Highest-score');
-        const modelScoreCard = document.getElementById('model-score');
+    const HighestScoreBtn = document.getElementById('Highest-score');
+    const modelScoreCard = document.getElementById('model-score');
 
-
-        HighestScoreBtn.addEventListener('click', function (e) {
-            modelScoreCard.style.display = 'block'; 
+    HighestScoreBtn.addEventListener('click', function (e) {
+        modelScoreCard.style.display = 'block'; 
     
-        });
+    });
 
-        closeModalButtons.forEach(function (button) {
-            button.addEventListener('click', function (e) {
-                modelScoreCard.style.display = 'none';
+    closeModalButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            modelScoreCard.style.display = 'none';
                 
-            }); 
-        });
+        }); 
+    });
 
-        // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
-        const highestScore = JSON.parse(localStorage.getItem('score')) || [];
+// https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
+    const highestScore = JSON.parse(localStorage.getItem('score')) || [];
             
         
-        const formCard = document.getElementById('form-player-score');
-            formCard.addEventListener('submit', function(e) {
-                e.preventDefault();
-            })
+    const formCard = document.getElementById('form-player-score');
+    formCard.addEventListener('submit', function(e) {
+        e.preventDefault();
+    });
         
-        const playerName = document.getElementById('player-name')
-            playerName.addEventListener('keydown', function (event) {
-                if (playerName.value === "Enter") {
-                    //console.log(playerName.value)
-                    return playerName.value
-                }
-            })
+    const playerName = document.getElementById('player-name')
+        playerName.addEventListener('keydown', function (event) {
+            if (playerName.value === "Enter") {
+                return playerName.value
+            }
+        });
 
 
-        const saveScore = document.getElementById('save-score')
+    const saveScore = document.getElementById('save-score')
         saveScore.addEventListener('click', function (e) {
-            //console.log(saveScore.click)
+            
+            //USE "Math.floor(Math.random() * 100)," TO HELP ME FIND OUT IF THE HIGHESTSCORE WAS SORTING
             let yourstore = {
-                score: Math.floor(Math.random() * 100),//score,
+                score: score,
                 name: playerName.value
             };
 
             if (playerName.value && saveScore.click) {
-                highestScore.push(yourstore); 
+                highestScore.push(yourstore);     
             }
-                console.log(yourstore)
-                console.log(highestScore)
+                
+        scoreRankings()
+        highestScore.splice(3)
+                
         });
-            /* need to finish this
-            //????????????????
-            //????????????????
-            */
-           // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
-           function scoreRankings (yourstore) {
-            highestScore.sort (function (a, b) {
-               return b.yourstore - a.yourstore;
-           });
-           
-          console.log(highestScore)
-           
-        }
-        
-               
+
+// https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
+    function scoreRankings (yourstore) {
+        highestScore.sort (function (a, b) {
+            return b.score - a.score; 
+        });
+        // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
+        localStorage.setItem('score', JSON.stringify(highestScore));  
+        console.log(highestScore)
+    };
+};// END
+// TO GET THE SAVE LIST FROM THE GAMES BEFORE
+let scoreList = JSON.parse(localStorage.getItem('score'));
+console.log(scoreList)
+
+scoreList.map(function (yourstore) {
+
+    console.log(`<tr><td>${yourstore.name}<td></td><${yourstore.score}/td></tr>`);
+});
 
 
-        
-        
 
-}
+
 // GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
     const restartBtn = document.getElementById('restart')
-    restartBtn.addEventListener('click', function (e) {
-        return window.location.assign("/index.html");       
-    });
-}
+        restartBtn.addEventListener('click', function (e) {
+            return window.location.assign("/index.html");       
+        });
+};//END
 
 
