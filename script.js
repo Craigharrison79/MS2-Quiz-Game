@@ -334,13 +334,24 @@ function yourScore () {
 let scoreList = JSON.parse(localStorage.getItem('score'));
 console.log(scoreList)
 
-scoreList.map(function (yourstore) {
-
-    console.log(`<tr><td>${yourstore.name}<td></td><${yourstore.score}/td></tr>`);
-});
 
 
+function topTenTableBuilder(info) {
+    let scoreTable = document.getElementById('top10-table');
 
+    for (var  i = 0; i < info.length; i++) {
+        let row =   `<tr>
+                    <td>${info[i].name}</td>
+                    <td>${info[i].score}</td>
+                    </tr>`
+
+    scoreTable.innerHTML += row;
+    }
+
+    
+}
+
+topTenTableBuilder(highestScore)
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
