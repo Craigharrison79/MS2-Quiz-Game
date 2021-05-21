@@ -1,52 +1,133 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Flag Quiz Game]()
 
-Welcome Craigharrison79,
+For my first milestone project, I had to build a static responsive front end website as part of my Diploma Course with the Code Institute. I wanted to build a game of some kind.  I was watching a old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it give me the idea to do a quiz game for my project.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+![Flag Quiz Game]()
 
-## Gitpod Reminders
+## Table of Content
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- [UX Design](#ux-design)
+    - [Strategy](#strategy)
+    - [Goals](#goals)
+- [Design](#design)
+    - [Wireframes](#wireframes)
+    - [Typography](#Typography)
+    - [Color Scheme](#color-scheme)
+    - [Image](#image)
+- [Features](#features)
+    - [Layout](#layout)
+    - [Features to implement in the future](#features-to-implement-in-the-future)
+- [Technologies used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+    - [Acknowlegements](#acknowlegements)
+    - [Inspiration from website](#Inspiration-for-website)
+    - [Code](#code)
+    
 
-`python3 -m http.server`
+# UX
 
-A blue button should appear to click: _Make Public_,
+## Strategy
 
-Another blue button should appear to click: _Open Browser_.
+## Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Scope
 
-A blue button should appear to click: _Make Public_,
+# Design
 
-Another blue button should appear to click: _Open Browser_.
+### Wireframes
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web base game.  Link below to the design.
 
-To log into the Heroku toolbelt CLI you can use:
+- [Game Design]()
 
-`heroku login -i`
+Or
 
-If you have Multi-Factor Authentication (MFA) enabled then use the API key that was generated for you at [Heroku](https://dashboard.heroku.com/account) as your password.
-This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+- [Wireframes Download PDF]()
 
-## Updates Since The Instructional Video
+### Typography
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Color Scheme
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Image
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+# Features
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+# Technologies Used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- HTML5: used to structure the page.
+- CSS3: used to add style and look of the page.
+- Font Awesome: a library full of icons.
+- Google Fonts: a library full of fonts.
+- Git: Version control from gitpod, save, commits and push code to Github.
+- GitHub: Live site to save code.
+- Gitpod: Local respoitory to read the develop code.
+- Mockup: Used to design my wireframes.
+- W3C CSS Validator: Used to check of errors in HTML code.
+- W3C HTML Checker: Used to check of errors in CSS code.
+- Am I responsive: is a high fidelity responsive design tool for previewing your site across a variety of popular devices.
+- W3C Spell Checker: This tool allows you to check the spelling of a web page.
+- Chrome Development Tools: Web developer tools built directly into the Google Chrome browser. To help developer diagnose problems as they work on project.
+- Responsive viewer: To test your website responsiveness across different devices.
+- Wave Accessibility: helps you make their web content more accessible to different people with disabilities.
+- Google lighthouse: Check your site Performance, Accessibility, Best Pracitces and SEO and give it a rating out of a 100.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Media
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+# Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Testing process can be read [here]().
 
----
+- ## Testing User Experience and Stories (UX)
 
-Happy coding!
+# Deployment
+
+Deployment of the project is on GitHub Pages, this is how I deploy it:
+
+- With the code being done in Gitpod and push to my repository in GitHub.
+- Log-in to GitHub and moving to my repository and finding and opening MS2-Quiz-Game.
+- Locating and clicking on the settings in the menu bar on the top of the page.
+- Scroll down the page till you reach the GitHub Pages section.
+- In this section under the source click the dropdown select that read “None” and select master and then save.
+- Refresh the page and scroll back down the same section and you find the published link for your site.
+
+![deployment]()
+
+## Cloning the Project
+
+Cloning the project
+
+When you finish log into Github, navigate to the repository page and select MS2-Quiz-Game.
+Above the file list, click on the Code button next to the Gitpod button (green button).
+Copy the URL.
+Open your terminal.
+Change the working directory to the location where you want the cloned directory.
+Paste the URL after you have type git clone. eg
+	$ git clone https://github.com/Username/repository-name
+Press enter and this will create a local clone.
+
+More information on cloning repository:
+[Github Information](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+![Clone]()
+
+## Forking the Project
+
+Forking the project
+
+When you finish log into Github, navigate to the repository page and select MS1-Dental-Clinic.
+Top right of the page click on the fork button.
+
+More information on fork repository:
+[Github Information](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
+
+# Credits
+
+## Acknowledgements
+
+## Inspiration for website
+
+## Code
+
+[]() : details?.
