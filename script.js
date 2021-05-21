@@ -1,22 +1,6 @@
-
-    /* const question = document.getElementById('question');
-    const questionImg = document.getElementById('image');
-    const answerSelectsA = document.getElementById('A');
-    const answerSelectsB = document.getElementById('B');
-    const answerSelectsC = document.getElementById('C');
-    const answerSelectsD = document.getElementById('D'); */
-const btnContainer = document.getElementById('select-container');
-const scoreNumber = document.getElementById('points');
-const questionIndex = document.getElementById('question-num');
-const timerCountdown = document.getElementById('counter');
-const welcomePage = document.getElementById('landing-page-container');
-const playGame = document.getElementById('play-game');
-const game = document.getElementById('game');
-const instructionsBtn = document.getElementById('instructions');
+const game = document.getElementById('game'); // USE IN NUMBER FOR FUNCTIONS - runGame() & nextQuestions().
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
- // const finalScore = document.getElementById('final-score');
-const HiScoreList = document.getElementById('Highest-score-list');
 
 let questionsArray = [
     {
@@ -112,30 +96,25 @@ const hiscoreMaxNum = 3;
 
 document.addEventListener("DOMContentLoaded", function () {
     
-    playGame.addEventListener('click', function (e) {
-        runGame();
-        console.log(this.click)
-    });
+document.getElementById('play-game').addEventListener('click', function (e) {
+    runGame();
+    console.log(this.click)
+});//END
 
-    instructionsBtn.addEventListener('click', function (e) {
-        model.style.display = 'block'; 
-
+document.getElementById('instructions').addEventListener('click', function (e) {
+    model.style.display = 'block'; 
     });
-});
+}); //END
 
 closeModalButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
         model.style.display = 'none';
-
     });
-});
+}); //END
 
 function runGame() {
-
-   // document.addEventListener("DOMContentLoaded", function () {
-        
         // display
-        welcomePage.style.display = 'none';
+        document.getElementById('landing-page-container').style.display = 'none';
         game.style.display = 'block';
         //document.getElementById('main-conatainer').style.backgroundColor = 'rgb(10, 59, 77)';
         
@@ -160,7 +139,7 @@ function runGame() {
     
     renderQuestion()
     countDown()  
-    
+    console.log('error')
 
 };
 
@@ -199,33 +178,26 @@ function nextQuesiton() {
 function perventQuestion() {
     
 const question = document.getElementById('question'); 
-const questionImg = document.getElementById('image');
-const answerSelectsA = document.getElementById('A');
-const answerSelectsB = document.getElementById('B');
-const answerSelectsC = document.getElementById('C');
-const answerSelectsD = document.getElementById('D');
-
-    questionIndex.innerText = "Q"+ questionNumber
+    document.getElementById('question-num').innerText = "Q"+ questionNumber
     question.innerText = currentAskQuestion.question;
-    questionImg.innerHTML = "<img src="+ currentAskQuestion.imgSrc +">";
-    answerSelectsA.innerText = currentAskQuestion.choiceA;
-    answerSelectsB.innerText = currentAskQuestion.choiceB;
-    answerSelectsC.innerText = currentAskQuestion.choiceC;
-    answerSelectsD.innerText = currentAskQuestion.choiceD; 
-   
+    document.getElementById('image').innerHTML = "<img src="+ currentAskQuestion.imgSrc +">";
+    document.getElementById('A').innerText = currentAskQuestion.choiceA;
+    document.getElementById('B').innerText = currentAskQuestion.choiceB;
+    document.getElementById('C').innerText = currentAskQuestion.choiceC;
+    document.getElementById('D').innerText = currentAskQuestion.choiceD; 
 };
 
 // TIMER 
 function countDown() {
     setInterval (function () {
      if (timer <= 0 || timer < 1) {
-        /* questionNumber++
-         was breaking the code
-        nextQuesiton(); // Maybe need to show answer first.
-        clearInterval(timer = 10 + 1);  // + 1 help give a break */
+        questionNumber++
+         nextQuesiton();
+         
     } 
         timer--;
-        timerCountdown.innerText = timer +"s" // SHOW THE TIMER ON PAGE
+        //timerCountdown
+        document.getElementById('counter').innerText = timer +"s" // SHOW THE TIMER ON PAGE
     }, 1000);   
 };//END
 
@@ -326,32 +298,23 @@ function yourScore () {
             return b.score - a.score; 
         });
         // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
-        localStorage.setItem('score', JSON.stringify(highestScore));  
-        console.log(highestScore)
+        localStorage.setItem('score', JSON.stringify(highestScore));    
     };
 };// END
+
 // TO GET THE SAVE LIST FROM THE GAMES BEFORE
-let scoreList = JSON.parse(localStorage.getItem('score'));
-console.log(scoreList)
+//https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s
+const scoreList = JSON.parse(localStorage.getItem("score")) || [];
 
+function topScoreList() {
+	const HiScoreList = document.getElementById('Highest-score-list');
+    HiScoreList.innerHTML = scoreList.map(function (yourstore) {
+	let topScore = `<li>${yourstore.name} - ${yourstore.score}</li>`;
+    return topScore;
+}).join('');
+}; //END 
 
-
-function topTenTableBuilder(info) {
-    let scoreTable = document.getElementById('top10-table');
-
-    for (var  i = 0; i < info.length; i++) {
-        let row =   `<tr>
-                    <td>${info[i].name}</td>
-                    <td>${info[i].score}</td>
-                    </tr>`
-
-    scoreTable.innerHTML += row;
-    }
-
-    
-}
-
-topTenTableBuilder(highestScore)
+topScoreList()
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
