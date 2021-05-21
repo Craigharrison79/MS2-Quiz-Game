@@ -30,7 +30,34 @@ For my first milestone project, I had to build a static responsive front end web
 
 ## Strategy
 
+The idea for this web base game was to build a fun quiz game that all ages could play.  To take the world flag's and see how much of you world the player knows.
+
 ## Goals
+
+#### The design of the game:
+
+As the designer of this game I wanted to build a simple and clean looking design.  A user friendly interface than any player of any age could just start playing. As this is my first project in Javascript, I wanted to start to understand how javascript works without overwhelming myself with to much complex and detailed procedures. I want to provide a enjoyable and stimulating game that the player/players would want to play again and again.
+
+#### Design Goals:
+
+ - A fun and easy to play game that all ages can play.
+ - To be able to education the players as they play the game.
+ - To be able to play the game multipe times and still be challenged.
+ - To have a player want to play again to better his/her score.
+ - Build something I am proud of.
+ - To understand and use affectively the knowledge for the course.
+
+#### User:
+
+    - First time player
+        - Easy to understand how to play the game and how to navigate throught the game.
+        - Something that is fun and look good to  play.
+        - Something to challenge them without overwhelm them at the same time.
+
+    - Returning players
+        - To be challenge even after playing the game a few times.
+        - I improve his/her scores on the leaderboard.
+        - To eductional themself to the country flags.
 
 ## Scope
 
@@ -58,6 +85,7 @@ Or
 
 - HTML5: used to structure the page.
 - CSS3: used to add style and look of the page.
+- Javascript: used to build interactive elements of the website/page.
 - Font Awesome: a library full of icons.
 - Google Fonts: a library full of fonts.
 - Git: Version control from gitpod, save, commits and push code to Github.
