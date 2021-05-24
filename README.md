@@ -61,13 +61,45 @@ As the designer of this game I wanted to build a simple and clean looking design
 
 ## Scope
 
+    - Responsive interface.
+    - Simple menu.
+    - Easy and simple section to find instructions on how to play the game.
+    - To have a random question asks from at array.
+    - Display the generate quesiton on the page.
+    - To generate the right image for each question.
+    - Have a countdown counter to run down as the player go through each quesiton.
+    - To have a updateable score which will be shown at the end of the game.
+    - Indentify the right answer once the player has taken a guess (to help educate the player on the subject).
+    - To indecate how well the player as done between each game or other players game.
+    - To restart the game once finish.
+
+## Future Features
+
+    - To build on the web base game:
+        - Adding lot of different array to give the user a differnet subject/question to pick from.
+        - The highest score board to be seen by different player on different computer and not just local Storage.
+        - Adding a choose of levels, from beginer to pro.
+        - Have a battle game to competer against players online.
+
+## Building Constraints
+
+    - Design
+        - First time building a game like this.
+        - Understand how UX works for web base game.
+    - Teachnical
+        - Just started out with javascript and is new a programing.
+        - Time frame alot to build the features needed.
+        - The ablitity to research and find the answer to the coding question once the problem show themself.
+    
 # Design
+
+To build a clear looking game that simple on the eye and that is modern look but will not age.
 
 ### Wireframes
 
 I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web base game.  Link below to the design.
 
-- [Game Design]()
+- [Game Design](assets/documents/image/wireframes-MS2.jpg)
 
 Or
 
@@ -76,6 +108,10 @@ Or
 ### Typography
 
 ### Color Scheme
+
+The colour scheme - I wanted to keep the game clean looking and not uses to many colours. The midnight green was a nice starting colour as it's a good dark colour that still pop a little without overwhelming the users eyes.  Orange was a nice pop of colour to give contrast to the  background and also give the user a simple indicator of were to look. The cadet blue is again a nice clean different in colour to help indicate the buttons on the page.
+
+![Colour Scheme](assets/documents/image/colour-scheme.png)
 
 ### Image
 
@@ -159,3 +195,9 @@ More information on fork repository:
 ## Code
 
 []() : details?.
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map3
+
+
+https://dev.to/minna_xd/adding-a-high-score-table-to-javascript30-whack-a-mole-4adk 
+problems with table
+try using table https://stackoverflow.com/questions/14643617/create-table-using-javascript/14644462
