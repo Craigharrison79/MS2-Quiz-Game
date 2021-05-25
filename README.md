@@ -73,14 +73,6 @@ As the designer of this game I wanted to build a simple and clean looking design
     - To indecate how well the player as done between each game or other players game.
     - To restart the game once finish.
 
-## Future Features
-
-    - To build on the web base game:
-        - Adding lot of different array to give the user a differnet subject/question to pick from.
-        - The highest score board to be seen by different player on different computer and not just local Storage.
-        - Adding a choose of levels, from beginer to pro.
-        - Have a battle game to competer against players online.
-
 ## Building Constraints
 
     - Design
@@ -115,7 +107,38 @@ The colour scheme - I wanted to keep the game clean looking and not uses to many
 
 ### Image
 
+ - Landing Page the two images are from
+    - [undraw](https://undraw.co/illustrations): Around the world but I remove the figure to just have the world in [figma](https://www.figma.com) this was then export to a svg "world.svg".
+    - [handz 3D](https://www.handz.design/): A package of different hands that I made into a image also in figma and export it to svg "handz.svg".
+
 # Features
+
+- #### Landing Page or menu
+
+    - A clean inviting page to indicate what site/game the user is looking at.
+    - Two call to action buttons. One of starting the game and a second of the instructions on how to play the game which will show up in a model to help the user with navigation.
+
+- #### Game Page
+
+    - First a area to indicate which question the player/user is on.
+    - The question its self.
+    - The image to the questions.
+    - The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This help educate the player/user.
+    - The timer which count down show the player/user and time left they have to answer the question.
+
+- #### Score Page
+
+    - The player/user overall score for the game.
+    - A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter to the high score card.
+    - Buttons: First one to save player/user score once name is enter.  Second to open up the score card table and see who the top player/user are.  And third button to enter back to the landing/menu page.
+
+### Future Features
+
+    - To build on the web base game:
+        - Adding lot of different array to give the user a differnet subject/question to pick from.
+        - The highest score board to be seen by different player on different computer and not just local Storage.
+        - Adding a choose of levels, from beginer to pro.
+        - Have a battle game to competer against players online.
 
 # Technologies Used
 
@@ -138,6 +161,10 @@ The colour scheme - I wanted to keep the game clean looking and not uses to many
 - Google lighthouse: Check your site Performance, Accessibility, Best Pracitces and SEO and give it a rating out of a 100.
 
 ### Media
+
+- [undraw](https://undraw.co/illustrations)
+- [handz 3D](https://www.handz.design/)
+- [figma](https://www.figma.com) 
 
 # Testing
 
@@ -190,14 +217,37 @@ More information on fork repository:
 
 ## Acknowledgements
 
+- My Wife: for her support and looking after the kids.
+- My little girl: For the hours playing the game and testing.
+- My newborn boy: For sleeping so well so I could get time to finish this project.
+- Mentor: Oluwafemi Medale for his feedback and help.
+- Code Institue: for the knowledge you gave me.
+- W3School: For helpful reminders.
+- Kevin Powell: inspiration and knowledge.
+- James Q Quick: inspiration and knowledge.
+
 ## Inspiration for website
+
+Big Bang Theory and Sheldon for Fun with Flags.
 
 ## Code
 
-[]() : details?.
-https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map3
+[James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) : help with many problems in the project. Did my best to rewrite code best I could using help from the codes below.  
 
+[Dani Krossing](https://youtu.be/kPtS4vO42II) : Help with building and information about 404 page.
 
-https://dev.to/minna_xd/adding-a-high-score-table-to-javascript30-whack-a-mole-4adk 
-problems with table
-try using table https://stackoverflow.com/questions/14643617/create-table-using-javascript/14644462
+[developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) : For more information about splice and how it works.
+    
+[w3schools](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map3) : ideas on how to write the map function in a different way.
+
+[w3schools](https://www.w3schools.com/jsref/prop_win_localstorage.asp) : help with local storage.
+
+[stackoverflow](https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue) : look over this for local storage issues.
+
+[w3schools](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2) : help to rewrite the code.
+
+[dev.to](https://dev.to/minna_xd/adding-a-high-score-table-to-javascript30-whack-a-mole-4adk) : idea on how to do the table with map, but run into lot of problems so pivoted to unordered list like in [James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) video.
+
+[stackoverflow](https://stackoverflow.com/questions/14643617/create-table-using-javascript/14644462) also use to try and build the table.
+
+[w3schools](https://www.w3schools.com/charsets/tryit.asp?deci=215&ent=times) : use &times for a button and [get.foundation](https://get.foundation/sites/docs/close-button.html) : help with the data close button.
