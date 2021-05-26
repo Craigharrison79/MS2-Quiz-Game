@@ -214,7 +214,9 @@ function checkAnswer(answer) {
     } else {
         console.log('no')
         showAnswer();
-    }      
+    }    
+    
+    
 }; //END
 
 // TO SHOW THE PLAYER THE RIGHT ANSWER
@@ -228,8 +230,8 @@ function reset () {
         setTimeout(() => {
             document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
             nextQuesiton();
-        }, 1000);     
-}; // END
+        }, 1000); 
+}; //END
 
 
 

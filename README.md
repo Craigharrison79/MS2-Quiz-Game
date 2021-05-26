@@ -49,39 +49,39 @@ As the designer of this game I wanted to build a simple and clean looking design
 
 #### User:
 
-    - First time player
-        - Easy to understand how to play the game and how to navigate throught the game.
-        - Something that is fun and look good to  play.
-        - Something to challenge them without overwhelm them at the same time.
+- First time player
+    - Easy to understand how to play the game and how to navigate throught the game.
+    - Something that is fun and look good to  play.
+    - Something to challenge them without overwhelm them at the same time.
 
-    - Returning players
-        - To be challenge even after playing the game a few times.
-        - I improve his/her scores on the leaderboard.
-        - To eductional themself to the country flags.
+- Returning players
+    - To be challenge even after playing the game a few times.
+    - I improve his/her scores on the leaderboard.
+    - To eductional themself to the country flags.
 
 ## Scope
 
-    - Responsive interface.
-    - Simple menu.
-    - Easy and simple section to find instructions on how to play the game.
-    - To have a random question asks from at array.
-    - Display the generate quesiton on the page.
-    - To generate the right image for each question.
-    - Have a countdown counter to run down as the player go through each quesiton.
-    - To have a updateable score which will be shown at the end of the game.
-    - Indentify the right answer once the player has taken a guess (to help educate the player on the subject).
-    - To indecate how well the player as done between each game or other players game.
-    - To restart the game once finish.
+- Responsive interface.
+- Simple menu.
+- Easy and simple section to find instructions on how to play the game.
+- To have a random question asks from at array.
+- Display the generate quesiton on the page.
+- To generate the right image for each question.
+- Have a countdown counter to run down as the player go through each quesiton.
+- To have a updateable score which will be shown at the end of the game.
+- Indentify the right answer once the player has taken a guess (to help educate the player on the subject).
+- To indecate how well the player as done between each game or other players game.
+- To restart the game once finish.
 
 ## Building Constraints
 
-    - Design
-        - First time building a game like this.
-        - Understand how UX works for web base game.
-    - Teachnical
-        - Just started out with javascript and is new a programing.
-        - Time frame alot to build the features needed.
-        - The ablitity to research and find the answer to the coding question once the problem show themself.
+- Design
+    - First time building a game like this.
+    - Understand how UX works for web base game.
+- Teachnical
+    - Just started out with javascript and is new a programing.
+    - Time frame alot to build the features needed.
+    - The ablitity to research and find the answer to the coding question once the problem show themself.
     
 # Design
 
@@ -115,30 +115,30 @@ The colour scheme - I wanted to keep the game clean looking and not uses to many
 
 - #### Landing Page or menu
 
-    - A clean inviting page to indicate what site/game the user is looking at.
-    - Two call to action buttons. One of starting the game and a second of the instructions on how to play the game which will show up in a model to help the user with navigation.
+- A clean inviting page to indicate what site/game the user is looking at.
+- Two call to action buttons. One of starting the game and a second of the instructions on how to play the game which will show up in a model to help the user with navigation.
 
 - #### Game Page
 
-    - First a area to indicate which question the player/user is on.
-    - The question its self.
-    - The image to the questions.
-    - The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This help educate the player/user.
-    - The timer which count down show the player/user and time left they have to answer the question.
+- First a area to indicate which question the player/user is on.
+- The question its self.
+- The image to the questions.
+- The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This help educate the player/user.
+- The timer which count down show the player/user and time left they have to answer the question.
 
 - #### Score Page
 
-    - The player/user overall score for the game.
-    - A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter to the high score card.
-    - Buttons: First one to save player/user score once name is enter.  Second to open up the score card table and see who the top player/user are.  And third button to enter back to the landing/menu page.
+- The player/user overall score for the game.
+- A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter to the high score card.
+- Buttons: First one to save player/user score once name is enter.  Second to open up the score card table and see who the top player/user are.  And third button to enter back to the landing/menu page.
 
 ### Future Features
 
-    - To build on the web base game:
-        - Adding lot of different array to give the user a differnet subject/question to pick from.
-        - The highest score board to be seen by different player on different computer and not just local Storage.
-        - Adding a choose of levels, from beginer to pro.
-        - Have a battle game to competer against players online.
+- To build on the web base game:
+    - Adding lot of different array to give the user a differnet subject/question to pick from.
+    - The highest score board to be seen by different player on different computer and not just local Storage.
+    - Adding a choose of levels, from beginer to pro.
+    - Have a battle game to competer against players online.
 
 # Technologies Used
 
