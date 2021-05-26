@@ -24,7 +24,11 @@ Then adding the code to a else statment in the next question function. This  fix
 
 ![clearInterval](assets/documents/test-code/next-question-set_timer.png)
 
-## Show Answer to the player.
+## Show Answer to Player
+
+I had a issue once the answer was shown to the player that it change to color of the answer box and didn't return back to it's original color when moving to the next question.  Reading my Javascript book JAVASCRIPT & JQUERY BY JON DUCKETT which help me with setTimerout function. This fix the issue.
+
+
 
 
 
