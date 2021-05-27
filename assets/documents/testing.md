@@ -28,6 +28,16 @@ Then adding the code to a else statment in the next question function. This  fix
 
 I had a issue once the answer was shown to the player that it change to color of the answer box and didn't return back to it's original color when moving to the next question.  Reading my Javascript book JAVASCRIPT & JQUERY BY JON DUCKETT which help me with setTimerout function. This fix the issue.
 
+## High Score Table/list
+
+I wanted to build a table to hold the highest score in and present they.  I could build the table but couldn't not figure out the code to get the score to insert into the table using map function.  I change to a unorder list.  This is something I need to came back to and figure out at a little date.  But with time being sensitive at the of the project I opted for the faster version.
+
+
+
+
+
+
+
 
 
 
