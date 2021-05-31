@@ -84,6 +84,8 @@ Wave Report showed the following issues:
 
 # Google lighthouse
 
+[Lighthouse](/assets/testing-code/Lighthouse-start.jpg)
+
 ### To improve the rating scores
 
 #### Performance
@@ -104,8 +106,24 @@ Wave Report showed the following issues:
 
 # HTML & CSS Validation
 
-
 ## W3C Markup CSS Validation
+
+### HTML CHECKER
+
+- first two error are empty heading.
+- third error is a duplicate attribute class.
+
+[HTML-1](/assets/testing-code/HTML-checker-1.jpg)
+[HTML-2](/assets/testing-code/HTML-checker-2.jpg)
+
+- Just removing the second class some no duplicate.
+
+### CSS CHECKER
+
+- No error
+
+[CSS](/assets/testing-code/CSS-checker.jpg)
+
 
 
 
