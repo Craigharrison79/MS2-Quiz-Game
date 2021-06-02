@@ -136,9 +136,9 @@ function runGame() {
             };
             //console.log('click', event.target)
         };
-    
+        
+    countDown() 
     renderQuestion()
-    countDown()  
     console.log('error')
 
 };
