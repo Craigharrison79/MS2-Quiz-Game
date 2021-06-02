@@ -1,8 +1,8 @@
-# [Flag Quiz Game]()
+# [Flag Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
 
 For my first milestone project, I had to build a static responsive front end website as part of my Diploma Course with the Code Institute. I wanted to build a game of some kind.  I was watching a old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it give me the idea to do a quiz game for my project.
 
-![Flag Quiz Game]()
+![Veiw Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
 
 ## Table of Content
 
@@ -95,7 +95,7 @@ I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the
 
 Or
 
-- [Wireframes Download PDF]()
+- [Wireframes Download PDF](https://github.com/Craigharrison79/MS2-Quiz-Game/blob/master/assets/documents/images/flag-game-wireframes.pdf)
 
 ### Typography
 
@@ -168,7 +168,7 @@ The colour scheme - I wanted to keep the game clean looking and not uses to many
 
 # Testing
 
-## Testing process can be read [here]().
+## Testing process can be read [here](assets/documents/testing.md).
 
 - ## Testing User Experience and Stories (UX)
 
