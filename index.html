@@ -27,15 +27,17 @@
                     <button data-close-button class="close-btn">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, 
-                        quo, aut porro voluptas in architecto ad incidunt soluta ab repudiandae 
-                        piente. Velit dolorem minima quam asperiores, minus similique cupiditate 
-                        sequi perferendis, veritatis deleniti animi, laboriosam magni? Autem 
-                        corrupti nam inventore, dignissimos cupiditate magnam minus libero error 
-                        sapiente facere, quaerat ratione sint nemo necessitatibus laborum? Commodi 
-                        us ducimus, quae nisi eum corporis cum et nostrum odit? Provident in quo nemo, 
-                        usandae obcaecati natus eveniet fugiat eaque officia perspiciatis facilis 
-                        officiis error.</p>
+                    <ol>
+                        <li>Once you hit the play game button you will be taken to the game page.</li>
+                        <li>On this page you will be given a countries flag with four different conutries options to choose from.</li>
+                        <li>Pick the correct flag to the country that owns it.</li>
+                        <li>Once you have made your pick and click on the countries name and game will show you the correct answer.  
+                            If you are right you get 10 points and you are wrong you lose 5 points.</li>
+                        <li>The aim of the game is to get all the flags correct.</li>
+                        <li>Also the is a countdown timer so you don't have long to make a pick.  Once the time running out you move on to the next question.</li>
+                        <li>At the end of the game you will find out your score.</li>
+                        <li>Good Luck!!!</li>
+                    </ol>
                 </div>
 
             </div>
@@ -67,7 +69,7 @@
                 </div>
             </div>
     <!-- TIMER HUB / COUNT DOWN TIMER AND GAUGE -->
-            <div id="timer-hub">
+            <div id="timer-hub" class="justify-center">
                 <div id="clock-container">
                     <p id="counter"></p>
                 </div>
@@ -92,14 +94,14 @@
             
             <!-- model score card -->
             <div id="model-score" style="display: none">
-                <div class="model-heading model-container">
-                    <h2>Instructions</h2>
+                <div class="model-heading model-container-scoretable">
+                    <h3>Top Players Score</h3>
+                </div>
+                <div class="model-body model-container-topscore">
+                    <ul id="Highest-score-list"></ul>
                     <button data-close-button class="close-btn">&times;</button>
                 </div>
-                <div class="model-body">
-                    <h3>Top Players Score</h3>
-                    <ul id="Highest-score-list"></ul>
-                </div>
+                
             </div>
         </div>
     </div>
