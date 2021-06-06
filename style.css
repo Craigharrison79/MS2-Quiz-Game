@@ -1,6 +1,7 @@
 /* --------- main pages colors */
 #landing-page-container {
-    background-color: rgb(207, 204, 204);
+    /* OLD COLOR WAS NOT WORKING RGB(207,204, 204) LOOK TO WASH OUT */
+    background-color: rgb(202, 245, 239); 
 }
 
 .main-conatainer {
@@ -21,6 +22,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* LANDING PAGE CONTAINER */
 
 #landing-page-container {
     display: flex;
@@ -58,7 +61,6 @@
 
 .start-btn {
     text-align: center;
-    border: 1px solid rgba(224, 222, 88, 0.25);
     font-size: 18px;
     width: 150px;
     padding: 10px;
@@ -67,9 +69,7 @@
     border-radius: 10px;
     border: 1px solid white;
     margin: 0 auto;
-    margin-bottom: 15px;
-    
-    
+    margin-bottom: 15px;  
 }
 
 #hands {
@@ -83,6 +83,8 @@
     width: 70vw;
     height: 25vh;
 }
+
+/* INSTRUCTIONS MODAL */
 
 .model-container {
     position: fixed;
@@ -112,10 +114,6 @@
     text-decoration: underline;
 }
 
-.scroll {
-    overflow: scroll;
-}
-
 .close-btn {
     font-size: 35px;
     border: none;
@@ -131,15 +129,18 @@
     line-height: 25px;
 }
 
+/* GAME CONTAINER PAGE */
+
 #game {
     width: 75%; 
     margin: auto 0; 
 }
+
 /* #question-circle */
 .circle {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     text-align: center;
     background-color: rgb(243, 105, 0);
@@ -162,17 +163,18 @@
 }
 
 #question {
-    font-size: 40px;
+    font-size: 30px;
     color: white;
 }
 
+/* ANSWER CONTAINER */
 #select-container {
     display: grid;
     /* grid-template-columns: repeat(2, auto); */
     justify-content: space-evenly;
     gap: 8px;
-    margin: 20px 100px;
-
+    margin: 20px;
+    margin-bottom: 20px;
 }
 
 .btn {
@@ -191,12 +193,10 @@
 }
 
 img {
-    height: 150px;
+    height: 100px;
 }
 
-#select-container {
-    margin-bottom: 40px;
-}
+/* TIMER */
 
 #clock-container {
     position: relative;
@@ -287,24 +287,6 @@ margin: 0 auto;
     margin-top: 10px;
     
 }
-/*
-.model-container-topscore {
-    position: fixed;
-    background-color: rgba(118, 163, 157, 1);
-    color: black;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    z-index: 20;
-    width: 50%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-} 
-
-
-.model-container-topscore, button {
-    text-align: center;
-} */
 
 #Highest-score-list {
     text-align: center;
@@ -314,10 +296,31 @@ margin: 0 auto;
     line-height: 1.5;
 }
 
-@media screen and (min-width: 991px) and (max-width: 1200px) {
+@media screen and (min-width: 991px) and (max-width: 2000px) {
     #select-container {
         grid-template-columns: repeat(2, auto);
     }
+
+    img {
+        height: 150px;
+    }
+
+    #image-world {
+        height: 200px;
+    }
+
+    #title {
+        font-size: 60px;
+    }
+
+    #image-hands {
+        width: auto;
+    }
+
+    #image-world {
+        height: 200px;
+    }
+
 }
 
 

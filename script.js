@@ -55,7 +55,6 @@ function runGame() {
         
     countDown() 
     renderQuestion()
-    console.log('error')
 };
 
 // TO PICK A QUESTION FROM THE ARRAY
@@ -125,7 +124,7 @@ function checkAnswer(answer) {
     } else {
         console.log('no')
         showAnswer();
-        score = score + wrongAnswerPoints;
+        score = score - wrongAnswerPoints;
     }     
 }; //END
 
@@ -239,6 +238,7 @@ function topScoreList() {
 function returnToStartPage ()  {
     const restartBtn = document.getElementById('restart')
         restartBtn.addEventListener('click', function (e) {
+            score = 0;
             return window.location.assign("/index.html");       
         });
 };//END
