@@ -37,20 +37,21 @@
 
 #landing-page {
     position: relative;
-    height: 80%;
-    width: 60%;
+    height: 80vh;
+    width: 80vw;
     background-color: rgb(10, 59, 77);
-    border-radius: 10%;
+    border-radius: 20px;
 }
 
 #world {
-    padding-left: 30px;
-    padding-top: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 30px;
 }
 
 #title {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color:rgb(243, 105, 0);
     font-size: 40px;
 }
@@ -59,7 +60,7 @@
     text-align: center;
     border: 1px solid rgba(224, 222, 88, 0.25);
     font-size: 18px;
-    width: 30%;
+    width: 150px;
     padding: 10px;
     background-color:rgba(118, 163, 157, 1);
     color: white;
@@ -76,6 +77,11 @@
     transform:translate(-50%, 2%);
     bottom: 0%;
     left: 50%;
+}
+
+#image-hands {
+    width: 70vw;
+    height: 25vh;
 }
 
 .model-container {
