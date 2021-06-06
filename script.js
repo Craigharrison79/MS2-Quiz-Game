@@ -3,8 +3,6 @@ const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 
 currentAskQuestion = {};
-const rightAnswerPoints = 10;
-const TOTAL_QUESTION = 2;
 let questionNumber = 0;
 let timer = 10;
 const hiscoreMaxNum = 3;
@@ -15,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('play-game').addEventListener('click', function (e) {
     runGame();
     console.log(this.click)
+    
 });//END
 
 // Show instructions
@@ -57,7 +56,6 @@ function runGame() {
     countDown() 
     renderQuestion()
     console.log('error')
-
 };
 
 // TO PICK A QUESTION FROM THE ARRAY
@@ -75,6 +73,7 @@ function renderQuestion() {
 
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
+    const TOTAL_QUESTION = 6;
 
     if (questionNumber > TOTAL_QUESTION) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
@@ -115,6 +114,8 @@ function countDown() {
 
 // TO CHECK THE ANSWER ON CLICK
 function checkAnswer(answer) {
+    const rightAnswerPoints = 10;
+    const wrongAnswerPoints = 5; 
     questionNumber++
 
     if (answer == currentAskQuestion.answer) {
@@ -124,6 +125,7 @@ function checkAnswer(answer) {
     } else {
         console.log('no')
         showAnswer();
+        score = score + wrongAnswerPoints;
     }     
 }; //END
 
@@ -199,7 +201,7 @@ function yourScore () {
             if (playerName.value && saveScore.click) {
                 highestScore.push(yourstore);     
             }
-                
+              
         scoreRankings()
        // highestScore.splice(3)
                 
@@ -215,6 +217,7 @@ function yourScore () {
         // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
         localStorage.setItem('score', JSON.stringify(highestScore));    
     };
+    //topScoreList()
 };// END
 
 // TO GET THE SAVE LIST FROM THE GAMES BEFORE
@@ -230,7 +233,7 @@ function topScoreList() {
 }).join('');
 }; //END 
 
-topScoreList()
+ topScoreList()
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
