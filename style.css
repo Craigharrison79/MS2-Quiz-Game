@@ -89,12 +89,14 @@
     background-color: rgba(118, 163, 157, 1);
     color: white;
     border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
     z-index: 20;
-    width: 50%;
+    width: 70%;
+    height: 65%; /* This keep the scroll on mobile and no scroll on desktop */
+    overflow: scroll;  
 }
 
 .modal-heading {
@@ -108,6 +110,10 @@
     font-size: 30px;
     color: black;
     text-decoration: underline;
+}
+
+.scroll {
+    overflow: scroll;
 }
 
 .close-btn {
@@ -162,7 +168,7 @@
 
 #select-container {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    /* grid-template-columns: repeat(2, auto); */
     justify-content: space-evenly;
     gap: 8px;
     margin: 20px 100px;
@@ -170,10 +176,7 @@
 }
 
 .btn {
-    border: 1px solid rgba(224, 222, 88, 0.25);
     font-size: 18px;
-    width: 100%;
-    padding: 15px;
     background-color:rgb(243, 105, 0);
     color: white;
     border-radius: 10px;
@@ -233,11 +236,12 @@ margin: 0 auto;
 #score-hub {
     flex-direction: column;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 #form-player-score {
     margin: 8% auto;
+    margin-bottom: 0px;
 }
 
 .btns-hub {
@@ -253,8 +257,10 @@ margin: 0 auto;
 }
 
 #player-name {
+    display: block;
+    margin: auto;
     font-size: 16px;
-    width: 30%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
@@ -281,12 +287,11 @@ margin: 0 auto;
     margin-top: 10px;
     
 }
-
+/*
 .model-container-topscore {
     position: fixed;
-    /*background-color: rgba(118, 163, 157, 1);*/
-    color: white;
-    border-radius: 20px;
+    background-color: rgba(118, 163, 157, 1);
+    color: black;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
@@ -294,11 +299,12 @@ margin: 0 auto;
     width: 50%;
     margin-top: 30px;
     margin-bottom: 20px;
-}
+} 
+
 
 .model-container-topscore, button {
     text-align: center;
-}
+} */
 
 #Highest-score-list {
     text-align: center;
