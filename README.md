@@ -92,7 +92,7 @@ To build a clear looking game that simple on the eye and that is modern look but
 
 I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web base game.  Link below to the design.
 
-- [Game Design](assets/documents/image/wireframes-MS2.jpg)
+![Game Design](assets/documents/images/wireframes-MS2.jpg)
 
 Or
 
@@ -104,7 +104,7 @@ Or
 
 The colour scheme - I wanted to keep the game clean looking and not uses to many colours. The midnight green was a nice starting colour as it's a good dark colour that still pop a little without overwhelming the users eyes.  Orange was a nice pop of colour to give contrast to the  background and also give the user a simple indicator of were to look. The cadet blue is again a nice clean different in colour to help indicate the buttons on the page.
 
-![Colour Scheme](assets/documents/image/colour-scheme.png)
+![Colour Scheme](assets/documents/images/colour-scheme.png)
 
 ### Image
 
