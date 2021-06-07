@@ -34,18 +34,18 @@
 
 - On the end screen to display the score, the timer was still initiating long after the game had finish.  This was caught when building the scoreRankings functions. To fix this I read through the code and try to figure out the area that was causing the problem.  I identify several area but didn't know which one was initiating from.  So I console.log different error message in the code to see which point it was from.
 
-![timer-error](./assets/documents/test-code/error1-timer.png)
-![timer-error](./assets/documents/test-code/error2-timer.png)
+![timer-error](assets/documents/testing-code/error1-timer.png)
+![timer-error](assets/documents/testing-code/error2-timer.png)
 [commit-point](https://github.com/Craigharrison79/MS2-Quiz-Game/commit/373d93346ba5343d9eaa981a9e7ec38f8ba23510)
 
 Once found the  initiating error I could trace my steps till I workout the problems.  I remove the clearInterval(timer = 10 + 1) from both the countDown and reset function.
 
-![clearInterval](./assets/documents/test-code/removing-cleartimer-countdown.png)
-![clearInterval](./assets/documents/test-code/removing-cleartimer1-set_time_out.png)
+![clearInterval](assets/documents/testing-code/removing-cleartimer-countdown.png)
+![clearInterval](assets/documents/testing-code/removing-cleartimer1-set_time_out.png)
 
 Then adding the code to a else statment in the next question function. This  fix the problem.
 
-![clearInterval](./assets/documents/test-code/next-question-set_timer.png)
+![clearInterval](assets/documents/testing-code/next-question-set_timer.png)
 
 ## Show Answer to Player
 
@@ -74,9 +74,9 @@ With the responsiveness being viewed through different devices and different scr
 
 - Galaxy fold: Issue on landscape when folded and also on portrait when unfolded.
 - Surface Duo: Breaks when unfolded
-[Surface-Duo-break](./assets/documents/testing-code/surface-duo.png)
+![Surface-Duo-break](assets/documents/testing-code/surface-duo.png)
 - iPhone 5/SE: Break on lower screen when ask quesitons
-[Surface-Duo-break](./assets/documents/testing-code/iphone5.png)
+![Surface-Duo-break](assets/documents/testing-code/iphone5.png)
 
 - **Issue:**
 
@@ -90,7 +90,7 @@ Wave Report showed the following issues:
 
 # Google lighthouse
 
-[Lighthouse](./assets/documents/testing-code/Lighthouse-start.jpg)
+![Lighthouse](assets/documents/testing-code/Lighthouse-start.jpg)
 
 ### To improve the rating scores
 
