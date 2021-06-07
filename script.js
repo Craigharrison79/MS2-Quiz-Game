@@ -5,7 +5,7 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 currentAskQuestion = {};
 let questionNumber = 0;
 let timer = 10;
-const hiscoreMaxNum = 3;
+const hiscoreMaxNum = 5;
 
 document.addEventListener("DOMContentLoaded", function () {
     
@@ -63,10 +63,9 @@ function renderQuestion() {
     console.log(questionsArray)
     const pickQ = Math.floor(Math.random()* questionsArray.length); // RANDOM THE PICK
     currentAskQuestion = questionsArray[pickQ]; // pick question
-    //console.log(questionsArray[pickQ]) // to see if the renderQuestion works
     perventQuestion(currentAskQuestion);
 
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     questionsArray.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
 };
 
@@ -134,7 +133,7 @@ function showAnswer() {
         reset(); //  change color back to original color  
 }; //END
 
-// TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR
+// TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR HELP JAMESQQUICK
 function reset () {
         setTimeout(() => {
             document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
@@ -157,12 +156,13 @@ function yourScore () {
     const HighestScoreBtn = document.getElementById('Highest-score');
     const modelScoreCard = document.getElementById('model-score');
 
-    // listener for click on Highest Score table button and close
+    // listener for click on Highest Score table button and open table
     HighestScoreBtn.addEventListener('click', function (e) {
         modelScoreCard.style.display = 'block'; 
     
     });
 
+    // To close high score table
     closeModalButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             modelScoreCard.style.display = 'none';
@@ -191,7 +191,6 @@ function yourScore () {
     const saveScore = document.getElementById('save-score')
         saveScore.addEventListener('click', function (e) {
             
-            //USE "Math.floor(Math.random() * 100)," TO HELP ME FIND OUT IF THE HIGHESTSCORE WAS SORTING
             let yourstore = {
                 score: score,
                 name: playerName.value
@@ -202,14 +201,14 @@ function yourScore () {
             }
               
         scoreRankings()
-       // highestScore.splice(3)
-                
-        });
+        topScoreList()
+       // highestScore.splice(3)       
+    });
 
-// https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
+    // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
     function scoreRankings (yourstore) {
-        highestScore.sort (function (a, b) {
-            return b.score - a.score; 
+    highestScore.sort (function (a, b) {
+        return b.score - a.score;    
         });
         // Save just the 5 top scores
         highestScore.splice(5)
@@ -218,6 +217,7 @@ function yourScore () {
     };
     //topScoreList()
 };// END
+
 
 // TO GET THE SAVE LIST FROM THE GAMES BEFORE
 //https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s
@@ -232,7 +232,7 @@ function topScoreList() {
 }).join('');
 }; //END 
 
- topScoreList()
+ //topScoreList()
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
@@ -257,7 +257,7 @@ let questionsArray = [
     },
     {
         question: "Whose flag is it?",
-        imgSrc: "https://flagcdn.com/w160/gm.png",
+        imgSrc: "https://flagcdn.com/w160/ax.png",
         choiceA: "Guernsey",
         choiceB: "Finland",
         choiceC: "Åland Islands",
@@ -284,7 +284,7 @@ let questionsArray = [
     },
     {
         question: "Whose flag is it?",
-        imgSrc: "https://flagcdn.com/128x96/aq.png",
+        imgSrc: "https://flagcdn.com/w160/aq.png",
         choiceA: "Cape Verde",
         choiceB: "United States Virgin Islands",
         choiceC: "Antarctica",
@@ -302,7 +302,7 @@ let questionsArray = [
     },
     {
         question: "Whose flag is it?",
-        imgSrc: "https://flagcdn.com/w160/am.png",
+        imgSrc: "https://flagcdn.com/w160/co.png",
         choiceA: "Armenia",
         choiceB: "Ethiopia",
         choiceC: "Colombia",
@@ -311,7 +311,7 @@ let questionsArray = [
     },
     {
         question: "Whose flag is it?",
-        imgSrc: "https://flagcdn.com/128x96/aw.png",
+        imgSrc: "https://flagcdn.com/w160/aw.png",
         choiceA: "Togo",
         choiceB: "Bhutan",
         choiceC: "Aruba",
@@ -327,7 +327,197 @@ let questionsArray = [
         choiceD: "Bangladesh",
         answer: "D"
     },
-    
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/al.png",
+        choiceA: "Albania",
+        choiceB: "Kosovo",
+        choiceC: "North Macedonia",
+        choiceD: "Greece",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ar.png",
+        choiceA: "Argentina",
+        choiceB: "Uruguay",
+        choiceC: "Bolivia",
+        choiceD: "Paraguay",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/bh.png",
+        choiceA: "Turkey",
+        choiceB: "Belarus",
+        choiceC: "Bahrain",
+        choiceD: "Eqypt",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/be.png",
+        choiceA: "Uganda",
+        choiceB: "Belgium",
+        choiceC: "Netherlands",
+        choiceD: "Germany",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/af.png",
+        choiceA: "Iran",
+        choiceB: "Tajikistan",
+        choiceC: "Pakistan",
+        choiceD: "Afghanistan",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/dz.png",
+        choiceA: "Algeria",
+        choiceB: "Mauritania",
+        choiceC: "Libya",
+        choiceD: "Morocco",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ad.png",
+        choiceA: "Spain",
+        choiceB: "Senegal",
+        choiceC: "Tuvalu",
+        choiceD: "Andorra",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/am.png",
+        choiceA: "Mayotte",
+        choiceB: "Armenia",
+        choiceC: "Georiga",
+        choiceD: "Azerbaijan",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/au.png",
+        choiceA: "Australia",
+        choiceB: "Papua New Guinea",
+        choiceC: "New Zealand",
+        choiceD: "Faroe Islands",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/at.png",
+        choiceA: "Switzerland",
+        choiceB: "Canada",
+        choiceC: "Austria",
+        choiceD: "Denmark",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/br.png",
+        choiceA: "Guyana",
+        choiceB: "Portugal",
+        choiceC: "Venezuela",
+        choiceD: "Brazil",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/az.png",
+        choiceA: "Russia",
+        choiceB: "Azerbaijan",
+        choiceC: "Armenia",
+        choiceD: "Iran",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/bs.png",
+        choiceA: "Bahamas",
+        choiceB: "Cuba",
+        choiceC: "Montenegro",
+        choiceD: "Barbados",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/bb.png",
+        choiceA: "Bahamas",
+        choiceB: "Barbados",
+        choiceC: "Venezuela",
+        choiceD: "Costa Rica",
+        answer: "B"
+    },{
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/by.png",
+        choiceA: "Guinea",
+        choiceB: "Lithuania",
+        choiceC: "Ukraine",
+        choiceD: "Belarus",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ca.png",
+        choiceA: "United States",
+        choiceB: "Canada",
+        choiceC: "Gambia",
+        choiceD: "Cook Islands",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/cl.png",
+        choiceA: "Cameroon",
+        choiceB: "Peru",
+        choiceC: "Chile",
+        choiceD: "Bolivia",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/cn.png",
+        choiceA: "Vietnam",
+        choiceB: "Hong Kong",
+        choiceC: "China",
+        choiceD: "North Korea",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/hr.png",
+        choiceA: "Croatia",
+        choiceB: "Uzbekistan",
+        choiceC: "Serbia",
+        choiceD: "Hungary",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/dk.png",
+        choiceA: "Germany",
+        choiceB: "Danmark",
+        choiceC: "Finland",
+        choiceD: "Norway",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ar.png",
+        choiceA: "England",
+        choiceB: "Gibraltar",
+        choiceC: "Great Britain",
+        choiceD: "Ireland",
+        answer: "C"
+    },
 ];
 
 // END OF SCRIPT
+
+/* Line 64, 65, 69, 76 137-141, 174, 194-197, 
+224, 227-232, 242 are being taken from Jamesquick see link in README.md */
