@@ -3,6 +3,7 @@
 For my first milestone project, I had to build a static responsive front end website as part of my Diploma Course with the Code Institute. I wanted to build a game of some kind.  I was watching a old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it give me the idea to do a quiz game for my project.
 
 [Veiw Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
+![Flag Quiz](./assets/documents/images/mock-up.jpg)
 
 ## Table of Content
 

@@ -323,4 +323,25 @@ margin: 0 auto;
 
 }
 
+@media only screen and (min-device-width: 831px) and (max-device-width: 1024px){
+    #image-world {
+        display: block;
+    }
+
+   }
+
+@media screen and (orientation:landscape) and (min-device-width: 319px) 
+and (max-device-width: 830px) {
+    #image-world {
+        display: none;
+    }
+
+    #image-hands {
+        width: 50vw;
+    }
+
+ }
+
+
+
 
