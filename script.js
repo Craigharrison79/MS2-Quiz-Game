@@ -69,6 +69,7 @@ function renderQuestion() {
     questionsArray.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
 };
 
+
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
     const TOTAL_QUESTION = 6;
@@ -80,10 +81,19 @@ function nextQuesiton() {
         returnToStartPage (); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
     } else {
         clearInterval(timer = 10 + 1);
-        renderQuestion();
-        
+        renderQuestion();  
     }
 };
+
+function countDown() { 
+    setInterval (function () {
+     if (timer <= 0 || timer < 1) {
+        questionNumber++
+    } 
+        timer--;
+        document.getElementById('counter').innerText = timer +"s" // SHOW THE TIMER ON PAGE
+    }, 1000);   
+};  //END */
 
 // SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
 function perventQuestion() {
@@ -97,18 +107,6 @@ const question = document.getElementById('question');
     document.getElementById('C').innerText = currentAskQuestion.choiceC;
     document.getElementById('D').innerText = currentAskQuestion.choiceD; 
 };
-
-// TIMER 
-function countDown() {
-    setInterval (function () {
-     if (timer <= 0 || timer < 1) {
-        questionNumber++
-        nextQuesiton();
-    } 
-        timer--;
-        document.getElementById('counter').innerText = timer +"s" // SHOW THE TIMER ON PAGE
-    }, 1000);   
-};//END
 
 // TO CHECK THE ANSWER ON CLICK
 function checkAnswer(answer) {
@@ -232,7 +230,7 @@ function topScoreList() {
 }).join('');
 }; //END 
 
- //topScoreList()
+ topScoreList()
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage ()  {
@@ -508,7 +506,7 @@ let questionsArray = [
     },
     {
         question: "Whose flag is it?",
-        imgSrc: "https://flagcdn.com/w160/ar.png",
+        imgSrc: "https://flagcdn.com/w160/gb-eng.png",
         choiceA: "England",
         choiceB: "Gibraltar",
         choiceC: "Great Britain",
