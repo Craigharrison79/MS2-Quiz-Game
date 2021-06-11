@@ -5,7 +5,7 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 currentAskQuestion = {};
 let questionNumber = 0;
 let timer = 10;
-const hiscoreMaxNum = 5;
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -72,13 +72,13 @@ function renderQuestion() {
 
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
-    const TOTAL_QUESTION = 3;
+    const TOTAL_QUESTION = 5;
 
     if (questionNumber > TOTAL_QUESTION) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
         finalScore.style.display = 'block';
         // https://www.w3schools.com/jsref/prop_win_localstorage.asp
-        localStorage.setItem("playerScore", score);
+        localStorage.setItem("Score", score);
         displayScore();
         returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
     } else {
@@ -143,17 +143,41 @@ function reset() {
     }, 1000);
 }; //END
 
+const playerScore = localStorage.getItem("Score");
+// https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
+let highScore = JSON.parse(localStorage.getItem('highScores')) || [];
+
 function displayScore() {
-    ls = localStorage.getItem("playerScore");
-    console.log(ls);
-    document.getElementById("points").innerHTML = localStorage.getItem("playerScore");
+    console.log(playerScore);
+    document.getElementById("points").innerHTML = score
     document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
-    loggingScore(ls)
+    loggingScore()
+    
+
+    const HighestScoreBtn = document.getElementById('Highest-score');
+    const modelScoreCard = document.getElementById('model-score');
+
+    // listener for click on Highest Score table button and open table
+    HighestScoreBtn.addEventListener('click', function (e) {
+        modelScoreCard.style.display = 'block';
+
+        const fiveBestScores = document.getElementById('Highest-score-list');
+        fiveBestScores.innerHTML = highScore.map(function (yourstore) {
+            let topScore = `<li>${yourstore.name} - ${yourstore.score}</li>`;
+            return topScore;
+        }).join('');
+    });
+
+    // To close high score table
+    closeModalButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            modelScoreCard.style.display = 'none';
+        });
+    });
 }
 
 function loggingScore() {
-    // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
-    const highScore = JSON.parse(localStorage.getItem('score')) || [];
+    const hiscoreMaxNum = 3;
     const formCard = document.getElementById('form-player-score');
     formCard.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -165,12 +189,32 @@ function loggingScore() {
             return playerName.value
         }
     });
-    
+
+    const saveScore = document.getElementById('save-score')
+    saveScore.addEventListener('click', function (e) {
+        if (playerName.value && saveScore.click) {
+            console.log('save detail')
+            let yourstore = {
+                score: score,
+                name: playerName.value
+            }
+            console.log(yourstore)
+            highScore.push(yourstore);
+        }   
+        // TO SORT SCORE BY BIGGEST TO LOWEREST
+        highScore.sort(function (a, b) {
+            return b.score - a.score;
+        });
+        // SPLICE THE LOWER SCORE OFF THE LIST IF MORE THAN FIVE SAVE SCORE
+        highScore.splice(3)
+        // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
+        localStorage.setItem('highScores', JSON.stringify(highScores));
+        console.log(highScore)     
+    });
 };  
 
-
-
-
+//const scoreList = JSON.parse(localStorage.getItem("score")) || [];
+console.log(highScore)
 // GOES BACK TO HOME PAGE
 function returnToStartPage() {
     const restartBtn = document.getElementById('restart')
@@ -181,7 +225,7 @@ function returnToStartPage() {
 
 };//END
 
-returnToStartPage();
+returnToStartPage(); 
 
 
 /* SCORE CARD CODE FOR HIGHSCORE AND SAVING SCORE
@@ -555,7 +599,7 @@ let questionsArray = [
         choiceB: "Gibraltar",
         choiceC: "Great Britain",
         choiceD: "Ireland",
-        answer: "C"
+        answer: "A"
     },
 ];
 
