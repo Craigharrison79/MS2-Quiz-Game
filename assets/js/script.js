@@ -72,18 +72,22 @@ function renderQuestion() {
 
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
-    const TOTAL_QUESTION = 6;
+    const TOTAL_QUESTION = 3;
 
     if (questionNumber > TOTAL_QUESTION) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
         finalScore.style.display = 'block';
-        yourScore();
+        // https://www.w3schools.com/jsref/prop_win_localstorage.asp
+        localStorage.setItem("playerScore", score);
+        displayScore();
         returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
     } else {
         clearInterval(timer = 10 + 1);
         renderQuestion();
     }
 };
+
+
 
 function countDown() {
     setInterval(function () {
@@ -139,9 +143,48 @@ function reset() {
     }, 1000);
 }; //END
 
+function displayScore() {
+    ls = localStorage.getItem("playerScore");
+    console.log(ls);
+    document.getElementById("points").innerHTML = localStorage.getItem("playerScore");
+    document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
+    loggingScore(ls)
+}
+
+function loggingScore() {
+    // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
+    const highScore = JSON.parse(localStorage.getItem('score')) || [];
+    const formCard = document.getElementById('form-player-score');
+    formCard.addEventListener('submit', function (e) {
+        e.preventDefault();
+    });
+
+    const playerName = document.getElementById('player-name')
+    playerName.addEventListener('keydown', function (event) {
+        if (playerName.value === "Enter") {
+            return playerName.value
+        }
+    });
+    
+};  
 
 
-// SCORE CARD CODE FOR HIGHSCORE AND SAVING SCORE
+
+
+// GOES BACK TO HOME PAGE
+function returnToStartPage() {
+    const restartBtn = document.getElementById('restart')
+    restartBtn.addEventListener('click', function (e) {
+        score = 0;
+        return window.location.href = "/index.html";
+    });
+
+};//END
+
+returnToStartPage();
+
+
+/* SCORE CARD CODE FOR HIGHSCORE AND SAVING SCORE
 
 function yourScore() {
     // https://www.w3schools.com/jsref/prop_win_localstorage.asp
@@ -240,7 +283,7 @@ function returnToStartPage() {
         score = 0;
         return window.location.assign("/index.html");
     });
-};//END
+};/END */
 
 
 // THE QUESTION THE COMPUTER CAN PICK FROM
