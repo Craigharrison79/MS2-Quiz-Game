@@ -337,7 +337,11 @@ and (max-device-width: 830px) {
     }
 
     #image-hands {
-        width: 50vw;
+        width: 40vw;
+    }
+
+    .main-conatainer {
+        height: auto !important;
     }
 
  }

@@ -72,7 +72,7 @@ function renderQuestion() {
 
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
-    const TOTAL_QUESTION = 5;
+    const TOTAL_QUESTION = 10;
 
     if (questionNumber > TOTAL_QUESTION) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
@@ -90,10 +90,10 @@ function nextQuesiton() {
 
 
 function countDown() {
-    setInterval(function () {
-        if (timer <= 0 || timer < 1) {
+    var x = setInterval(function () {
+        if (timer < 0 || timer < 1) {
             questionNumber++
-        }
+    }
         timer--;
         document.getElementById('counter').innerText = timer + "s" // SHOW THE TIMER ON PAGE
     }, 1000);
@@ -124,6 +124,7 @@ function checkAnswer(answer) {
         score = score + rightAnswerPoints;
     } else {
         console.log('no')
+        alert('This is the wrong answer');
         showAnswer();
         score = score - wrongAnswerPoints;
     }
@@ -180,7 +181,7 @@ function displayScore() {
 }
 
 function loggingScore() {
-    const hiscoreMaxNum = 3;
+    const hiscoreMaxNum = 5;
     const formCard = document.getElementById('form-player-score');
     formCard.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -209,7 +210,7 @@ function loggingScore() {
             return b.score - a.score;
         });
         // SPLICE THE LOWER SCORE OFF THE LIST IF MORE THAN FIVE SAVE SCORE
-        highScore.splice(3)
+        highScore.splice(5)
         // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
         localStorage.setItem('highScore', JSON.stringify(highScore));
         console.log(highScore)     
@@ -232,109 +233,6 @@ function returnToStartPage() {
 };//END
 
 returnToStartPage(); 
-
-
-/* SCORE CARD CODE FOR HIGHSCORE AND SAVING SCORE
-
-function yourScore() {
-    // https://www.w3schools.com/jsref/prop_win_localstorage.asp
-    localStorage.setItem("yourScore", score);
-
-    // show the score and pervent it on screen
-    document.getElementById("points").innerHTML = localStorage.getItem("yourScore");
-    document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
-
-    const HighestScoreBtn = document.getElementById('Highest-score');
-    const modelScoreCard = document.getElementById('model-score');
-
-    // listener for click on Highest Score table button and open table
-    HighestScoreBtn.addEventListener('click', function (e) {
-        modelScoreCard.style.display = 'block';
-
-    });
-
-    // To close high score table
-    closeModalButtons.forEach(function (button) {
-        button.addEventListener('click', function (e) {
-            modelScoreCard.style.display = 'none';
-
-        });
-    });
-
-    // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
-    const highestScore = JSON.parse(localStorage.getItem('score')) || [];
-
-    // stop the form senting
-    const formCard = document.getElementById('form-player-score');
-    formCard.addEventListener('submit', function (e) {
-        e.preventDefault();
-    });
-
-    // Player enter name 
-    const playerName = document.getElementById('player-name')
-    playerName.addEventListener('keydown', function (event) {
-        if (playerName.value === "Enter") {
-            return playerName.value
-        }
-    });
-
-    // player saving score
-    const saveScore = document.getElementById('save-score')
-    saveScore.addEventListener('click', function (e) {
-
-        let yourstore = {
-            score: score,
-            name: playerName.value
-        };
-
-        if (playerName.value && saveScore.click) {
-            highestScore.push(yourstore);
-        }
-
-        scoreRankings()
-        topScoreList()
-        console.log(highestScore)
-        // highestScore.splice(5)       
-    });
-
-    // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2
-    function scoreRankings(yourstore) {
-        highestScore.sort(function (a, b) {
-            return b.score - a.score;
-        });
-        // Save just the 5 top scores
-        highestScore.splice(5)
-        // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
-        localStorage.setItem('score', JSON.stringify(highestScore));
-    };
-    //topScoreList()
-};// END
-
-
-// TO GET THE SAVE LIST FROM THE GAMES BEFORE
-//https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s
-const scoreList = JSON.parse(localStorage.getItem("score")) || [];
-
-// ENTER THE TOPSCORE INTO THE TABLE AND SHOW IT
-function topScoreList() {
-    const HiScoreList = document.getElementById('Highest-score-list');
-    HiScoreList.innerHTML = scoreList.map(function (yourstore) {
-        let topScore = `<li>${yourstore.name} - ${yourstore.score}</li>`;
-        return topScore;
-    }).join('');
-}; //END 
-
-topScoreList()
-
-// GOES BACK TO HOME PAGE
-function returnToStartPage() {
-    const restartBtn = document.getElementById('restart')
-    restartBtn.addEventListener('click', function (e) {
-        score = 0;
-        return window.location.assign("/index.html");
-    });
-};/END */
-
 
 // THE QUESTION THE COMPUTER CAN PICK FROM
 let questionsArray = [
