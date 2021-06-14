@@ -223,7 +223,7 @@ function returnToStartPage() {
     const restartBtn = document.getElementById('restart')
     restartBtn.addEventListener('click', function (e) {
         score = 0;
-        return window.location.href = "/index.html";
+        return window.location.href = "./index.html";
         /* const finalScore = document.getElementById('final-score');
         finalScore.style.display = 'none';
         document.getElementById('landing-page-container').style.display = 'flex';*/
