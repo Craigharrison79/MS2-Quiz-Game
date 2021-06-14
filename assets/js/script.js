@@ -145,17 +145,20 @@ function reset() {
 
 const playerScore = localStorage.getItem("Score");
 // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
-let highScore = JSON.parse(localStorage.getItem('highScores')) || [];
+let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 
 function displayScore() {
     console.log(playerScore);
     document.getElementById("points").innerHTML = score
     document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
     loggingScore()
+    console.log('this is the' + highScore)
     
 
     const HighestScoreBtn = document.getElementById('Highest-score');
     const modelScoreCard = document.getElementById('model-score');
+
+    console.log(localStorage)
 
     // listener for click on Highest Score table button and open table
     HighestScoreBtn.addEventListener('click', function (e) {
@@ -208,13 +211,13 @@ function loggingScore() {
         // SPLICE THE LOWER SCORE OFF THE LIST IF MORE THAN FIVE SAVE SCORE
         highScore.splice(3)
         // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
-        localStorage.setItem('highScores', JSON.stringify(highScores));
+        localStorage.setItem('highScore', JSON.stringify(highScore));
         console.log(highScore)     
     });
 };  
 
 //const scoreList = JSON.parse(localStorage.getItem("score")) || [];
-console.log(highScore)
+
 // GOES BACK TO HOME PAGE
 function returnToStartPage() {
     const restartBtn = document.getElementById('restart')
