@@ -54,7 +54,7 @@ function runGame() {
         //console.log('click', event.target)
     };
 
-    countDown(timer)
+    countDown(timer = )
     renderQuestion()
 };
 
