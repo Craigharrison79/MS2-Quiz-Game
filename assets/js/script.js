@@ -5,6 +5,7 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 currentAskQuestion = {};
 let questionNumber = 0;
 let timer = 10;
+let x;
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -53,7 +54,7 @@ function runGame() {
         //console.log('click', event.target)
     };
 
-    countDown()
+    countDown(timer)
     renderQuestion()
 };
 
@@ -82,7 +83,7 @@ function nextQuesiton() {
         displayScore();
         returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
     } else {
-        clearInterval(timer = 10 + 1);
+        clearInterval(x);
         renderQuestion();
     }
 };
@@ -93,6 +94,7 @@ function countDown() {
     var x = setInterval(function () {
         if (timer < 0 || timer < 1) {
             questionNumber++
+            nextQuesiton()
     }
         timer--;
         document.getElementById('counter').innerText = timer + "s" // SHOW THE TIMER ON PAGE
