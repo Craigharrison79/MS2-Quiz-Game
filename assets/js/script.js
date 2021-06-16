@@ -4,9 +4,8 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 
 currentAskQuestion = {};
 let questionNumber = 0;
-let timer = 10;
+let timer = 60;
 let x;
-
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -53,8 +52,7 @@ function runGame() {
         };
         //console.log('click', event.target)
     };
-
-    countDown(timer = )
+    countDown()
     renderQuestion()
 };
 
@@ -75,15 +73,23 @@ function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
     const TOTAL_QUESTION = 10;
 
-    if (questionNumber > TOTAL_QUESTION) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
+    if (questionNumber > TOTAL_QUESTION || timer <= 0) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
         finalScore.style.display = 'block';
         // https://www.w3schools.com/jsref/prop_win_localstorage.asp
         localStorage.setItem("Score", score);
         displayScore();
         returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
-    } else {
         clearInterval(x);
+    /*} else if (timer <= 0) {
+        game.style.display = 'none';
+        finalScore.style.display = 'block';
+        // https://www.w3schools.com/jsref/prop_win_localstorage.asp
+        localStorage.setItem("Score", score);
+        displayScore();
+        returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
+        clearInterval(x); */
+    } else {
         renderQuestion();
     }
 };
@@ -91,14 +97,17 @@ function nextQuesiton() {
 
 
 function countDown() {
-    var x = setInterval(function () {
-        if (timer < 0 || timer < 1) {
+    x = setInterval(function () {
+        console.log(timer)
+        if (timer <= 0) {
             questionNumber++
-            nextQuesiton()
-    }
+            nextQuesiton() 
+            clearInterval(x)  
+        }
         timer--;
         document.getElementById('counter').innerText = timer + "s" // SHOW THE TIMER ON PAGE
     }, 1000);
+
 };  //END */
 
 // SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
