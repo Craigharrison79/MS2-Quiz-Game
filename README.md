@@ -184,7 +184,7 @@ Deployment of the project is on GitHub Pages, this is how I deploy it:
 - In this section under the source click the dropdown select that read “None” and select master and then save.
 - Refresh the page and scroll back down the same section and you find the published link for your site.
 
-![deployment]()
+![deployment](assets/documents/images/deployment.png)
 
 ## Cloning the Project
 
@@ -202,7 +202,7 @@ Press enter and this will create a local clone.
 More information on cloning repository:
 [Github Information](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
-![Clone]()
+![Clone](assets/documents/images/cloning.png)
 
 ## Forking the Project
 
