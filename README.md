@@ -100,6 +100,10 @@ Or
 
 ### Typography
 
+I wanted to use a font that look good and that almost everyone has. Everyone is has uses and is find arial very readable. So this makes sense to use as the font on the game. It  is clean and has a nice flow between the letters.
+
+Font-family use are: Arial, Helvetica, sans-serif,;
+
 ### Color Scheme
 
 The colour scheme - I wanted to keep the game clean looking and not uses to many colours. The midnight green was a nice starting colour as it's a good dark colour that still pop a little without overwhelming the users eyes.  Orange was a nice pop of colour to give contrast to the  background and also give the user a simple indicator of were to look. The cadet blue is again a nice clean different in colour to help indicate the buttons on the page.

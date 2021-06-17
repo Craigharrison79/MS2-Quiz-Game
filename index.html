@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="main-conatainer">
+    <section class="main-conatainer">
         <!-- LANDING PAGE (will disappear once you click play)  -->
         <div id="landing-page-container">
             <div id="landing-page">
-                    <div id="world"><img src="./assets/game-image/world.png" alt="drawing of the world with locations" id="image-world"></div>
+                    <div id="world"><img src="./assets/image/world.png" alt="drawing of the world with locations" id="image-world"></div>
                     <h1 id="title">Quiz Game</h1>
                     <div class="start-btn" id="play-game">Play</div>
                     <!-- made a model -->
                     <div class="start-btn" id="instructions">Instructions</div>  
-                <div id="hands"><img src="./assets/game-image/handz.png" alt="group of hands knowing the answer to the question" id="image-hands"></div> 
+                <div id="hands"><img src="./assets/image/handz.png" alt="group of hands knowing the answer to the question" id="image-hands"></div> 
             </div>
             <div id="modal-hub" class="model-container" style="display: none">
                 <div class="modal-heading">
@@ -32,9 +32,9 @@
                         <li>On this page you will be given a countries flag with four different conutries options to choose from.</li>
                         <li>Pick the correct flag to the country that owns it.</li>
                         <li>Once you have made your pick and click on the countries name and game will show you the correct answer.  
-                            If you are right you get 10 points and you are wrong you lose 5 points.</li>
+                            If you are right you will get 10 points and if you are wrong you lose 5 points.</li>
                         <li>The aim of the game is to get all the flags correct.</li>
-                        <li>Also the is a countdown timer so you don't have long to make a pick.  Once the time running out you move on to the next question.</li>
+                        <li>Also the is a countdown timer so you don't have long to make a pick.</li>
                         <li>At the end of the game you will find out your score.</li>
                         <li>Good Luck!!!</li>
                     </ol>
@@ -97,11 +97,11 @@
                 <div class="model-heading model-container-scoretable">
                     <h3>Top Players Score</h3>
                     <ul id="Highest-score-list"></ul>
-                    <button data-close-button class="close-btn">&times;</button>
+                    <button data-close-button class="close-btn" id="x-btn">&times;</button>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <script src='assets/js/script.js'></script>
 </body>
 </html>
