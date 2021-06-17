@@ -1,8 +1,8 @@
 const game = document.getElementById('game'); // USE IN NUMBER FOR FUNCTIONS - runGame() & nextQuestions().
 const model = document.getElementById('modal-hub');
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
 
-currentAskQuestion = {};
+let currentAskQuestion = {};
 let questionNumber = 0;
 let timer = 60;
 let x;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Run Game section once click
     document.getElementById('play-game').addEventListener('click', function (e) {
         runGame();
-        console.log(this.click)
+        console.log(this.click);
 
     });//END
 
@@ -35,11 +35,11 @@ function runGame() {
     //document.getElementById('main-conatainer').style.backgroundColor = 'rgb(10, 59, 77)';
 
     // starting information
-    score = 0;
+    //var score = 0;
     questionNumber = 1;
-    let counter = 0;
+    //let counter = 0;
 
-    const firstQuestion = questionsArray
+    //const firstQuestion = questionsArray;
 
     let btnChecks = document.querySelectorAll('.btn');
     btnChecks.forEach(function (event) {
@@ -49,24 +49,24 @@ function runGame() {
     function myClick(event) {
         if (event.click === 'click') {
             checkAnswer();
-        };
+        }
         //console.log('click', event.target)
-    };
-    countDown()
-    renderQuestion()
-};
+    }
+    countDown();
+    renderQuestion();
+}
 
 // TO PICK A QUESTION FROM THE ARRAY
 function renderQuestion() {
 
-    console.log(questionsArray)
+    console.log(questionsArray);
     const pickQ = Math.floor(Math.random() * questionsArray.length); // RANDOM THE PICK
     currentAskQuestion = questionsArray[pickQ]; // pick question
     perventQuestion(currentAskQuestion);
 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     questionsArray.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
-};
+}
 
 
 function nextQuesiton() {
@@ -81,71 +81,71 @@ function nextQuesiton() {
         displayScore();
         returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
         clearInterval(x);
-    /*} else if (timer <= 0) {
-        game.style.display = 'none';
-        finalScore.style.display = 'block';
-        // https://www.w3schools.com/jsref/prop_win_localstorage.asp
-        localStorage.setItem("Score", score);
-        displayScore();
-        returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
-        clearInterval(x); */
+        /*} else if (timer <= 0) {
+            game.style.display = 'none';
+            finalScore.style.display = 'block';
+            // https://www.w3schools.com/jsref/prop_win_localstorage.asp
+            localStorage.setItem("Score", score);
+            displayScore();
+            returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
+            clearInterval(x); */
     } else {
         renderQuestion();
     }
-};
+}
 
 
 
 function countDown() {
     x = setInterval(function () {
-        console.log(timer)
+        console.log(timer);
         if (timer <= 0) {
-            questionNumber++
-            nextQuesiton() 
-            clearInterval(x)  
+            questionNumber++;
+            nextQuesiton();
+            clearInterval(x);
         }
         timer--;
-        document.getElementById('counter').innerText = timer + "s" // SHOW THE TIMER ON PAGE
+        document.getElementById('counter').innerText = timer + "s"; // SHOW THE TIMER ON PAGE
     }, 1000);
 
-};  //END */
+}  //END */
 
 // SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
 function perventQuestion() {
 
     const question = document.getElementById('question');
-    document.getElementById('question-num').innerText = "Q" + questionNumber
+    document.getElementById('question-num').innerText = "Q" + questionNumber;
     question.innerText = currentAskQuestion.question;
     document.getElementById('image').innerHTML = "<img src=" + currentAskQuestion.imgSrc + ">";
     document.getElementById('A').innerText = currentAskQuestion.choiceA;
     document.getElementById('B').innerText = currentAskQuestion.choiceB;
     document.getElementById('C').innerText = currentAskQuestion.choiceC;
     document.getElementById('D').innerText = currentAskQuestion.choiceD;
-};
+}
 
 // TO CHECK THE ANSWER ON CLICK
 function checkAnswer(answer) {
     const rightAnswerPoints = 10;
     const wrongAnswerPoints = 5;
-    questionNumber++
+    questionNumber++;
 
     if (answer == currentAskQuestion.answer) {
-        console.log('yes')
+        console.log('yes');
         showAnswer();
         score = score + rightAnswerPoints;
     } else {
-        console.log('no')
+        console.log('no');
         alert('This is the wrong answer');
         showAnswer();
         score = score - wrongAnswerPoints;
     }
-}; //END
+} //END
 
 // TO SHOW THE PLAYER THE RIGHT ANSWER
 function showAnswer() {
     document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
     reset(); //  change color back to original color  
-}; //END
+} //END
 
 // TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR HELP JAMESQQUICK
 function reset() {
@@ -153,7 +153,7 @@ function reset() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
         nextQuesiton();
     }, 1000);
-}; //END
+} //END
 
 const playerScore = localStorage.getItem("Score");
 // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
@@ -161,16 +161,16 @@ let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 
 function displayScore() {
     console.log(playerScore);
-    document.getElementById("points").innerHTML = score
+    document.getElementById("points").innerHTML = score;
     document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
-    loggingScore()
-    console.log('this is the' + highScore)
-    
+    loggingScore();
+    console.log('this is the' + highScore);
+
 
     const HighestScoreBtn = document.getElementById('Highest-score');
     const modelScoreCard = document.getElementById('model-score');
 
-    console.log(localStorage)
+    console.log(localStorage);
 
     // listener for click on Highest Score table button and open table
     HighestScoreBtn.addEventListener('click', function (e) {
@@ -192,58 +192,58 @@ function displayScore() {
 }
 
 function loggingScore() {
-    const hiscoreMaxNum = 5;
+    //const hiscoreMaxNum = 5;
     const formCard = document.getElementById('form-player-score');
     formCard.addEventListener('submit', function (e) {
         e.preventDefault();
     });
 
-    const playerName = document.getElementById('player-name')
+    const playerName = document.getElementById('player-name');
     playerName.addEventListener('keydown', function (event) {
         if (playerName.value === "Enter") {
-            return playerName.value
+            return playerName.value;
         }
     });
 
-    const saveScore = document.getElementById('save-score')
+    const saveScore = document.getElementById('save-score');
     saveScore.addEventListener('click', function (e) {
         if (playerName.value && saveScore.click) {
-            console.log('save detail')
+            console.log('save detail');
             let yourstore = {
                 score: score,
                 name: playerName.value
-            }
-            console.log(yourstore)
+            };
+            console.log(yourstore);
             highScore.push(yourstore);
-        }   
+        }
         // TO SORT SCORE BY BIGGEST TO LOWEREST
         highScore.sort(function (a, b) {
             return b.score - a.score;
         });
         // SPLICE THE LOWER SCORE OFF THE LIST IF MORE THAN FIVE SAVE SCORE
-        highScore.splice(5)
+        highScore.splice(5);
         // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
         localStorage.setItem('highScore', JSON.stringify(highScore));
-        console.log(highScore)     
+        console.log(highScore);
     });
-};  
+}
 
 //const scoreList = JSON.parse(localStorage.getItem("score")) || [];
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage() {
-    const restartBtn = document.getElementById('restart')
+    const restartBtn = document.getElementById('restart');
     restartBtn.addEventListener('click', function (e) {
         score = 0;
-        return window.location.href = "./index.html";
+        /*return*/ window.location.href = "./index.html";
         /* const finalScore = document.getElementById('final-score');
         finalScore.style.display = 'none';
         document.getElementById('landing-page-container').style.display = 'flex';*/
     });
 
-};//END
+}//END
 
-returnToStartPage(); 
+returnToStartPage();
 
 // THE QUESTION THE COMPUTER CAN PICK FROM
 let questionsArray = [

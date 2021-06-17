@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,20 @@
     <title>Quiz Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <section class="main-conatainer">
         <!-- LANDING PAGE (will disappear once you click play)  -->
         <div id="landing-page-container">
             <div id="landing-page">
-                    <div id="world"><img src="./assets/image/world.png" alt="drawing of the world with locations" id="image-world"></div>
-                    <h1 id="title">Quiz Game</h1>
-                    <div class="start-btn" id="play-game">Play</div>
-                    <!-- made a model -->
-                    <div class="start-btn" id="instructions">Instructions</div>  
-                <div id="hands"><img src="./assets/image/handz.png" alt="group of hands knowing the answer to the question" id="image-hands"></div> 
+                <div id="world"><img src="./assets/image/world.png" alt="drawing of the world with locations"
+                        id="image-world"></div>
+                <h1 id="title">Quiz Game</h1>
+                <div class="start-btn" id="play-game">Play</div>
+                <!-- made a model -->
+                <div class="start-btn" id="instructions">Instructions</div>
+                <div id="hands"><img src="./assets/image/handz.png"
+                        alt="group of hands knowing the answer to the question" id="image-hands"></div>
             </div>
             <div id="modal-hub" class="model-container" style="display: none">
                 <div class="modal-heading">
@@ -29,9 +33,11 @@
                 <div class="modal-body">
                     <ol>
                         <li>Once you hit the play game button you will be taken to the game page.</li>
-                        <li>On this page you will be given a countries flag with four different conutries options to choose from.</li>
+                        <li>On this page you will be given a countries flag with four different conutries options to
+                            choose from.</li>
                         <li>Pick the correct flag to the country that owns it.</li>
-                        <li>Once you have made your pick and click on the countries name and game will show you the correct answer.  
+                        <li>Once you have made your pick and click on the countries name and game will show you the
+                            correct answer.
                             If you are right you will get 10 points and if you are wrong you lose 5 points.</li>
                         <li>The aim of the game is to get all the flags correct.</li>
                         <li>Also the is a countdown timer so you don't have long to make a pick.</li>
@@ -42,24 +48,25 @@
 
             </div>
         </div>
-    <!-- game -->
-        <div id="game" style="display: none"> <!-- may need to remove this -->
-    <!-- QUESTION NUMBER HUB / WHICH QUESTION YOU ARE ON -->
+        <!-- game -->
+        <div id="game" style="display: none">
+            <!-- may need to remove this -->
+            <!-- QUESTION NUMBER HUB / WHICH QUESTION YOU ARE ON -->
             <div id="question-number-hub" class="justify-center">
                 <div class="circle">
                     <h2 id="question-num" class="circle-number-text">Q1</h2>
                 </div>
             </div>
-    <!-- QUESTION HUB / SHOW THE QUESTION  & IMAGE -->
+            <!-- QUESTION HUB / SHOW THE QUESTION  & IMAGE -->
             <div id="question-hub" class="justify-center">
                 <div id="question-container">
-                    <h2 id="question"></h2>    
+                    <h2 id="question">Question</h2>
                 </div>
                 <div id="image-container">
                     <div id="image"></div>
                 </div>
             </div>
-    <!-- ANSWER HUB / ANSWER TO CHOOSE -->
+            <!-- ANSWER HUB / ANSWER TO CHOOSE -->
             <div id="answer-hub" class="justify-center">
                 <div id="select-container">
                     <div class="btn" data-type="A" id='A' onclick="checkAnswer('A')"></div>
@@ -68,7 +75,7 @@
                     <div class="btn" data-type="D" id='D' onclick="checkAnswer('D')"></div>
                 </div>
             </div>
-    <!-- TIMER HUB / COUNT DOWN TIMER AND GAUGE -->
+            <!-- TIMER HUB / COUNT DOWN TIMER AND GAUGE -->
             <div id="timer-hub" class="justify-center">
                 <div id="clock-container">
                     <p id="counter"></p>
@@ -78,20 +85,21 @@
         <!-- score card -->
         <div class="score-container" style="display: none" id="final-score">
             <div id="score-hub" class="justify-center">
-                    <div class="circle center">
-                        <h2 id="points" class="circle-number-text"></h2>
-                    </div>  
-                    <h2 id="score">This is your score</h2>
+                <div class="circle center">
+                    <h2 id="points" class="circle-number-text"></h2>
+                </div>
+                <h2 id="score">This is your score</h2>
             </div>
             <div class="btns-hub justify-center">
                 <form id="form-player-score" action="/" method="GET">
-                    <input type="text" id="player-name" name="player-name" placeholder="Enter Your Name" required>
+                    <input type="text" id="player-name" label="Name" name="player-name" placeholder="Enter Your Name"
+                        required>
                     <button class="start-btn" type="submit" id="save-score">Save Score</button>
-               </form>
+                </form>
                 <div class="start-btn" id="Highest-score">Highest Score</div>
                 <div class="start-btn" id="restart">Home</div>
-            </div>  
-            
+            </div>
+
             <!-- model score card -->
             <div id="model-score" style="display: none">
                 <div class="model-heading model-container-scoretable">
@@ -104,4 +112,5 @@
     </section>
     <script src='assets/js/script.js'></script>
 </body>
+
 </html>

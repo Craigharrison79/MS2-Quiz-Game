@@ -87,6 +87,7 @@ With the responsiveness being viewed through different devices and different scr
 
 Wave Report showed the following issues:
 
+![Wave Report](assets/documents/testing-code/wave1.png)
 
 # Google lighthouse
 
