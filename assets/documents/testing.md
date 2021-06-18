@@ -101,7 +101,15 @@ I had a issue once the answer was shown to the player that it change to color of
 
 I wanted to build a table to hold the highest score in and present they.  I could build the table but couldn't not figure out the code to get the score to insert into the table using map function.  I change to a unorder list.  This is something I need to came back to and figure out at a little date.  But with time being sensitive at the moment of the project I opted for the faster version.
 
-##
+## Home button
+
+I was having issue with the home button and the site going to 404 page everytime I try to use it on git page.  In the editor everything was fine and working properly but once I published it in on git page the issue started.  My Mentor: Oluwafemi Medale help me with this.
+
+## SVG problems
+
+I have use two SVG images that is put together in figma.  I the editor everything was working fine, I didn't have a problem till publishing the game.  Then the image wouldn't show up.  I couldn't find out how to fix the  issue so I just when to a PNG and this work fine.
+
+## 
 
 # Testing on devices
 
