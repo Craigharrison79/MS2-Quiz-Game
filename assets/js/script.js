@@ -35,7 +35,7 @@ function runGame() {
     //document.getElementById('main-conatainer').style.backgroundColor = 'rgb(10, 59, 77)';
 
     // starting information
-    //var score = 0;
+    score = 0;
     questionNumber = 1;
     //let counter = 0;
 

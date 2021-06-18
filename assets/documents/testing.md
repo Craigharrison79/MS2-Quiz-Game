@@ -14,18 +14,56 @@
 
     - As a first time user/player I want to understand what it I looking at and what I can interact with.
 
-        1.
+        1. The user/player will have a simple and uncluttered display with all the informaiton and visual in the center of the screen, reading from top to bottom.
+
+        2. The simple display will be intuitive and the user/player will know what they are looking at, at first glance.  They will know what to click on.
+
+        3. The display will use a font that everyone is familiar with and easy to read.
 
     - As a user/player I want to know how much time I have left to answer the question.
 
-        1.
+        1. A the bottom of the page the will be a countdown timer which is counting down from 60 second.  This is just underneath the 4 answer choices so will be in the user/player eyesight at all time when pick a answer.
+
+        2. Once the timer hit "0" the game will automatic finish and the user/player will be taken to the score page.
 
     - As a user/player I would like to know if the answer to the question is right.
 
-        1. Once the user/player has click a answer the right answer will flash up for about  3 second given they a chance to acknowledge the right answer and to educate the player  on the country's flag.
+        1. Once the user/player has click a answer the right answer will flash up for about 3 second given they a chance to acknowledge the right answer and to educate the player on the country's flag.
+
+        2. If the player hit the wrong answer, a alert message will pop up saying it was the wrong answer and then the answer will flash up before switching to the next question.
 
     - As a user/player I want to know what question I am on.
-        
+
+        1. The will be a quesiton number indication at the top center of the page just above the question and image.  So the  user/player will see and be able to  acknowledge the indicate when reading the question.
+
+        2. This will automatic change after each question.
+
+    - As a user/player I would like to know how well I play the game.
+
+        1. Once the game has finish the user/player will be transport to the score page.  Here the user/player will be given two  different way to see there score. First is at the top of the page with just the score it's self.  This is display just like the the display of which question the player was on. This is to help with familiarity to the player and speed up the reading of the game.
+
+        2. Second is just under the score indicate at the top and gives more detail by saying "this is your score".
+
+        3. The player can then choose if she/he would like to score the score.  The save form is easy to see and workout how it works without having to user any instruction.  Enter name and save!  The enter name is a input bar and says in the bar "Enter your name", and just below that is the save button.
+
+        4. The user/player can also check out the top score by hit the highest score button which brings up a modal with the scores. This will sort the top 5 best scores.  At the end of the list and user/player will see a "X" button which is universal sign to close the modal.
+
+    - As a user/player I would like to know how to restart the game again so I can try and better my last attempt.
+
+        1. A the  bottom of the page the is a clear button reading "Home" which will take the user/player back to the start so they can play the game again.
+
+- Returning user/player goals:
+    - As a returning user/player I would like to better my score.
+
+        1. As the top scores are save to local store a player can come back in and try to better it.
+
+        2. A user/player will also be able to see other player score that have play the game on the same device in the highscore table screen. This will giving it a competitive feel.
+
+    - As a returning user/player I dont't want to find it boring after a few trys.
+
+        1. The game has a big array of question which will tax the user/player every time they play the game.
+
+        2. The question are pick randomly so the sequence on which the question appear will be different everytime you play the game.  Once the question is user the game will remove it from that play game so you can't see the same question twice in one turn.
 
 
 # Bugs issues and solutions
@@ -43,9 +81,17 @@ Once found the  initiating error I could trace my steps till I workout the probl
 ![clearInterval](../assets/documents/testing-code/removing-cleartimer-countdown.png)
 ![clearInterval](./assets/documents/testing-code/removing-cleartimer1-set_time_out.png)
 
-Then adding the code to a else statment in the next question function. This  fix the problem.
+Then adding the code to a else statment in the next question function. This fix the problem.
 
 ![clearInterval](./assets/documents/testing-code/next-question-set_timer.png)
+
+## Timer issue again
+
+- Once I add a alert message to the game the timer started to run into the negative numbers.  I fix this by add a global variance "x" and then changing the clearInterval to take "x".  Also adding a extra bit to the if statement to acknowledge when the timer had run down to 0 and then finish the game.  This change fix the negative number problem but caused a second one.  See below.
+
+## Second issue with timer
+
+- After the fix the timer was not looping over again.  10 seconds of question one and then 10 seconds for two etc.  I try calling the countdown() at different time and places but this just sent the timer heywire, jumping and skipping numbers.  So I made a executive decision to change the timer from 10 second interval to one long timer running for 60 second through the whole game.  10 question at 10 second a piece is 60 seconds which is the same thing.  This also mean the question a user/player know they can save on time and use them for harder question.
 
 ## Show Answer to Player
 
@@ -53,7 +99,9 @@ I had a issue once the answer was shown to the player that it change to color of
 
 ## High Score Table/list
 
-I wanted to build a table to hold the highest score in and present they.  I could build the table but couldn't not figure out the code to get the score to insert into the table using map function.  I change to a unorder list.  This is something I need to came back to and figure out at a little date.  But with time being sensitive at the of the project I opted for the faster version.
+I wanted to build a table to hold the highest score in and present they.  I could build the table but couldn't not figure out the code to get the score to insert into the table using map function.  I change to a unorder list.  This is something I need to came back to and figure out at a little date.  But with time being sensitive at the moment of the project I opted for the faster version.
+
+##
 
 # Testing on devices
 
