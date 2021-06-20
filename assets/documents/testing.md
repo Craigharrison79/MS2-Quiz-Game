@@ -72,42 +72,59 @@
 
 - On the end screen to display the score, the timer was still initiating long after the game had finish.  This was caught when building the scoreRankings functions. To fix this I read through the code and try to figure out the area that was causing the problem.  I identify several area but didn't know which one was initiating from.  So I console.log different error message in the code to see which point it was from.
 
-![timer error](assets/documents/testing-code/error1-timer.png)
-![timer error](assets/documents/testing-code/error2-timer.png)
+![timer error](./testing-code/error1-timer.png)
+![timer error](./testing-code/error2-timer.png)
 [commit-point](https://github.com/Craigharrison79/MS2-Quiz-Game/commit/373d93346ba5343d9eaa981a9e7ec38f8ba23510)
 
 Once found the  initiating error I could trace my steps till I workout the problems.  I remove the clearInterval(timer = 10 + 1) from both the countDown and reset function.
 
-![clearInterval](../assets/documents/testing-code/removing-cleartimer-countdown.png)
-![clearInterval](./assets/documents/testing-code/removing-cleartimer1-set_time_out.png)
+![clearInterval](./testing-code/removing-cleartimer-countdown.png)
+![clearInterval](./testing-code/removing-cleartimer1-set_time_out.png)
 
 Then adding the code to a else statment in the next question function. This fix the problem.
 
-![clearInterval](./assets/documents/testing-code/next-question-set_timer.png)
+![clearInterval](./testing-code/next-question-set_timer.png)
 
 ## Timer issue again
 
 - Once I add a alert message to the game the timer started to run into the negative numbers.  I fix this by add a global variance "x" and then changing the clearInterval to take "x".  Also adding a extra bit to the if statement to acknowledge when the timer had run down to 0 and then finish the game.  This change fix the negative number problem but caused a second one.  See below.
 
+![Reset-answer](./testing-code/debug-timer.png)
+
 ## Second issue with timer
 
 - After the fix the timer was not looping over again.  10 seconds of question one and then 10 seconds for two etc.  I try calling the countdown() at different time and places but this just sent the timer heywire, jumping and skipping numbers.  So I made a executive decision to change the timer from 10 second interval to one long timer running for 60 second through the whole game.  10 question at 10 second a piece is 60 seconds which is the same thing.  This also mean the question a user/player know they can save on time and use them for harder question.
+
+![timer](./testing-code/timer-fix-2.png)
+![timer2](./testing-code/timer-fix-3.png)
+![timer3](./testing-code/timer-fix-4.png)
 
 ## Show Answer to Player
 
 I had a issue once the answer was shown to the player that it change to color of the answer box and didn't return back to it's original color when moving to the next question.  Reading my Javascript book JAVASCRIPT & JQUERY BY JON DUCKETT which help me with setTimerout function. This fix the issue.
 
+![Reset-answer](./testing-code/reset-answer.png)
+
 ## High Score Table/list
 
 I wanted to build a table to hold the highest score in and present they.  I could build the table but couldn't not figure out the code to get the score to insert into the table using map function.  I change to a unorder list.  This is something I need to came back to and figure out at a little date.  But with time being sensitive at the moment of the project I opted for the faster version.
 
+![Score-table](./testing-code/highscore-table1.png)
+![Score-table](./testing-code/highscore-table2.png)
+
 ## Home button
 
-I was having issue with the home button and the site going to 404 page everytime I try to use it on git page.  In the editor everything was fine and working properly but once I published it in on git page the issue started.  My Mentor: Oluwafemi Medale help me with this.
+I was having issue with the home button and the site going to 404 page everytime I try to use it on git page.  In the editor everything was fine and working properly but once I published it in on git page the issue started.  My Mentor: Oluwafemi Medale help me with this.  I was using the first image and should have use /index.html but this was still not working why I dont know but I added a dot the the start and this fix the issue.
+
+![Home button1](./testing-code/home-btn-assign.png)
+![Home button2](./testing-code/home-btn-index.png)
+![Home button3](./testing-code/home-btn-index2.png)
 
 ## SVG problems
 
 I have use two SVG images that is put together in figma.  I the editor everything was working fine, I didn't have a problem till publishing the game.  Then the image wouldn't show up.  I couldn't find out how to fix the  issue so I just when to a PNG and this work fine.
+
+![SVG](./testing-code/svg-problem.png)
 
 ## 
 
@@ -130,9 +147,9 @@ With the responsiveness being viewed through different devices and different scr
 
 - Galaxy fold: Issue on landscape when folded and also on portrait when unfolded.
 - Surface Duo: Breaks when unfolded
-![Surface-Duo-break](assets/documents/testing-code/surface-duo.png)
+![Surface-Duo-break](./testing-code/surface-duo.png)
 - iPhone 5/SE: Break on lower screen when ask quesitons
-![Surface-Duo-break](assets/documents/testing-code/iphone5.png)
+![Surface-Duo-break](./testing-code/iphone5.png)
 
 - **Issue:**
 
@@ -143,11 +160,11 @@ With the responsiveness being viewed through different devices and different scr
 
 Wave Report showed the following issues:
 
-![Wave Report](assets/documents/testing-code/wave1.png)
+![Wave Report](./testing-code/wave1.png)
 
 # Google lighthouse
 
-![Lighthouse](assets/documents/testing-code/Lighthouse-start.jpg)
+![Lighthouse](./testing-code/Lighthouse-start.jpg)
 
 ### To improve the rating scores
 
@@ -176,8 +193,8 @@ Wave Report showed the following issues:
 - first two error are empty heading.
 - third error is a duplicate attribute class.
 
-[HTML-1](./assets/testing-code/HTML-checker-1.jpg)
-[HTML-2](./assets/testing-code/HTML-checker-2.jpg)
+![HTML-1](./testing-code/HTML-checker-1.jpg)
+![HTML-2](./testing-code/HTML-checker-2.jpg)
 
 - Just removing the second class some no duplicate.
 
@@ -185,7 +202,7 @@ Wave Report showed the following issues:
 
 - No error
 
-[CSS](./assets/testing-code/CSS-checker.jpg)
+![CSS](./testing-code/CSS-checker.jpg)
 
 
 
