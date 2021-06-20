@@ -162,6 +162,26 @@ Wave Report showed the following issues:
 
 ![Wave Report](./testing-code/wave1.png)
 
+#### Missing label
+
+I added a label to the form input box and then display: none to hidden it from the screen veiw.
+
+#### Contrast Error
+
+I had some contrast errors with the text on the buttons. To fix this I would have to take the text colour to black or darken the button colour to fix the issue. If I darken the button the contrast bewteen the background and the button is not enough to make the button pop or I have to change my colour style.  So it leaves me with just changing the text colour to black and I didn't want to do this as I think the white colour looks better.
+
+#### No page regions
+
+As this is a game and I don't need a header, I fix this by placing a header with a link to the main section and then display: none to the header. This fixes the alert.
+
+#### Empty heading
+
+Just added text to fix this.
+
+#### Event handler Alerts
+
+I have a alert on 4 event handler all to do with the answer choices.  This need a keyboard fix but as I had a issue with this before I didn't want to play around with it and set me back just before handing in the project.  This is something I need to look at again and fix later on.  I also thinking about this in the next projects so this don't happen again.
+
 # Google lighthouse
 
 ![Lighthouse](./testing-code/Lighthouse-start.jpg)
