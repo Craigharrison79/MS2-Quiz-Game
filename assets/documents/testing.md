@@ -122,11 +122,15 @@ I was having issue with the home button and the site going to 404 page everytime
 
 ## SVG problems
 
-I have use two SVG images that is put together in figma.  I the editor everything was working fine, I didn't have a problem till publishing the game.  Then the image wouldn't show up.  I couldn't find out how to fix the  issue so I just when to a PNG and this work fine.
+I have use two SVG images that is put together in figma. I the editor everything was working fine, I didn't have a problem till publishing the game.  Then the image wouldn't show up. I couldn't find out how to fix the issue so I just when to a PNG and this work fine.
 
 ![SVG](./testing-code/svg-problem.png)
 
-## 
+## local storage issue
+
+Had a issue with the score being save and also the score splicing so it is just the top five scores.  I ask my mentor for help with this but he couldn't help me.  This was hard to hear as I need help with it, I was working on it for days without any futher progress.  I decide to remove the whole code and rewrite it again. This time I had sucess. Can't say what fix the issue but this work.
+
+[link here to read code](https://github.com/Craigharrison79/MS2-Quiz-Game/commit/4ee0280e4b43b6c475d3eec452085d192c4f3e2a#diff-4698a0d6946cc7eab0ee49f1773e6bfa66a91c8c1ae37b2587b9dc9ebdf47247L148)
 
 # Testing on devices
 
@@ -135,6 +139,8 @@ Testing was done on different elements to see how the site preforms and the resp
 Browsers:
 
 - Chrome, Firefox, Safari and Opera.
+
+No problems with any of the browsers I test on.
 
 Devices:
 
@@ -181,6 +187,8 @@ Just added text to fix this.
 #### Event handler Alerts
 
 I have a alert on 4 event handler all to do with the answer choices.  This need a keyboard fix but as I had a issue with this before I didn't want to play around with it and set me back just before handing in the project.  This is something I need to look at again and fix later on.  I also thinking about this in the next projects so this don't happen again.
+
+![wave2](./testing-code/wave2.png)
 
 # Google lighthouse
 
