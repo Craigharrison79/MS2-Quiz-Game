@@ -516,6 +516,197 @@ let questionsArray = [
         choiceD: "Ireland",
         answer: "A"
     },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/gb-wls.png",
+        choiceA: "Sri Lanka",
+        choiceB: "Guam",
+        choiceC: "South Georgia",
+        choiceD: "Wales",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/va.png",
+        choiceA: "United States Virgin Islands",
+        choiceB: "Vatican City",
+        choiceC: "Saint Barthelemy",
+        choiceD: "Palua",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/us.png",
+        choiceA: "Canada",
+        choiceB: "USA",
+        choiceC: "Mexico",
+        choiceD: "Puerto Rico",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/tr.png",
+        choiceA: "Turkey",
+        choiceB: "Tunisia",
+        choiceC: "Syria",
+        choiceD: "Armenia",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/fr.png",
+        choiceA: "Russia",
+        choiceB: "Netherlands",
+        choiceC: "Luxembourg",
+        choiceD: "France",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/mf.png",
+        choiceA: "Netherlands",
+        choiceB: "Russia",
+        choiceC: "Saint Martin",
+        choiceD: "Luxembourg",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/de.png",
+        choiceA: "Romaina",
+        choiceB: "Belgium",
+        choiceC: "Cote d'Ivoire",
+        choiceD: "Germany",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/bg.png",
+        choiceA: "Bulgaria",
+        choiceB: "Italy",
+        choiceC: "Ghana",
+        choiceD: "Hungary",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/cz.png",
+        choiceA: "Slovenia",
+        choiceB: "Poland",
+        choiceC: "Slovakia",
+        choiceD: "Czech Republic",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/jp.png",
+        choiceA: "Japan",
+        choiceB: "Taiwan",
+        choiceC: "South Korea",
+        choiceD: "El Salvador",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ae.png",
+        choiceA: "Palestine",
+        choiceB: "Sudan",
+        choiceC: "United Arab Emirates",
+        choiceD: "Western Sahara",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/cm.png",
+        choiceA: "Cameroon",
+        choiceB: "Benin",
+        choiceC: "Republic of the Congo",
+        choiceD: "Bolivia",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/gr.png",
+        choiceA: "Honduras",
+        choiceB: "Greece",
+        choiceC: "Israel",
+        choiceD: "Nicaragua",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/np.png",
+        choiceA: "Saint Lucia",
+        choiceB: "Palau",
+        choiceC: "Nepal",
+        choiceD: "Peru",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/ye.png",
+        choiceA: "Oman",
+        choiceB: "Syria",
+        choiceC: "Yemen",
+        choiceD: "Saudi Arabia",
+        answer: "C"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/th.png",
+        choiceA: "Malaysia",
+        choiceB: "Laos",
+        choiceC: "Cambodia",
+        choiceD: "Thailand",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/tt.png",
+        choiceA: "Isle of Man",
+        choiceB: "Trinidad and Tobago",
+        choiceC: "Republic of Congo",
+        choiceD: "Cameroon",
+        answer: "B"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/se.png",
+        choiceA: "Finland",
+        choiceB: "Norway",
+        choiceC: "Switzerland",
+        choiceD: "Sweden",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/pt.png",
+        choiceA: "Mauritania",
+        choiceB: "Spain",
+        choiceC: "Jamaica",
+        choiceD: "Portugal",
+        answer: "D"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/jm.png",
+        choiceA: "Jamaica",
+        choiceB: "Cayman Islands",
+        choiceC: "Dominican Republic",
+        choiceD: "Saint Kitts and Nevis",
+        answer: "A"
+    },
+    {
+        question: "Whose flag is it?",
+        imgSrc: "https://flagcdn.com/w160/mc.png",
+        choiceA: "Malta",
+        choiceB: "Monaco",
+        choiceC: "Poland",
+        choiceD: "Morocco",
+        answer: "B"
+    },
+    
+    
 ];
 
 // END OF SCRIPT
