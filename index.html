@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Craig Harrison">
+    <meta name="Description" content="Quiz Game on countries Flags">
+    <meta name="keywords" content="Countries, Quiz Game, Flags, Highest score">
+    
     <title>Quiz Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
+<header style="display: none;">
+    <a href="#one"></a>
+</header>
 <body>
-    <section class="main-conatainer">
+    <section class="main-conatainer" id="one">
         <!-- LANDING PAGE (will disappear once you click play)  -->
         <div id="landing-page-container">
             <div id="landing-page">
@@ -86,13 +92,14 @@
         <div class="score-container" style="display: none" id="final-score">
             <div id="score-hub" class="justify-center">
                 <div class="circle center">
-                    <h2 id="points" class="circle-number-text"></h2>
+                    <h2 id="points" class="circle-number-text">points</h2>
                 </div>
                 <h2 id="score">This is your score</h2>
             </div>
             <div class="btns-hub justify-center">
                 <form id="form-player-score" action="/" method="GET">
-                    <input type="text" id="player-name" label="Name" name="player-name" placeholder="Enter Your Name"
+                    <label style="display: none;">Enter name to save score</label>
+                    <input type="text" id="player-name" name="player-name" placeholder="Enter Your Name"
                         required>
                     <button class="start-btn" type="submit" id="save-score">Save Score</button>
                 </form>
