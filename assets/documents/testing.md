@@ -126,7 +126,7 @@ I have use two SVG images that is put together in figma. I the editor everything
 
 ![SVG](./testing-code/svg-problem.png)
 
-## local storage issue
+## Local storage issue
 
 Had a issue with the score being save and also the score splicing so it is just the top five scores.  I ask my mentor for help with this but he couldn't help me.  This was hard to hear as I need help with it, I was working on it for days without any futher progress.  I decide to remove the whole code and rewrite it again. This time I had sucess. Can't say what fix the issue but this work.
 
@@ -159,8 +159,10 @@ With the responsiveness being viewed through different devices and different scr
 
 - **Issue:**
 
-> - Art work
-
+> - Artwork needed resizing on different sie screen.
+> - Artwork on phone landscape, remove world image from landscape to make everything fix better.
+> - Landscape game features did not fix on page without the background breaking. Fix this by add .main-conatainer: height: auto !important.
+> - Look of question on big screens.  Use grid-template-columns: repeat(2, auto) on big screen to give the quesion a more game show look.
 
 # Accesibility
 
@@ -198,19 +200,27 @@ I have a alert on 4 event handler all to do with the answer choices.  This need 
 
 #### Performance
 
-- 
+-  100% rating so great could do maybe some small changes if I need to.
 
 #### Accesibility
 
-- 
+- Contrast ratio
+
+Same as the Wave Report, contrast issue on the buttons.  I could change it to black and fix the problem but I like it white so I am optin to keep this white as its still 95% accessibility rate.
 
 #### Best Practices
 
-- 
+- I change the handz image from 821 x 369 to a 411 x 185. This should maybe be a 252 x 160 but I like to have a little wiggle room for the increased screen size.  Plus at 87% this is a good rating on mobile and decktop is at 100%.
 
 #### SEO
 
-- 
+- This was good recording to the report.
+
+![decktop](./testing-code/lighthouse-finish.png)
+
+This is becasue of the high aspect ratio.
+
+![mobile](./testing-code/lighthouse-mobile.png)
 
 # HTML & CSS Validation
 
@@ -232,9 +242,14 @@ I have a alert on 4 event handler all to do with the answer choices.  This need 
 
 ![CSS](./testing-code/CSS-checker.jpg)
 
+### JS HINTS
 
+- Lots of this statment:
+    - 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
 
+    - let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
 
+![JS](./testing-code/js.png)
 
 
 

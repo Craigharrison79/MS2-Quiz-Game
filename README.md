@@ -164,6 +164,7 @@ The colour scheme - I wanted to keep the game clean looking and not uses to many
 - Responsive viewer: To test your website responsiveness across different devices.
 - Wave Accessibility: helps you make their web content more accessible to different people with disabilities.
 - Google lighthouse: Check your site Performance, Accessibility, Best Pracitces and SEO and give it a rating out of a 100.
+- JSHints: a tool that helps to detect errors and potential.
 
 ### Media
 
