@@ -159,18 +159,18 @@ The colour scheme - I wanted to keep the game clean looking and not uses too man
 - Javascript: used to build interactive elements of the website/page.
 - Font Awesome: a library full of icons.
 - Google Fonts: a library full of fonts.
-- Git: Version control from gitpod, save, commits and push code to Github.
+- Git: Version control from gitpod, save, commits, and push code to Github.
 - GitHub: Live site to save code.
-- Gitpod: Local respoitory to read the develop code.
+- Gitpod: Local repository to read the develop code.
 - Mockup: Used to design my wireframes.
 - W3C CSS Validator: Used to check of errors in HTML code.
 - W3C HTML Checker: Used to check of errors in CSS code.
 - Am I responsive: is a high fidelity responsive design tool for previewing your site across a variety of popular devices.
 - W3C Spell Checker: This tool allows you to check the spelling of a web page.
-- Chrome Development Tools: Web developer tools built directly into the Google Chrome browser. To help developer diagnose problems as they work on project.
+- Chrome Development Tools: Web developer tools built directly into the Google Chrome browser. To help developers diagnose problems as they work on projects.
 - Responsive viewer: To test your website responsiveness across different devices.
 - Wave Accessibility: helps you make their web content more accessible to different people with disabilities.
-- Google lighthouse: Check your site Performance, Accessibility, Best Pracitces and SEO and give it a rating out of a 100.
+- Google lighthouse: Check your site Performance, Accessibility, Best Practices, and SEO and give it a rating out of a 100.
 - JSHints: a tool that helps to detect errors and potential.
 
 ### Media
@@ -190,7 +190,7 @@ The colour scheme - I wanted to keep the game clean looking and not uses too man
 Deployment of the project is on GitHub Pages, this is how I deploy it:
 
 - With the code being done in Gitpod and push to my repository in GitHub.
-- Log-in to GitHub and moving to my repository and finding and opening MS2-Quiz-Game.
+- Log in to GitHub and moving to my repository and finding and opening MS2-Quiz-Game.
 - Locating and clicking on the settings in the menu bar on the top of the page.
 - Scroll down the page till you reach the GitHub Pages section.
 - In this section under the source click the dropdown select that read “None” and select master and then save.
@@ -202,13 +202,13 @@ Deployment of the project is on GitHub Pages, this is how I deploy it:
 
 Cloning the project
 
-When you finish log into Github, navigate to the repository page and select MS2-Quiz-Game.
+When you finish log into Github, navigate to the repository page, and select MS2-Quiz-Game.
 Above the file list, click on the Code button next to the Gitpod button (green button).
 Copy the URL.
 Open your terminal.
 Change the working directory to the location where you want the cloned directory.
 Paste the URL after you have type git clone. eg
-	$ git clone https://github.com/Username/repository-name
+    $ git clone https://github.com/Username/repository-name
 Press enter and this will create a local clone.
 
 More information on cloning repository:
@@ -220,7 +220,7 @@ More information on cloning repository:
 
 Forking the project
 
-When you finish log into Github, navigate to the repository page and select MS1-Dental-Clinic.
+When you finish log into Github, navigate to the repository page, and select MS1-Dental-Clinic.
 Top right of the page click on the fork button.
 
 More information on fork repository:
