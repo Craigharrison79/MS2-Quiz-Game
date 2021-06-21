@@ -1,6 +1,6 @@
 # [Flag Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
 
-For my first milestone project, I had to build a static responsive front-end website as part of my Diploma Course with the Code Institute. I wanted to build a game of some kind.  I was watching an old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it gives me the idea to do a quiz game for my project.
+For my first milestone project, I had to build a static responsive front-end website as part of my Diploma Course with the Code Institute.  I wanted to build a game of some kind.  I was watching an old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it gave me the idea to do a quiz game for my project.
 
 [Veiw Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
 ![Flag Quiz](./assets/documents/images/mock-up.jpg)
@@ -38,15 +38,15 @@ The idea for this web base game was to build a fun quiz game that all ages could
 
 #### The design of the game:
 
-As the designer of this game, I wanted to build a simple and clean-looking design.  A user-friendly interface that any player of any age could just start playing. As this is my first project in Javascript, I wanted to start to understand how javascript works without overwhelming myself with too many complex and detailed procedures. I want to provide an enjoyable and stimulating game that the player/players would want to play again and again.
+As the designer of this game, I wanted to build a simple and clean-looking design.  A user-friendly interface that any player of any age could just start playing. As this is my first project in Javascript, I wanted to start to understand how javascript works without overwhelming myself with too many complex and detailed procedures. I wanted to provide an enjoyable and stimulating game that the player/players would want to play again and again.
 
 
 #### Design Goals:
 
- - A fun and easy to play the game that all ages can play.
+ - A fun and easy to play game that all ages can play.
  - To be able to educate the players as they play the game.
  - To be able to play the game multiple times and still be challenged.
- - To have a player want to play again to better his/her score.
+ - To have the player want to play the game again to better his/her score.
  - Build something I am proud of.
  - To understand and use effectively the knowledge for the course.
 
@@ -55,13 +55,13 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
 
 - First time player
     - Easy to understand how to play the game and how to navigate throughout the game.
-    - Something that is fun and looks good to  play.
+    - Something that is fun and looks good to play.
     - Something to challenge them without overwhelming them at the same time.
 
 - Returning players
     - To challenge even after playing the game a few times.
-    - I improve his/her scores on the leaderboard.
-    - To educational themself to the country flags.
+    - To improve his/her scores on the leaderboard.
+    - To education themself to the country flags.
 
 
 ## Scope
@@ -75,7 +75,7 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
 - Have a countdown counter to run down as the player go through each question.
 - To have an updateable score which will be shown at the end of the game.
 - Identify the right answer once the player has taken a guess (to help educate the player on the subject).
-- To indicate how well the player has done between each game or other players game.
+- To indicate how well the player has done between each game or other players games.
 - To restart the game once finish.
 
 ## Building Constraints
@@ -84,9 +84,9 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
     - First time building a game like this.
     - Understand how UX works for web base games.
 - Technical
-    - Just started with javascript and am new a programing.
+    - Just started with javascript and I am new a programing.
     - Time frame a lot to build the features needed.
-    - The ability to research and find the answer to the coding question once the problem shows themself.
+    - The ability to research and find the answers to the coded questions once the problem present themself.
 
     
 # Design
@@ -105,7 +105,7 @@ Or
 
 ### Typography
 
-I wanted to use a font that look good and that almost everyone has. Everyone is has uses and is find arial very readable. So this makes sense to use as the font on the game. It  is clean and has a nice flow between the letters.
+I wanted to use a font that look good and that almost everyone has use or used to. Everyone is has uses this font and I find arial very readable. So this makes sense to use as the font on the game. It is clean and has a nice flow between the letters.
 
 Font-family use are: Arial, Helvetica, sans-serif,;
 
@@ -118,22 +118,25 @@ The colour scheme - I wanted to keep the game clean looking and not uses too man
 ### Image
 
  Landing Page, the two images are from
-    - [undraw](https://undraw.co/illustrations): Around the world but I remove the figure to just have the world in [figma](https://www.figma.com) this was then export to an SVG "world. SVG".
-    - [handz 3D](https://www.handz.design/): A package of different hands that I made into an image also in Figma and export it to SVG "hands. SVG".
+    - [undraw](https://undraw.co/illustrations): Around the world but I remove the figure's to just have the world in [figma](https://www.figma.com) this was then export to an SVG "world SVG". 
+    - [handz 3D](https://www.handz.design/): A package of different hands that I made into an image also in Figma and export it to SVG "hands SVG".
+    
+Both change to PNG from SVG.
+
 # Features
 
 - #### Landing Page or menu
 
 - A clean inviting page to indicate what site/game the user is looking at.
-- Two call to action buttons. One of starting the game and a second of the instructions on how to play the game which will show up in a model to help the user with navigation.
+- Two call to action buttons. One of starting the game and a second of the instructions on how to play the game which will show up in a modal to help the user with navigation.
 
 - #### Game Page
 
 - First, an area to indicate which question the player/user is on.
 - The question its self.
 - The image to the questions.
-- The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This help educate the player/user.
-- The timer which counts down show the player/user and time left they have to answer the question.
+- The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This will help educate the player/user.
+- The timer which counts down shows the player/user and time left they have to answer the question.
 
 
 - #### Score Page
