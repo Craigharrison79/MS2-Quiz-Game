@@ -1,6 +1,6 @@
 # [Flag Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
 
-For my first milestone project, I had to build a static responsive front end website as part of my Diploma Course with the Code Institute. I wanted to build a game of some kind.  I was watching a old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it give me the idea to do a quiz game for my project.
+For my first milestone project, I had to build a static responsive front-end website as part of my Diploma Course with the Code Institute. I wanted to build a game of some kind.  I was watching an old episode of Big Bang Theory and Sheldon was doing Fun With Flags and it gives me the idea to do a quiz game for my project.
 
 [Veiw Quiz Game](https://craigharrison79.github.io/MS2-Quiz-Game/)
 ![Flag Quiz](./assets/documents/images/mock-up.jpg)
@@ -31,34 +31,38 @@ For my first milestone project, I had to build a static responsive front end web
 
 ## Strategy
 
-The idea for this web base game was to build a fun quiz game that all ages could play.  To take the world flag's and see how much of you world the player knows.
+The idea for this web base game was to build a fun quiz game that all ages could play.  To take the world flags and see how much of your world the player knows.
+
 
 ## Goals
 
 #### The design of the game:
 
-As the designer of this game I wanted to build a simple and clean looking design.  A user friendly interface than any player of any age could just start playing. As this is my first project in Javascript, I wanted to start to understand how javascript works without overwhelming myself with to much complex and detailed procedures. I want to provide a enjoyable and stimulating game that the player/players would want to play again and again.
+As the designer of this game, I wanted to build a simple and clean-looking design.  A user-friendly interface that any player of any age could just start playing. As this is my first project in Javascript, I wanted to start to understand how javascript works without overwhelming myself with too many complex and detailed procedures. I want to provide an enjoyable and stimulating game that the player/players would want to play again and again.
+
 
 #### Design Goals:
 
- - A fun and easy to play game that all ages can play.
- - To be able to education the players as they play the game.
- - To be able to play the game multipe times and still be challenged.
+ - A fun and easy to play the game that all ages can play.
+ - To be able to educate the players as they play the game.
+ - To be able to play the game multiple times and still be challenged.
  - To have a player want to play again to better his/her score.
  - Build something I am proud of.
- - To understand and use affectively the knowledge for the course.
+ - To understand and use effectively the knowledge for the course.
+
 
 #### User:
 
 - First time player
-    - Easy to understand how to play the game and how to navigate throught the game.
-    - Something that is fun and look good to  play.
-    - Something to challenge them without overwhelm them at the same time.
+    - Easy to understand how to play the game and how to navigate throughout the game.
+    - Something that is fun and looks good to  play.
+    - Something to challenge them without overwhelming them at the same time.
 
 - Returning players
-    - To be challenge even after playing the game a few times.
+    - To challenge even after playing the game a few times.
     - I improve his/her scores on the leaderboard.
-    - To eductional themself to the country flags.
+    - To educational themself to the country flags.
+
 
 ## Scope
 
@@ -66,23 +70,24 @@ As the designer of this game I wanted to build a simple and clean looking design
 - Simple menu.
 - Easy and simple section to find instructions on how to play the game.
 - To have a random question asks from at array.
-- Display the generate quesiton on the page.
+- Display the generate questions on the page.
 - To generate the right image for each question.
-- Have a countdown counter to run down as the player go through each quesiton.
-- To have a updateable score which will be shown at the end of the game.
-- Indentify the right answer once the player has taken a guess (to help educate the player on the subject).
-- To indecate how well the player as done between each game or other players game.
+- Have a countdown counter to run down as the player go through each question.
+- To have an updateable score which will be shown at the end of the game.
+- Identify the right answer once the player has taken a guess (to help educate the player on the subject).
+- To indicate how well the player has done between each game or other players game.
 - To restart the game once finish.
 
 ## Building Constraints
 
 - Design
     - First time building a game like this.
-    - Understand how UX works for web base game.
-- Teachnical
-    - Just started out with javascript and is new a programing.
-    - Time frame alot to build the features needed.
-    - The ablitity to research and find the answer to the coding question once the problem show themself.
+    - Understand how UX works for web base games.
+- Technical
+    - Just started with javascript and am new a programing.
+    - Time frame a lot to build the features needed.
+    - The ability to research and find the answer to the coding question once the problem shows themself.
+
     
 # Design
 
@@ -90,7 +95,7 @@ To build a clear looking game that simple on the eye and that is modern look but
 
 ### Wireframes
 
-I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web base game.  Link below to the design.
+I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web base game. Link below to the design.
 
 ![Game Design](assets/documents/images/wireframes-MS2.jpg)
 
@@ -106,16 +111,15 @@ Font-family use are: Arial, Helvetica, sans-serif,;
 
 ### Color Scheme
 
-The colour scheme - I wanted to keep the game clean looking and not uses to many colours. The midnight green was a nice starting colour as it's a good dark colour that still pop a little without overwhelming the users eyes.  Orange was a nice pop of colour to give contrast to the  background and also give the user a simple indicator of were to look. The cadet blue is again a nice clean different in colour to help indicate the buttons on the page.
+The colour scheme - I wanted to keep the game clean looking and not uses too many colours. The midnight green was a nice starting colour as it's a good dark colour that still pops a little without overwhelming the user's eyes.  Orange was a nice pop of colour to contrast the background and give the user a simple indicator of where to look. The cadet blue is again a nice clean difference in colour to help indicate the buttons on the page.
 
 ![Colour Scheme](assets/documents/images/colour-scheme.png)
 
 ### Image
 
- - Landing Page the two images are from
-    - [undraw](https://undraw.co/illustrations): Around the world but I remove the figure to just have the world in [figma](https://www.figma.com) this was then export to a svg "world.svg".
-    - [handz 3D](https://www.handz.design/): A package of different hands that I made into a image also in figma and export it to svg "handz.svg".
-
+ Landing Page, the two images are from
+    - [undraw](https://undraw.co/illustrations): Around the world but I remove the figure to just have the world in [figma](https://www.figma.com) this was then export to an SVG "world. SVG".
+    - [handz 3D](https://www.handz.design/): A package of different hands that I made into an image also in Figma and export it to SVG "hands. SVG".
 # Features
 
 - #### Landing Page or menu
@@ -125,25 +129,28 @@ The colour scheme - I wanted to keep the game clean looking and not uses to many
 
 - #### Game Page
 
-- First a area to indicate which question the player/user is on.
+- First, an area to indicate which question the player/user is on.
 - The question its self.
 - The image to the questions.
 - The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This help educate the player/user.
-- The timer which count down show the player/user and time left they have to answer the question.
+- The timer which counts down show the player/user and time left they have to answer the question.
+
 
 - #### Score Page
 
 - The player/user overall score for the game.
-- A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter to the high score card.
-- Buttons: First one to save player/user score once name is enter.  Second to open up the score card table and see who the top player/user are.  And third button to enter back to the landing/menu page.
+- A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter into the high scorecard.
+- Buttons: The first one to save player/user score once a name is entered.  Second to open up the scorecard table and see who the top player/user are.  And third button to enter back to the landing/menu page.
+
 
 ### Future Features
 
 - To build on the web base game:
-    - Adding lot of different array to give the user a differnet subject/question to pick from.
-    - The highest score board to be seen by different player on different computer and not just local Storage.
-    - Adding a choose of levels, from beginer to pro.
-    - Have a battle game to competer against players online.
+    - Adding a lot of different arrays to give the user a different subject/question to pick from.
+    - The highest scoreboard to be seen by a different player on a different computer and not just local Storage.
+    - Adding a choice of levels, from beginner to pro.
+    - Have a battle game to compete against players online.
+
 
 # Technologies Used
 

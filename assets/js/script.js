@@ -2,44 +2,40 @@ const game = document.getElementById('game'); // USE IN NUMBER FOR FUNCTIONS - r
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 
+// TO HOLD THE CURRENT QUESTION BEING ASK
 let currentAskQuestion = {};
 let questionNumber = 0;
-let timer = 60;
-let x;
+let timer = 60; //SETTING FOR THE TIME GIVEN ON COUNTDOWN TIMER
+let clock; // VARIABLE FOR THE COUNTDOWN TIMER TO CLEAR INTERVAL
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Run Game section once click
+    // RUN GAME SECTION ONCE CLICK
     document.getElementById('play-game').addEventListener('click', function (e) {
         runGame();
-        console.log(this.click);
+    });
 
-    });//END
-
-    // Show instructions
+    // SHOW INSTRUCTIONS PANEL
     document.getElementById('instructions').addEventListener('click', function (e) {
         model.style.display = 'block';
     });
-}); //END
+});
 
+// CLOSE INSTRUCTION PANEL
 closeModalButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
         model.style.display = 'none';
     });
-}); //END
+});
 
 function runGame() {
-    // display
+    //DISPLAY PANEL
     document.getElementById('landing-page-container').style.display = 'none';
     game.style.display = 'block';
-    //document.getElementById('main-conatainer').style.backgroundColor = 'rgb(10, 59, 77)';
 
-    // starting information
+    // STARTING  INFORMATION
     score = 0;
     questionNumber = 1;
-    //let counter = 0;
-
-    //const firstQuestion = questionsArray;
 
     let btnChecks = document.querySelectorAll('.btn');
     btnChecks.forEach(function (event) {
@@ -50,7 +46,7 @@ function runGame() {
         if (event.click === 'click') {
             checkAnswer();
         }
-        //console.log('click', event.target)
+
     }
     countDown();
     renderQuestion();
@@ -58,20 +54,18 @@ function runGame() {
 
 // TO PICK A QUESTION FROM THE ARRAY
 function renderQuestion() {
-
-    console.log(questionsArray);
     const pickQ = Math.floor(Math.random() * questionsArray.length); // RANDOM THE PICK
-    currentAskQuestion = questionsArray[pickQ]; // pick question
-    perventQuestion(currentAskQuestion);
+    currentAskQuestion = questionsArray[pickQ]; // PICK QUESTION
+    presentQuestion(currentAskQuestion);
 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     questionsArray.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
 }
 
-
+// TO RUN AFTER THE FIRST QUESTION HAS BEEN ASK AND ANSWER
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
-    const TOTAL_QUESTION = 10;
+    const TOTAL_QUESTION = 10;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
 
     if (questionNumber > TOTAL_QUESTION || timer <= 0) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
@@ -80,38 +74,29 @@ function nextQuesiton() {
         localStorage.setItem("Score", score);
         displayScore();
         returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
-        clearInterval(x);
-        /*} else if (timer <= 0) {
-            game.style.display = 'none';
-            finalScore.style.display = 'block';
-            // https://www.w3schools.com/jsref/prop_win_localstorage.asp
-            localStorage.setItem("Score", score);
-            displayScore();
-            returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
-            clearInterval(x); */
+        clearInterval(clock);
     } else {
         renderQuestion();
     }
 }
 
-
-
+// TIMER
 function countDown() {
-    x = setInterval(function () {
+    clock = setInterval(function () {
         console.log(timer);
         if (timer <= 0) {
             questionNumber++;
             nextQuesiton();
-            clearInterval(x);
+            clearInterval(clock);
         }
         timer--;
         document.getElementById('counter').innerText = timer + "s"; // SHOW THE TIMER ON PAGE
     }, 1000);
 
-}  //END */
+}
 
 // SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
-function perventQuestion() {
+function presentQuestion() {
 
     const question = document.getElementById('question');
     document.getElementById('question-num').innerText = "Q" + questionNumber;
@@ -125,27 +110,25 @@ function perventQuestion() {
 
 // TO CHECK THE ANSWER ON CLICK
 function checkAnswer(answer) {
-    const rightAnswerPoints = 10;
-    const wrongAnswerPoints = 5;
+    const rightAnswerPoints = 10; // POINTS FOR RIGHT ANSWER
+    const wrongAnswerPoints = 5;  // POINTS REMOVE FOR WRONG ANSWER
     questionNumber++;
 
     if (answer == currentAskQuestion.answer) {
-        console.log('yes');
         showAnswer();
         score = score + rightAnswerPoints;
     } else {
-        console.log('no');
-        alert('This is the wrong answer');
+        alert('This is the wrong answer'); // TELL THE PLAYER THE ANSWER IS WRONG
         showAnswer();
         score = score - wrongAnswerPoints;
     }
-} //END
+}
 
 // TO SHOW THE PLAYER THE RIGHT ANSWER
 function showAnswer() {
     document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
-    reset(); //  change color back to original color  
-} //END
+    reset(); // CHANGE COLOUR BACK TO THE ORIGINAL COLOUR
+}
 
 // TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR HELP JAMESQQUICK
 function reset() {
@@ -153,8 +136,9 @@ function reset() {
         document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
         nextQuesiton();
     }, 1000);
-} //END
+}
 
+// STORAGE THE PLAYER SCORE
 const playerScore = localStorage.getItem("Score");
 // https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
 let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
@@ -164,15 +148,11 @@ function displayScore() {
     document.getElementById("points").innerHTML = score;
     document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
     loggingScore();
-    console.log('this is the' + highScore);
-
 
     const HighestScoreBtn = document.getElementById('Highest-score');
     const modelScoreCard = document.getElementById('model-score');
 
-    console.log(localStorage);
-
-    // listener for click on Highest Score table button and open table
+    // LISTENER FOR CLICK ON HIGHEST SCORE TABLE BUTTON AND OPEN TABLE
     HighestScoreBtn.addEventListener('click', function (e) {
         modelScoreCard.style.display = 'block';
 
@@ -183,7 +163,7 @@ function displayScore() {
         }).join('');
     });
 
-    // To close high score table
+    // TO CLOSE HIGH SCORE TABLE
     closeModalButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             modelScoreCard.style.display = 'none';
@@ -192,10 +172,9 @@ function displayScore() {
 }
 
 function loggingScore() {
-    //const hiscoreMaxNum = 5;
     const formCard = document.getElementById('form-player-score');
     formCard.addEventListener('submit', function (e) {
-        e.preventDefault();
+        e.preventDefault(); // PREVENT PAGE RELOADING ONCE PLAYER HIT SAVE SCORE
     });
 
     const playerName = document.getElementById('player-name');
@@ -208,12 +187,10 @@ function loggingScore() {
     const saveScore = document.getElementById('save-score');
     saveScore.addEventListener('click', function (e) {
         if (playerName.value && saveScore.click) {
-            console.log('save detail');
             let yourstore = {
                 score: score,
                 name: playerName.value
             };
-            console.log(yourstore);
             highScore.push(yourstore);
         }
         // TO SORT SCORE BY BIGGEST TO LOWEREST
@@ -224,26 +201,17 @@ function loggingScore() {
         highScore.splice(5);
         // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
         localStorage.setItem('highScore', JSON.stringify(highScore));
-        console.log(highScore);
     });
 }
-
-//const scoreList = JSON.parse(localStorage.getItem("score")) || [];
 
 // GOES BACK TO HOME PAGE
 function returnToStartPage() {
     const restartBtn = document.getElementById('restart');
     restartBtn.addEventListener('click', function (e) {
         score = 0;
-        /*return*/ window.location.href = "./index.html";
-        /* const finalScore = document.getElementById('final-score');
-        finalScore.style.display = 'none';
-        document.getElementById('landing-page-container').style.display = 'flex';*/
+        window.location.href = "./index.html";
     });
-
-}//END
-
-returnToStartPage();
+}
 
 // THE QUESTION THE COMPUTER CAN PICK FROM
 let questionsArray = [
@@ -705,8 +673,8 @@ let questionsArray = [
         choiceD: "Morocco",
         answer: "B"
     },
-    
-    
+
+
 ];
 
 // END OF SCRIPT
