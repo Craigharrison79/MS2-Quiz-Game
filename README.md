@@ -245,7 +245,7 @@ Big Bang Theory and Sheldon for Fun with Flags.
 
 ## Code
 
-[James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) : help with many problems in the project. Did my best to rewrite code best I could using help from the codes below.  
+[James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) : Referenced in the code.  Help with many problems in the project. Did my best to rewrite code best I could using help from the codes below.  
 
 [Dani Krossing](https://youtu.be/kPtS4vO42II) : Help with building and information about 404 page.
 

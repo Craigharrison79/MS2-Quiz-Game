@@ -679,5 +679,5 @@ let questionsArray = [
 
 // END OF SCRIPT
 
-/* Line 64, 65, 69, 76 137-141, 174, 194-197,
-224, 227-232, 242 are being taken from Jamesquick see link in README.md */
+/* Line 57-58, 62, 70-74, 142-144, 159-163, 177, 187-203
+are being taken from Jamesquick see link in README.md */
