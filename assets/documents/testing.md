@@ -57,27 +57,28 @@
 
         1. As the top scores are saved to the local store a player can come back in and try to better it.
 
-        2. A user/player will also be able to see other player scores that have to play the game on the same device in the high score table screen. This will give it a competitive feel.
+        2. A user/player will also be able to see other player scores that have play the game on the same device in the high score table screen. This will give it a competitive feel.
 
     - As a returning user/player I don't want to find it boring after a few tries.
 
-        1. The game has a big array of question which will tax the user/player every time they play the game.
+        1. The game has a big array of questions which will tax the user/player every time they play the game.
 
-        2. The question is pick randomly so the sequence on which the question appears will be different every time you play the game.  Once the question iis usedthe game will remove it from that play game so you can't see the same question twice in one turn.
+        2. The questions is pick randomly so the sequence on which the questions appears will be different every time you play the game.  Once the question is used the game will remove it from that play game so you can't see the same question twice in one turn.
 
 
 # Bugs issues and solutions
 
 ## Timer still running on score page
 
-- On the end screen to display the score, the timer was still initiating long after the game had finished.  This was caught when building the score rankings functions. To fix this I read through the code and try to figure out the area that was causing the problem.  I identify several areas but didn't know which one was initiated from.  So I console.log different error messages in the code to see which point it was from.
+- On the end screen to display the score, the timer was still initiating long after the game had finished.  This was caught when building the score rankings functions. To fix this I read through the code and try to figure out the area that was causing the problem.  I identify several areas but didn't know which one was initiated the problem from.  So I console.log different error messages in the code to see which point it was from.
 
 
 ![timer error](./testing-code/error1-timer.png)
 ![timer error](./testing-code/error2-timer.png)
+
 [commit-point](https://github.com/Craigharrison79/MS2-Quiz-Game/commit/373d93346ba5343d9eaa981a9e7ec38f8ba23510)
 
-Once found the initiating error I could trace my steps till I work out the problems.  I remove the clear interval(timer = 10 + 1) from both the countDown and reset function.
+- Once found the initiating error I could trace my steps till I work out the problems. I remove the clear interval(timer = 10 + 1) from both the countDown and reset function.
 
 ![clearInterval](./testing-code/removing-cleartimer-countdown.png)
 ![clearInterval](./testing-code/removing-cleartimer1-set_time_out.png)
@@ -96,7 +97,7 @@ Then add the code to an else statement in the next question function. This fixes
 
 ## Second issue with timer
 
-- After the fix, the timer was not looping over again.  10 seconds of question one and then 10 seconds for two etc.  I try calling the countdown() at different times and places but this just sent the timer heywire, jumping, and skipping numbers.  So I made an executive decision to change the timer from a 10-second interval to one long-timer running for 60 seconds throughout the whole game.  10 questions at 10 seconds a piece is 60 seconds which is the same thing.  This also means the question a user/player knows they can save on time and use them for a harder question.
+- After the fix, the timer was not looping over again.  10 seconds of question one and then 10 seconds for two etc.  I try calling the countdown() at different times and places but this just sent the timer heywire, jumping, and skipping numbers.  So I made an executive decision to change the timer from a 10-second interval to one long-timer running for 60 seconds throughout the whole game.  10 questions at 10 seconds a piece is 60 seconds which is the same thing.  This also means the question a user/player knows they can save on time and use them for a harder questions.
 
 ![timer](./testing-code/timer-fix-2.png)
 ![timer2](./testing-code/timer-fix-3.png)
@@ -110,7 +111,7 @@ I had an issue once the answer was shown to the player that it changes the color
 
 ## High Score Table/list
 
-I wanted to build a table to hold the highest score and present them.  I could build the table but couldn't figure out the code to get the score to insert into the table using the map function.  I change to an unordered list.  This is something I need to came back to and figure out at a little date.  But with time being sensitive at the moment of the project I opted for the faster version.
+I wanted to build a table to hold the highest score and present them.  I could build the table but couldn't figure out the code to get the score to insert into the table using the map function.  I change to an unordered list.  This is something I need to come back to and figure out at a little date.  But with time being sensitive at the moment of the project I opted for the faster version.
 
 ![Score-table](./testing-code/highscore-table1.png)
 ![Score-table](./testing-code/highscore-table2.png)
@@ -118,6 +119,7 @@ I wanted to build a table to hold the highest score and present them.  I could b
 ## Home button
 
 I was having an issue with the home button and the site going to the 404 pages every time I try to use it on the git page.  In the editor, everything was fine and working properly but once I published it on the git page the issue started.  My Mentor: Oluwafemi Medale helps me with this.  I was using the first image and should have use /index.html but this was still not working why I don't know but I added a dot at the start and this fixes the issue.
+
 ![Home button1](./testing-code/home-btn-assign.png)
 ![Home button2](./testing-code/home-btn-index.png)
 ![Home button3](./testing-code/home-btn-index2.png)
@@ -161,7 +163,7 @@ With the responsiveness being viewed through different devices and different scr
 
 - **Issue:**
 
-> - Artwork needed resizing on different sie screen.
+> - Artwork needed resizing on different size screen.
 > - Artwork on phone landscape, remove world image from landscape to make everything fit better.
 > - Landscape game features did not fix on a page without the background breaking. Fix this by add .main-container: height: auto !important.
 > - Look at a question on big screens.  Use grid-template-columns: repeat(2, auto) on a big screen to give the questions a more game show look.
@@ -252,6 +254,12 @@ This is becasue of the high aspect ratio.
     - let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
 
 ![JS](./testing-code/js.png)
+
+
+
+
+
+
 
 
 
