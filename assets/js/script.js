@@ -1,7 +1,8 @@
 const game = document.getElementById('game'); // USE IN NUMBER FOR FUNCTIONS - runGame() & nextQuestions().
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
-const TOTAL_QUESTION = 10;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
+const TOTAL_QUESTION = 2;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
+const overlay = document.getElementById('overlay'); // END MODAL HIGH SCORE
 
 // TO HOLD THE CURRENT QUESTION BEING ASK
 let currentAskQuestion = {};
@@ -164,6 +165,8 @@ function displayScore() {
     // LISTENER FOR CLICK ON HIGHEST SCORE TABLE BUTTON AND OPEN TABLE
     HighestScoreBtn.addEventListener('click', function (e) {
         modelScoreCard.style.display = 'block';
+        overlay.classList.add('active');
+        console.log('open');
 
         const fiveBestScores = document.getElementById('Highest-score-list');
         fiveBestScores.innerHTML = highScore.map(function (yourstore) {
@@ -176,6 +179,8 @@ function displayScore() {
     closeModalButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
             modelScoreCard.style.display = 'none';
+            overlay.classList.remove('active');
+            console.log('close');
         });
     });
 }

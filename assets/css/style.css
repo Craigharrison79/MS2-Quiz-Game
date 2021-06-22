@@ -323,6 +323,22 @@ margin: 0 auto;
     margin-bottom: 20px;
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-color:  rgba(100, 139, 134, 0.9);
+    pointer-events: none;
+}
+
+#overlay.active {
+    pointer-events: all;
+    
+}
+
 @media screen and (min-width: 991px) and (max-width: 2000px) {
     #select-container {
         grid-template-columns: repeat(2, auto);
