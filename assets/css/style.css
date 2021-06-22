@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif,;    
+    font-family: Arial, Helvetica, sans-serif;    
 }
 
 .main-conatainer {
@@ -199,10 +199,10 @@ body {
 }
 
 #btn-home {
-    font-size: 18px;
+    font-size: 14px;
     background-color:rgba(243, 105, 0, 0.699);
     color: white;
-    border-radius: 10px;
+    border-radius: 50px;
     border: 1px solid white;
     padding: 15px;
     width: 100%;
@@ -227,7 +227,6 @@ img {
     background-color: rgb(243, 105, 0);
     text-align: center;
     border-radius: 50%;
-    margin-left: 10px;
     margin-bottom: 10px;
     border: 1px solid white;
 }
@@ -292,7 +291,6 @@ margin: 0 auto;
 .model-container-scoretable {
     position: fixed;
     background-color: rgba(118, 163, 157, 1);
-    color: white;
     border: 1px solid black;
     border-radius: 20px;
     transform: translate(-50%,-50%);
@@ -330,7 +328,7 @@ margin: 0 auto;
     bottom: 0;
     right: 0;
     opacity: 1;
-    background-color:  rgba(100, 139, 134, 0.9);
+    background-color:  rgba(79, 97, 60, 0.7);
     pointer-events: none;
 }
 

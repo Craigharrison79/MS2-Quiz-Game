@@ -1,7 +1,7 @@
 const game = document.getElementById('game'); // USE IN NUMBER FOR FUNCTIONS - runGame() & nextQuestions().
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
-const TOTAL_QUESTION = 2;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
+const TOTAL_QUESTION = 10;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
 const overlay = document.getElementById('overlay'); // END MODAL HIGH SCORE
 
 // TO HOLD THE CURRENT QUESTION BEING ASK
@@ -66,12 +66,12 @@ function home() {
 
 // TO PICK A QUESTION FROM THE ARRAY
 function renderQuestion() {
-    const pickQ = Math.floor(Math.random() * questionsArray.length); // RANDOM THE PICK
-    currentAskQuestion = questionsArray[pickQ]; // PICK QUESTION
+    const pickQ = Math.floor(Math.random() * QUESTION_ARRAY.length); // RANDOM THE PICK
+    currentAskQuestion = QUESTION_ARRAY[pickQ]; // PICK QUESTION
     presentQuestion(currentAskQuestion);
 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-    questionsArray.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
+    QUESTION_ARRAY.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
 }
 
 // TO RUN AFTER THE FIRST QUESTION HAS BEEN ASK AND ANSWER
@@ -183,6 +183,12 @@ function displayScore() {
             console.log('close');
         });
     });
+
+    // TO CLOSE THE MODAL BY CLICK THE OVERLAY 
+    overlay.addEventListener('click', function() {
+            modelScoreCard.style.display = 'none';
+            overlay.classList.remove('active');
+        });
 }
 
 function loggingScore() {
@@ -229,7 +235,7 @@ function returnToStartPage() {
 }
 
 // THE QUESTION THE COMPUTER CAN PICK FROM
-let questionsArray = [
+let QUESTION_ARRAY = [
     {
         question: "Whose flag is it?",
         imgSrc: "https://flagcdn.com/w160/ai.png",
