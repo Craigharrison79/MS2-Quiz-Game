@@ -23,9 +23,11 @@
                 <div id="world"><img src="./assets/image/world.png" alt="drawing of the world with locations"
                         id="image-world"></div>
                 <h1 id="title">Quiz Game</h1>
-                <div class="start-btn" id="play-game">Play</div>
+                <div class="btn-container">
+                <button class="start-btn" id="play-game">Play</button>
                 <!-- made a model -->
-                <div class="start-btn" id="instructions">Instructions</div>
+                <button class="start-btn" id="instructions">Instructions</button>
+            </div>
                 <div id="hands"><img src="./assets/image/handz.png"
                         alt="group of hands knowing the answer to the question" id="image-hands"></div>
             </div>
@@ -76,15 +78,18 @@
             <div id="answer-hub" class="justify-center">
                 <div id="select-container">
                     <div><button class="btn" data-type="A" id='A' onclick="checkAnswer('A')"></button></div>
-                    <div class="btn" data-type="B" id='B' onclick="checkAnswer('B')"></div>
-                    <div class="btn" data-type="C" id='C' onclick="checkAnswer('C')"></div>
-                    <div class="btn" data-type="D" id='D' onclick="checkAnswer('D')"></div>
+                    <div><button class="btn" data-type="B" id='B' onclick="checkAnswer('B')"></button></div>
+                    <div><button class="btn" data-type="C" id='C' onclick="checkAnswer('C')"></button></div>
+                    <div><button class="btn" data-type="D" id='D' onclick="checkAnswer('D')"></button></div>
                 </div>
             </div>
             <!-- TIMER HUB / COUNT DOWN TIMER AND GAUGE -->
             <div id="timer-hub" class="justify-center">
                 <div id="clock-container">
                     <p id="counter"></p>
+                </div>
+                <div id="home-btn-container">
+                    <button id="btn-home">Home</button>
                 </div>
             </div>
         </div>
@@ -103,8 +108,8 @@
                         required>
                     <button class="start-btn" type="submit" id="save-score">Save Score</button>
                 </form>
-                <div class="start-btn" id="Highest-score">Highest Score</div>
-                <div class="start-btn" id="restart">Home</div>
+                <div><button class="start-btn" id="Highest-score">Highest Score</button></div>
+                <div><button class="start-btn" id="restart">Home</button></div>
             </div>
 
             <!-- model score card -->

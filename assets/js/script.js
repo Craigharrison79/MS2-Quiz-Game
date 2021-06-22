@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // RUN GAME SECTION ONCE CLICK
     document.getElementById('play-game').addEventListener('click', function (e) {
         runGame();
+        home();
     });
 
     // SHOW INSTRUCTIONS PANEL
@@ -34,6 +35,7 @@ function runGame() {
     document.getElementById('landing-page-container').style.display = 'none';
     game.style.display = 'block';
 
+    
     // STARTING  INFORMATION
     score = 0;
     questionNumber = 1;
@@ -51,6 +53,14 @@ function runGame() {
     }
     countDown();
     renderQuestion();
+    
+}
+
+function home() {
+    document.getElementById('btn-home').onclick = function () {
+        window.location.href = "./index.html";
+        //location.href = "https://craigharrison79.github.io/MS2-Quiz-Game/";
+    };
 }
 
 // TO PICK A QUESTION FROM THE ARRAY
@@ -186,6 +196,7 @@ function loggingScore() {
     const saveScore = document.getElementById('save-score');
     saveScore.addEventListener('click', function (e) {
         if (playerName.value && saveScore.click) {
+            alert('Your score has been save!');
             let yourstore = {
                 score: score,
                 name: playerName.value

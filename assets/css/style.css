@@ -74,6 +74,7 @@ body {
     border: 1px solid white;
     margin: 0 auto;
     margin-bottom: 15px;  
+    display: block;
 }
 
 #hands {
@@ -190,6 +191,23 @@ body {
     padding: 15px;
     width: 100%;
     text-align: center;
+}
+
+#home-btn-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#btn-home {
+    font-size: 18px;
+    background-color:rgba(243, 105, 0, 0.699);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    margin-left: 10px;
 }
 
 #image-container {
