@@ -12,10 +12,10 @@
     <title>Quiz Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<header style="display: none;">
-    <a href="#one">Game Page</a>
-</header>
 <body>
+    <header style="display: none;">
+        <a href="#one">Game Page</a>
+    </header>
     <section class="main-conatainer" id="one">
         <!-- LANDING PAGE (will disappear once you click play)  -->
         <div id="landing-page-container">
@@ -75,7 +75,7 @@
             <!-- ANSWER HUB / ANSWER TO CHOOSE -->
             <div id="answer-hub" class="justify-center">
                 <div id="select-container">
-                    <div class="btn" data-type="A" id='A' onclick="checkAnswer('A')"></div>
+                    <div><button class="btn" data-type="A" id='A' onclick="checkAnswer('A')"></button></div>
                     <div class="btn" data-type="B" id='B' onclick="checkAnswer('B')"></div>
                     <div class="btn" data-type="C" id='C' onclick="checkAnswer('C')"></div>
                     <div class="btn" data-type="D" id='D' onclick="checkAnswer('D')"></div>

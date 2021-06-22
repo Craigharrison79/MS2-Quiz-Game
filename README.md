@@ -51,7 +51,7 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
  - To understand and use the knowledge of the course effectively.
 
 
-#### User:
+#### User Stories:
 
 - First time player
     - Easy to understand how to play the game and how to navigate throughout the game.
@@ -96,10 +96,6 @@ To build a clear looking game that is simple on the eye and that has a modern lo
 ### Wireframes
 
 I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web based game. Link below to the design.
-
-![Game Design](assets/documents/images/wireframes-MS2.jpg)
-
-Or
 
 - [Wireframes Download PDF](https://github.com/Craigharrison79/MS2-Quiz-Game/blob/master/assets/documents/images/flag-game-wireframes.pdf)
 
@@ -248,22 +244,22 @@ Big Bang Theory and Sheldon for Fun with Flags.
 
 ## Code
 
-[James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) : Referenced in the code.  Help with many problems in the project. Did my best to rewrite code best I could using help from the codes below.  
+- [James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) : Referenced in the code.  Help with many problems in the project. Did my best to rewrite code best I could using help from the codes below.  
 
-[Dani Krossing](https://youtu.be/kPtS4vO42II) : Help with building and information about 404 page.
+- [Dani Krossing](https://youtu.be/kPtS4vO42II) : Help with building and information about 404 page.
 
-[developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) : For more information about splice and how it works.
+- [developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) : For more information about splice and how it works.
     
-[w3schools](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map3) : ideas on how to write the map function in a different way.
+- [w3schools](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map3) : ideas on how to write the map function in a different way.
 
-[w3schools](https://www.w3schools.com/jsref/prop_win_localstorage.asp) : help with local storage.
+- [w3schools](https://www.w3schools.com/jsref/prop_win_localstorage.asp) : help with local storage.
 
-[stackoverflow](https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue) : look over this for local storage issues.
+- [stackoverflow](https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue) : look over this for local storage issues.
 
-[w3schools](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2) : help to rewrite the code.
+- [w3schools](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2) : help to rewrite the code.
 
-[dev.to](https://dev.to/minna_xd/adding-a-high-score-table-to-javascript30-whack-a-mole-4adk) : idea on how to do the table with map, but run into lot of problems so pivoted to unordered list like in [James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) video.
+- [dev.to](https://dev.to/minna_xd/adding-a-high-score-table-to-javascript30-whack-a-mole-4adk) : idea on how to do the table with map, but run into lot of problems so pivoted to unordered list like in [James Q Quick](https://www.youtube.com/watch?v=jfOv18lCMmw&t=363s) video.
 
-[stackoverflow](https://stackoverflow.com/questions/14643617/create-table-using-javascript/14644462) also use to try and build the table.
+- [stackoverflow](https://stackoverflow.com/questions/14643617/create-table-using-javascript/14644462) also use to try and build the table.
 
-[w3schools](https://www.w3schools.com/charsets/tryit.asp?deci=215&ent=times) : use &times for a button and [get.foundation](https://get.foundation/sites/docs/close-button.html) : help with the data close button.
+- [w3schools](https://www.w3schools.com/charsets/tryit.asp?deci=215&ent=times) : use &times for a button and [get.foundation](https://get.foundation/sites/docs/close-button.html) : help with the data close button.

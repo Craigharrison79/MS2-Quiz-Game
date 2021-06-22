@@ -1,6 +1,7 @@
 const game = document.getElementById('game'); // USE IN NUMBER FOR FUNCTIONS - runGame() & nextQuestions().
 const model = document.getElementById('modal-hub');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const TOTAL_QUESTION = 10;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
 
 // TO HOLD THE CURRENT QUESTION BEING ASK
 let currentAskQuestion = {};
@@ -65,8 +66,7 @@ function renderQuestion() {
 // TO RUN AFTER THE FIRST QUESTION HAS BEEN ASK AND ANSWER
 function nextQuesiton() {
     const finalScore = document.getElementById('final-score');
-    const TOTAL_QUESTION = 10;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
-
+    
     if (questionNumber > TOTAL_QUESTION || timer <= 0) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
         game.style.display = 'none';
         finalScore.style.display = 'block';
@@ -83,7 +83,6 @@ function nextQuesiton() {
 // TIMER
 function countDown() {
     clock = setInterval(function () {
-        console.log(timer);
         if (timer <= 0) {
             questionNumber++;
             nextQuesiton();
