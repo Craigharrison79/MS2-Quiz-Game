@@ -6,29 +6,29 @@
     - As a first-time user/player of the web-based game,  I want to be able to navigate through the site quickly and understand everything at first glance.  
 
         1. The visitor will enter the site and have a simple and clean site to read and follow.
-        The is just two option to pick from to move forward in the game.  Instructions and Play Game.
+        There is just two options to pick from to move forward in the game, Instructions and Play Game.
 
-        2. On clicking the instruction button the rules of the game will appear and will explain how to play.  The instruction will be a model so the user/player will know where they are in the website/game.  The model will have a simple X at the top right corner to close the instruction tab.
+        2. On clicking the instruction button the rules of the game will appear and will explain how to play. The instruction will be a model so the user/player will know where they are in the website/game. The model will have a simple X at the top right corner to close the instruction tab.
 
         3. Click play will start the game and switch the screen to the game stage.
 
-    - As a first-time user/player I want to understand what I looking at and what I can interact with.
+    - As a first-time user/player I want to understand what I am looking at and what I can interact with.
 
         1. The user/player will have a simple and uncluttered display with all the information and visuals in the center of the screen, reading from top to bottom.
 
-        2. The simple display will be intuitive and the user/player will know what they are looking at, at first glance.  They will know what to click on.
+        2. The simple display will be intuitive and the user/player will know what they are looking at, at first glance. They will know what to click on.
 
         3. The display will use a font that everyone is familiar with and easy to read.
 
-    - As a user/player I want to know how much time I have left to answer the question.
+    - As a user/player I want to know how much time I have left to answer the questions.
 
-        1. A the bottom of the page the will be a countdown timer which is counting down from 60 seconds.  This is just underneath the 4 answer choices so will be in the user/player eyesight at all time when picking an answer.
+        1. A the bottom of the page there will be a countdown timer which is counting down from 60 seconds.  This is just underneath the 4 answer choices so it will be in the user/player eyesight at all times when picking an answer.
 
         2. Once the timer hits "0" the game will automatically finish and the user/player will be taken to the score page.
 
     - As a user/player I would like to know if the answer to the question is right.
 
-        1. Once the user/player has to click an answer the right answer will flash up for about 3 seconds given them a chance to acknowledge the right answer and to educate the player on the country's flag.
+        1. Once the user/player has clicked on an answer the right answer will flash up for about 3 seconds giving them a chance to acknowledge the right answer and to educate the player on the country's flag.
 
         2. If the player hits the wrong answer, an alert message will pop up saying it was the wrong answer and then the answer will flash up before switching to the next question.
 
@@ -42,9 +42,9 @@
 
         1. Once the game has finished the user/player will be transported to the score page.  Here the user/player will be given two different ways to see their score. The first is at the top of the page with just the score itself.  This is a display just like the display of which question the player was on. This is to help with familiarity to the player and speed up the reading of the game.
 
-        2. Second is just under the score indicate at the top and gives more detail by saying "this is your score".
+        2. The score is just under the score indicator at the top and gives more detail by saying "this is your score".
 
-        3. The player can then choose if she/he would like to score the score.  The saved form is easy to see and work out how it works without having to use any instruction.  Enter name and save!  The entered name is an input bar and says in the bar "Enter your name", and just below that is the save button.
+        3. The player can then choose if she/he would like to save the score.  The saved form is easy to see and work out how it works without having to use any instruction.  Enter name and save!  The entered name is an input bar and says in the bar "Enter your name", and just below that is the save button.
 
         4. The user/player can also check out the top score by hitting the highest score button which brings up a modal with the scores. This will sort the top 5 best scores.  At the end of the list and user/player will see an "X" button which is a universal sign to close the modal.
 

@@ -31,7 +31,7 @@ For my first milestone project, I had to build a static responsive front-end web
 
 ## Strategy
 
-The idea for this web base game was to build a fun quiz game that all ages could play.  To take the world flags and see how much of your world the player knows.
+The idea for this web based game was to build a fun quiz game that all ages could play.  To take the world flags and see how much of our world the player knows.
 
 
 ## Goals
@@ -48,7 +48,7 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
  - To be able to play the game multiple times and still be challenged.
  - To have the player want to play the game again to better his/her score.
  - Build something I am proud of.
- - To understand and use effectively the knowledge for the course.
+ - To understand and use the knowledge of the course effectively.
 
 
 #### User:
@@ -61,7 +61,7 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
 - Returning players
     - To challenge even after playing the game a few times.
     - To improve his/her scores on the leaderboard.
-    - To education themself to the country flags.
+    - To educate themselfs to the country flags.
 
 
 ## Scope
@@ -70,32 +70,32 @@ As the designer of this game, I wanted to build a simple and clean-looking desig
 - Simple menu.
 - Easy and simple section to find instructions on how to play the game.
 - To have a random question asks from at array.
-- Display the generate questions on the page.
+- Display the generated questions on the page.
 - To generate the right image for each question.
-- Have a countdown counter to run down as the player go through each question.
+- Have a countdown counter to run down as the player goes through each question.
 - To have an updateable score which will be shown at the end of the game.
 - Identify the right answer once the player has taken a guess (to help educate the player on the subject).
 - To indicate how well the player has done between each game or other players games.
-- To restart the game once finish.
+- To restart the game once finished.
 
 ## Building Constraints
 
 - Design
     - First time building a game like this.
-    - Understand how UX works for web base games.
+    - Understand how UX works for web based games.
 - Technical
-    - Just started with javascript and I am new a programing.
+    - Just started with javascript and I am new at programing.
     - Time frame a lot to build the features needed.
-    - The ability to research and find the answers to the coded questions once the problem present themself.
+    - The ability to research and find the answers to the coded questions once the problems presents themselfs.
 
     
 # Design
 
-To build a clear looking game that simple on the eye and that is modern look but will not age.
+To build a clear looking game that is simple on the eye and that has a modern look but will not age.
 
 ### Wireframes
 
-I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web base game. Link below to the design.
+I used mockup [mockflow.com](https://www.mockflow.com/) once again to design the idea for the web based game. Link below to the design.
 
 ![Game Design](assets/documents/images/wireframes-MS2.jpg)
 
@@ -105,21 +105,21 @@ Or
 
 ### Typography
 
-I wanted to use a font that look good and that almost everyone has use or used to. Everyone is has uses this font and I find arial very readable. So this makes sense to use as the font on the game. It is clean and has a nice flow between the letters.
+I wanted to use a font that look good and that almost everyone has used. Everyone has used this font before and I find Arial very readable. So this makes sense to use as the font for the game. It is clean and has a nice flow between the letters.
 
-Font-family use are: Arial, Helvetica, sans-serif,;
+Font-family used are: Arial, Helvetica, sans-serif,;
 
 ### Color Scheme
 
-The colour scheme - I wanted to keep the game clean looking and not uses too many colours. The midnight green was a nice starting colour as it's a good dark colour that still pops a little without overwhelming the user's eyes.  Orange was a nice pop of colour to contrast the background and give the user a simple indicator of where to look. The cadet blue is again a nice clean difference in colour to help indicate the buttons on the page.
+The colour scheme - I wanted to keep the game clean looking and not use too many colours. The midnight green was a nice starting colour as it's a good dark colour that still pops a little without overwhelming the user's eyes.  Orange was a nice pop of colour to contrast the background and give the user a simple indicator of where to look. The cadet blue is again a nice clean difference in colour to help indicate the buttons on the page.
 
 ![Colour Scheme](assets/documents/images/colour-scheme.png)
 
 ### Image
 
  Landing Page, the two images are from
-    - [undraw](https://undraw.co/illustrations): Around the world but I remove the figure's to just have the world in [figma](https://www.figma.com) this was then export to an SVG "world SVG". 
-    - [handz 3D](https://www.handz.design/): A package of different hands that I made into an image also in Figma and export it to SVG "hands SVG".
+    - [undraw](https://undraw.co/illustrations): Around the world but I removed the figure's to just have the world in [figma](https://www.figma.com) this was then exported to an SVG "world SVG". 
+    - [handz 3D](https://www.handz.design/): A package of different hands that I made into an image also in Figma and exported it to SVG "hands SVG".
     
 Both change to PNG from SVG.
 
@@ -128,22 +128,22 @@ Both change to PNG from SVG.
 - #### Landing Page or menu
 
 - A clean inviting page to indicate what site/game the user is looking at.
-- Two call to action buttons. One of starting the game and a second of the instructions on how to play the game which will show up in a modal to help the user with navigation.
+- Two call to action buttons. One to start the game and a second one of the instructions on how to play the game which will show up in a modal to help the user with navigation.
 
 - #### Game Page
 
 - First, an area to indicate which question the player/user is on.
-- The question its self.
+- The question itself.
 - The image to the questions.
-- The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the questions. This will help educate the player/user.
-- The timer which counts down shows the player/user and time left they have to answer the question.
+- The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the question. This will help educate the player/user.
+- The timer which counts down shows the player/user and time left they have to answer the questions.
 
 
 - #### Score Page
 
 - The player/user overall score for the game.
 - A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter into the high scorecard.
-- Buttons: The first one to save player/user score once a name is entered.  Second to open up the scorecard table and see who the top player/user are.  And third button to enter back to the landing/menu page.
+- Buttons: The first one to save player/user score once a name is entered.  Second to open up the scorecard table and see who the top player/user are. And third button to enter back to the landing/menu page.
 
 
 ### Future Features
@@ -223,7 +223,7 @@ More information on cloning repository:
 
 Forking the project
 
-When you finish log into Github, navigate to the repository page, and select MS1-Dental-Clinic.
+When you finish log into Github, navigate to the repository page, and select MS2-Quiz-Game.
 Top right of the page click on the fork button.
 
 More information on fork repository:
