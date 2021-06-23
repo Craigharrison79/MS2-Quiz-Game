@@ -154,7 +154,6 @@ const playerScore = localStorage.getItem("Score");
 let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 
 function displayScore() {
-    console.log(playerScore);
     document.getElementById("points").innerHTML = score;
     document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
     loggingScore();
@@ -166,7 +165,6 @@ function displayScore() {
     HighestScoreBtn.addEventListener('click', function (e) {
         modelScoreCard.style.display = 'block';
         overlay.classList.add('active');
-        console.log('open');
 
         const fiveBestScores = document.getElementById('Highest-score-list');
         fiveBestScores.innerHTML = highScore.map(function (yourstore) {
@@ -180,7 +178,6 @@ function displayScore() {
         button.addEventListener('click', function (e) {
             modelScoreCard.style.display = 'none';
             overlay.classList.remove('active');
-            console.log('close');
         });
     });
 
