@@ -123,24 +123,24 @@ Both change to PNG from SVG.
 
 - #### Landing Page or menu
 
-- A clean inviting page to indicate what site/game the user is looking at.
-- Two call to action buttons. One to start the game and a second one of the instructions on how to play the game which will show up in a modal to help the user with navigation.
+    - A clean inviting page to indicate what site/game the user is looking at.
+    - Two call to action buttons. One to start the game and a second one of the instructions on how to play the game which will show up in a modal to help the user with navigation.
 
 - #### Game Page
 
-- First, an area to indicate which question the player/user is on.
-- The question itself.
-- The image to the questions.
-- The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the question. This will help educate the player/user.
-- The timer which counts down shows the player/user and time left they have to answer the questions.
-
+    - First, an area to indicate which question the player/user is on.
+    - The question itself.
+    - The image to the questions.
+    - The 4 answer boxes. One of the boxes will indicate the right answer once the player/user has answered the question. This will help educate the player/user.
+    - The timer which counts down shows the player/user and time left they have to answer the questions.
 
 - #### Score Page
 
-- The player/user overall score for the game.
-- A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter into the high scorecard.
-- Buttons: The first one to save player/user score once a name is entered.  Second to open up the scorecard table and see who the top player/user are. And third button to enter back to the landing/menu page.
-
+    - The player/user overall score for the game.
+    - Right answer will be 10 points and a wrong answer will remove -5 points from the score.
+    - A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter into the high scorecard.
+    - Buttons: The first one to save player/user score once a name is entered.  Second to open up the scorecard table and see who the top player/user are. And third button to enter back to the landing/menu page.
+    - All scores the highest scores table will be held in local storage.
 
 ### Future Features
 
@@ -153,24 +153,42 @@ Both change to PNG from SVG.
 
 # Technologies Used
 
-- HTML5: used to structure the page.
-- CSS3: used to add style and look of the page.
-- Javascript: used to build interactive elements of the website/page.
-- Font Awesome: a library full of icons.
-- Google Fonts: a library full of fonts.
-- Git: Version control from gitpod, save, commits, and push code to Github.
-- GitHub: Live site to save code.
-- Gitpod: Local repository to read the develop code.
-- Mockup: Used to design my wireframes.
-- W3C CSS Validator: Used to check of errors in HTML code.
-- W3C HTML Checker: Used to check of errors in CSS code.
-- Am I responsive: is a high fidelity responsive design tool for previewing your site across a variety of popular devices.
-- W3C Spell Checker: This tool allows you to check the spelling of a web page.
-- Chrome Development Tools: Web developer tools built directly into the Google Chrome browser. To help developers diagnose problems as they work on projects.
-- Responsive viewer: To test your website responsiveness across different devices.
-- Wave Accessibility: helps you make their web content more accessible to different people with disabilities.
-- Google lighthouse: Check your site Performance, Accessibility, Best Practices, and SEO and give it a rating out of a 100.
-- JSHints: a tool that helps to detect errors and potential.
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) 
+    - used to structure the page.
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) 
+    - used to add style and look of the page.
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript) 
+    - used to build interactive elements of the website/page.
+- [Font Awesome:](https://fontawesome.com/) 
+    - a library full of icons.
+- [Google Fonts:](https://fonts.google.com/)
+    - a library full of fonts.
+- [Git](https://git-scm.com/)
+    - Version control from gitpod, save, commits, and push code to Github.
+- [GitHub:](https://github.com/)
+    - Live site to save code.
+- [GitPod:](https://www.gitpod.io) 
+    - Local repository to read the develop code.
+- [mockflow.com](https://www.mockflow.com/) 
+    - Used to design my wireframes.
+- [W3C CSS Validator](https://validator.w3.org) 
+    - Used to check of errors in HTML code.
+- [W3C HTML Checker](https://validator.w3.org)
+    - Used to check of errors in CSS code.
+- [Am I responsive](http://ami.responsivedesign.is) 
+    - is a high fidelity responsive design tool for previewing your site across a variety of popular devices.
+- [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker) 
+    - This tool allows you to check the spelling of a web page.
+- [Chrome Development Tools](https://developer.chrome.com/docs/devtools/)
+    - Web developer tools built directly into the Google Chrome browser. To help developers diagnose problems as they work on projects.
+- [Responsive viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) 
+    - To test your website responsiveness across different devices.
+- [Wave Accessibility](https://wave.webaim.org) 
+    - helps you make their web content more accessible to different people with disabilities.
+- [Google lighthouse](https://developers.google.com/web/tools/lighthouse) 
+    - Check your site Performance, Accessibility, Best Practices, and SEO and give it a rating out of a 100.
+- [JShints](https://jshint.com) 
+    - a tool that helps to detect errors and potential.
 
 ### Media
 
