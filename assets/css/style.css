@@ -118,7 +118,7 @@ header {
 }
 
 .modal-heading h2 {
-    font-size: 40px;
+    font-size: 30px;
     color: black;
     text-decoration: underline;
 }
@@ -252,7 +252,7 @@ img {
 
 .score-container {
     width: 80vw;
-    height: 80vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     border-radius: 10%;   
