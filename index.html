@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header style="display: none;">
+    <header>
         <a href="#one">Game Page</a>
     </header>
     <section class="main-conatainer" id="one">
@@ -31,7 +31,7 @@
                 <div id="hands"><img src="./assets/image/handz.png"
                         alt="group of hands knowing the answer to the question" id="image-hands"></div>
             </div>
-            <div id="modal-hub" class="model-container" style="display: none">
+            <div id="modal-hub" class="modal-container" style="display: none">
                 <div class="modal-heading">
                     <h2>Instructions</h2>
                     <!-- use &times for a button - https://www.w3schools.com/charsets/tryit.asp?deci=215&ent=times -->
@@ -40,20 +40,19 @@
                 </div>
                 <div class="modal-body">
                     <ol>
-                        <li>Once you hit the play game button you will be taken to the game page.</li>
-                        <li>On this page you will be given a countries flag with four different conutries options to
+                        <li>Press play to start the  game.</li>
+                        <li>Once you start the game, you will be given a countries flag with four different conutries options to
                             choose from.</li>
                         <li>Pick the correct flag to the country that owns it.</li>
-                        <li>Once you have made your pick and click on the countries name and game will show you the
-                            correct answer.
-                            If you are right you will get 10 points and if you are wrong you lose 5 points.</li>
+                        <li>Once you have made your choose, click on the countries name and game will show you the
+                            correct answer. <br>
+                            * Correct answer is worth <em>10 points</em>  <br> * Wrong answer and you will lose <em>5 points</em>.</li>
                         <li>The aim of the game is to get all the flags correct.</li>
                         <li>Also the is a countdown timer so you don't have long to make a pick.</li>
                         <li>At the end of the game you will find out your score.</li>
                         <li>Good Luck!!!</li>
                     </ol>
                 </div>
-
             </div>
         </div>
         <!-- game -->
@@ -111,7 +110,7 @@
                 <div><button class="start-btn" id="Highest-score">Highest Score</button></div>
                 <div><button class="start-btn" id="restart">Home</button></div>
             </div>
-
+            
             <!-- model score card -->
             <div id="model-score" style="display: none">
                 <div class="model-heading model-container-scoretable">

@@ -19,6 +19,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;    
 }
 
+header {
+    display: none;
+}
+
 .main-conatainer {
     display: flex;
     width: 100vw;
@@ -91,7 +95,7 @@ body {
 
 /* INSTRUCTIONS MODAL */
 
-.model-container {
+.modal-container {
     position: fixed;
     background-color: rgba(118, 163, 157, 1);
     color: white;
@@ -114,9 +118,13 @@ body {
 }
 
 .modal-heading h2 {
-    font-size: 30px;
+    font-size: 40px;
     color: black;
     text-decoration: underline;
+}
+
+em {
+    color:rgb(173, 81, 11); 
 }
 
 .close-btn {
@@ -129,8 +137,8 @@ body {
 
 .modal-body {
     padding: 0px 20px 30px 40px;
-    color: white;
-    font-size: 18px;
+    color: black;
+    font-size: 24px;
     line-height: 25px;
 }
 
@@ -304,8 +312,7 @@ margin: 0 auto;
 .model-container-scoretable, h3 {
     text-align: center;
     font-size: 30px;
-    margin-top: 10px;
-    
+    margin-top: 10px;    
 }
 
 #Highest-score-list {
@@ -333,10 +340,11 @@ margin: 0 auto;
 }
 
 #overlay.active {
-    pointer-events: all;
-    
+    pointer-events: all;   
 }
 
+
+/* Media Screen Size */
 @media screen and (min-width: 991px) and (max-width: 2000px) {
     #select-container {
         grid-template-columns: repeat(2, auto);
@@ -369,7 +377,7 @@ margin: 0 auto;
         display: block;
     }
 
-   }
+}
 
 @media screen and (orientation:landscape) and (min-device-width: 319px) 
 and (max-device-width: 830px) {
@@ -385,7 +393,7 @@ and (max-device-width: 830px) {
         height: auto !important;
     }
 
- }
+}
 
 
 

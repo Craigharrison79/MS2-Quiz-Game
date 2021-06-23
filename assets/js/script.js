@@ -4,233 +4,6 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const TOTAL_QUESTION = 10;  // VARIABLES TO SET THE NUMBER OF ASK QUESTION IN THE QUIZ
 const overlay = document.getElementById('overlay'); // END MODAL HIGH SCORE
 
-// TO HOLD THE CURRENT QUESTION BEING ASK
-let currentAskQuestion = {};
-let questionNumber = 0;
-let timer = 60; //SETTING FOR THE TIME GIVEN ON COUNTDOWN TIMER
-let clock; // VARIABLE FOR THE COUNTDOWN TIMER TO CLEAR INTERVAL
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    // RUN GAME SECTION ONCE CLICK
-    document.getElementById('play-game').addEventListener('click', function (e) {
-        runGame();
-        home();
-    });
-
-    // SHOW INSTRUCTIONS PANEL
-    document.getElementById('instructions').addEventListener('click', function (e) {
-        model.style.display = 'block';
-    });
-});
-
-// CLOSE INSTRUCTION PANEL
-closeModalButtons.forEach(function (button) {
-    button.addEventListener('click', function (e) {
-        model.style.display = 'none';
-    });
-});
-
-function runGame() {
-    //DISPLAY PANEL
-    document.getElementById('landing-page-container').style.display = 'none';
-    game.style.display = 'block';
-
-    
-    // STARTING  INFORMATION
-    score = 0;
-    questionNumber = 1;
-
-    let btnChecks = document.querySelectorAll('.btn');
-    btnChecks.forEach(function (event) {
-        event.addEventListener('click', myClick);
-    });
-
-    function myClick(event) {
-        if (event.click === 'click') {
-            checkAnswer();
-        }
-
-    }
-    countDown();
-    renderQuestion();
-    
-}
-
-function home() {
-    document.getElementById('btn-home').onclick = function () {
-        window.location.href = "./index.html";
-        //location.href = "https://craigharrison79.github.io/MS2-Quiz-Game/";
-    };
-}
-
-// TO PICK A QUESTION FROM THE ARRAY
-function renderQuestion() {
-    const pickQ = Math.floor(Math.random() * QUESTION_ARRAY.length); // RANDOM THE PICK
-    currentAskQuestion = QUESTION_ARRAY[pickQ]; // PICK QUESTION
-    presentQuestion(currentAskQuestion);
-
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-    QUESTION_ARRAY.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
-}
-
-// TO RUN AFTER THE FIRST QUESTION HAS BEEN ASK AND ANSWER
-function nextQuesiton() {
-    const finalScore = document.getElementById('final-score');
-    
-    if (questionNumber > TOTAL_QUESTION || timer <= 0) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
-        game.style.display = 'none';
-        finalScore.style.display = 'block';
-        // https://www.w3schools.com/jsref/prop_win_localstorage.asp
-        localStorage.setItem("Score", score);
-        displayScore();
-        returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
-        clearInterval(clock);
-    } else {
-        renderQuestion();
-    }
-}
-
-// TIMER
-function countDown() {
-    clock = setInterval(function () {
-        if (timer <= 0) {
-            questionNumber++;
-            nextQuesiton();
-            clearInterval(clock);
-        }
-        timer--;
-        document.getElementById('counter').innerText = timer + "s"; // SHOW THE TIMER ON PAGE
-    }, 1000);
-
-}
-
-// SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
-function presentQuestion() {
-
-    const question = document.getElementById('question');
-    document.getElementById('question-num').innerText = "Q" + questionNumber;
-    question.innerText = currentAskQuestion.question;
-    document.getElementById('image').innerHTML = "<img src=" + currentAskQuestion.imgSrc + ">";
-    document.getElementById('A').innerText = currentAskQuestion.choiceA;
-    document.getElementById('B').innerText = currentAskQuestion.choiceB;
-    document.getElementById('C').innerText = currentAskQuestion.choiceC;
-    document.getElementById('D').innerText = currentAskQuestion.choiceD;
-}
-
-// TO CHECK THE ANSWER ON CLICK
-function checkAnswer(answer) {
-    const rightAnswerPoints = 10; // POINTS FOR RIGHT ANSWER
-    const wrongAnswerPoints = 5;  // POINTS REMOVE FOR WRONG ANSWER
-    questionNumber++;
-
-    if (answer == currentAskQuestion.answer) {
-        showAnswer();
-        score = score + rightAnswerPoints;
-    } else {
-        alert('This is the wrong answer'); // TELL THE PLAYER THE ANSWER IS WRONG
-        showAnswer();
-        score = score - wrongAnswerPoints;
-    }
-}
-
-// TO SHOW THE PLAYER THE RIGHT ANSWER
-function showAnswer() {
-    document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
-    reset(); // CHANGE COLOUR BACK TO THE ORIGINAL COLOUR
-}
-
-// TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR HELP JAMESQQUICK
-function reset() {
-    setTimeout(() => {
-        document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
-        nextQuesiton();
-    }, 1000);
-}
-
-// STORAGE THE PLAYER SCORE
-const playerScore = localStorage.getItem("Score");
-// https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
-let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
-
-function displayScore() {
-    document.getElementById("points").innerHTML = score;
-    document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
-    loggingScore();
-
-    const HighestScoreBtn = document.getElementById('Highest-score');
-    const modelScoreCard = document.getElementById('model-score');
-
-    // LISTENER FOR CLICK ON HIGHEST SCORE TABLE BUTTON AND OPEN TABLE
-    HighestScoreBtn.addEventListener('click', function (e) {
-        modelScoreCard.style.display = 'block';
-        overlay.classList.add('active');
-
-        const fiveBestScores = document.getElementById('Highest-score-list');
-        fiveBestScores.innerHTML = highScore.map(function (yourstore) {
-            let topScore = `<li>${yourstore.name} - ${yourstore.score}</li>`;
-            return topScore;
-        }).join('');
-    });
-
-    // TO CLOSE HIGH SCORE TABLE
-    closeModalButtons.forEach(function (button) {
-        button.addEventListener('click', function (e) {
-            modelScoreCard.style.display = 'none';
-            overlay.classList.remove('active');
-        });
-    });
-
-    // TO CLOSE THE MODAL BY CLICK THE OVERLAY 
-    overlay.addEventListener('click', function() {
-            modelScoreCard.style.display = 'none';
-            overlay.classList.remove('active');
-        });
-}
-
-function loggingScore() {
-    const formCard = document.getElementById('form-player-score');
-    formCard.addEventListener('submit', function (e) {
-        e.preventDefault(); // PREVENT PAGE RELOADING ONCE PLAYER HIT SAVE SCORE
-    });
-
-    const playerName = document.getElementById('player-name');
-    playerName.addEventListener('keydown', function (event) {
-        if (playerName.value === "Enter") {
-            return playerName.value;
-        }
-    });
-
-    const saveScore = document.getElementById('save-score');
-    saveScore.addEventListener('click', function (e) {
-        if (playerName.value && saveScore.click) {
-            alert('Your score has been save!');
-            let yourstore = {
-                score: score,
-                name: playerName.value
-            };
-            highScore.push(yourstore);
-        }
-        // TO SORT SCORE BY BIGGEST TO LOWEREST
-        highScore.sort(function (a, b) {
-            return b.score - a.score;
-        });
-        // SPLICE THE LOWER SCORE OFF THE LIST IF MORE THAN FIVE SAVE SCORE
-        highScore.splice(5);
-        // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
-        localStorage.setItem('highScore', JSON.stringify(highScore));
-    });
-}
-
-// GOES BACK TO HOME PAGE
-function returnToStartPage() {
-    const restartBtn = document.getElementById('restart');
-    restartBtn.addEventListener('click', function (e) {
-        score = 0;
-        window.location.href = "./index.html";
-    });
-}
-
 // THE QUESTION THE COMPUTER CAN PICK FROM
 let QUESTION_ARRAY = [
     {
@@ -695,7 +468,231 @@ let QUESTION_ARRAY = [
 
 ];
 
+// TO HOLD THE CURRENT QUESTION BEING ASK
+let currentAskQuestion = {};
+let questionNumber = 0;
+let timer = 60; //SETTING FOR THE TIME GIVEN ON COUNTDOWN TIMER
+let clock; // VARIABLE FOR THE COUNTDOWN TIMER TO CLEAR INTERVAL
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // RUN GAME SECTION ONCE CLICK
+    document.getElementById('play-game').addEventListener('click', function (e) {
+        runGame();
+        home();
+    });
+
+    // SHOW INSTRUCTIONS PANEL
+    document.getElementById('instructions').addEventListener('click', function (e) {
+        model.style.display = 'block';
+    });
+});
+
+// CLOSE INSTRUCTION PANEL
+closeModalButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+        model.style.display = 'none';
+    });
+});
+
+function runGame() {
+    //DISPLAY PANEL
+    document.getElementById('landing-page-container').style.display = 'none';
+    game.style.display = 'block';
+
+
+    // STARTING  INFORMATION
+    score = 0;
+    questionNumber = 1;
+
+    let btnChecks = document.querySelectorAll('.btn');
+    btnChecks.forEach(function (event) {
+        event.addEventListener('click', myClick);
+    });
+
+    function myClick(event) {
+        if (event.click === 'click') {
+            checkAnswer();
+        }
+    }
+    countDown();
+    renderQuestion();
+}
+
+function home() {
+    document.getElementById('btn-home').onclick = function () {
+        window.location.href = "./index.html";
+    };
+}
+
+// TO PICK A QUESTION FROM THE ARRAY
+function renderQuestion() {
+    const pickQ = Math.floor(Math.random() * QUESTION_ARRAY.length); // RANDOM THE PICK
+    currentAskQuestion = QUESTION_ARRAY[pickQ]; // PICK QUESTION
+    presentQuestion(currentAskQuestion);
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    QUESTION_ARRAY.splice(pickQ, 1); // TO REMOVE THE PERVENT QUESTION FROM THE ARRAY
+}
+
+// TO RUN AFTER THE FIRST QUESTION HAS BEEN ASK AND ANSWER
+function nextQuesiton() {
+    const finalScore = document.getElementById('final-score');
+
+    if (questionNumber > TOTAL_QUESTION || timer <= 0) { // TO CHANGE THE QUIZ PAGE TO SCORE PAGE
+        game.style.display = 'none';
+        finalScore.style.display = 'block';
+        // https://www.w3schools.com/jsref/prop_win_localstorage.asp
+        localStorage.setItem("Score", score);
+        displayScore();
+        returnToStartPage(); // RELOAD THE INDEX.HTML AGAIN, GOES TO HOME PAGE
+        clearInterval(clock);
+    } else {
+        renderQuestion();
+    }
+}
+
+// TIMER
+function countDown() {
+    clock = setInterval(function () {
+        if (timer <= 0) {
+            questionNumber++;
+            nextQuesiton();
+            clearInterval(clock);
+        }
+        timer--;
+        document.getElementById('counter').innerText = timer + "s"; // SHOW THE TIMER ON PAGE
+    }, 1000);
+
+}
+
+// SHOW THE  QUESTION, ANSWERS, IMAGE AND WHICH QUESTION NUMBER YOU ARE ON
+function presentQuestion() {
+
+    const question = document.getElementById('question');
+    document.getElementById('question-num').innerText = "Q" + questionNumber;
+    question.innerText = currentAskQuestion.question;
+    document.getElementById('image').innerHTML = "<img src=" + currentAskQuestion.imgSrc + ">";
+    document.getElementById('A').innerText = currentAskQuestion.choiceA;
+    document.getElementById('B').innerText = currentAskQuestion.choiceB;
+    document.getElementById('C').innerText = currentAskQuestion.choiceC;
+    document.getElementById('D').innerText = currentAskQuestion.choiceD;
+}
+
+// TO CHECK THE ANSWER ON CLICK
+function checkAnswer(answer) {
+    const rightAnswerPoints = 10; // POINTS FOR RIGHT ANSWER
+    const wrongAnswerPoints = 5;  // POINTS REMOVE FOR WRONG ANSWER
+    questionNumber++;
+
+    if (answer == currentAskQuestion.answer) {
+        showAnswer();
+        score = score + rightAnswerPoints;
+    } else {
+        alert('This is the wrong answer'); // TELL THE PLAYER THE ANSWER IS WRONG
+        showAnswer();
+        score = score - wrongAnswerPoints;
+    }
+}
+
+// TO SHOW THE PLAYER THE RIGHT ANSWER
+function showAnswer() {
+    document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(135, 193, 62)';
+    reset(); // CHANGE COLOUR BACK TO THE ORIGINAL COLOUR
+}
+
+// TO RESET THE CHANGE FOR COLOUR BACK TO THE ORIGINAL COLOUR HELP JAMESQQUICK
+function reset() {
+    setTimeout(() => {
+        document.getElementById(currentAskQuestion.answer).style.backgroundColor = 'rgb(243, 105, 0)';
+        nextQuesiton();
+    }, 1000);
+}
+
+// STORAGE THE PLAYER SCORE
+const playerScore = localStorage.getItem("Score");
+// https://stackoverflow.com/questions/35273539/json-parse-from-localstorage-issue
+let highScore = JSON.parse(localStorage.getItem('highScore')) || [];
+
+function displayScore() {
+    document.getElementById("points").innerHTML = score;
+    document.getElementById("score").innerHTML = "This is your overall score " + score + " points";
+    loggingScore();
+
+    const HighestScoreBtn = document.getElementById('Highest-score');
+    const modelScoreCard = document.getElementById('model-score');
+
+    // LISTENER FOR CLICK ON HIGHEST SCORE TABLE BUTTON AND OPEN TABLE
+    HighestScoreBtn.addEventListener('click', function (e) {
+        modelScoreCard.style.display = 'block';
+        overlay.classList.add('active');
+
+        const fiveBestScores = document.getElementById('Highest-score-list');
+        fiveBestScores.innerHTML = highScore.map(function (yourstore) {
+            let topScore = `<li>${yourstore.name} - ${yourstore.score}</li>`;
+            return topScore;
+        }).join('');
+    });
+
+    // TO CLOSE HIGH SCORE TABLE
+    closeModalButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            modelScoreCard.style.display = 'none';
+            overlay.classList.remove('active');
+        });
+    });
+
+    // TO CLOSE THE MODAL BY CLICK THE OVERLAY 
+    overlay.addEventListener('click', function () {
+        modelScoreCard.style.display = 'none';
+        overlay.classList.remove('active');
+    });
+}
+
+function loggingScore() {
+    const formCard = document.getElementById('form-player-score');
+    formCard.addEventListener('submit', function (e) {
+        e.preventDefault(); // PREVENT PAGE RELOADING ONCE PLAYER HIT SAVE SCORE
+    });
+
+    const playerName = document.getElementById('player-name');
+    playerName.addEventListener('keydown', function (event) {
+        if (playerName.value === "Enter") {
+            return playerName.value;
+        }
+    });
+
+    const saveScore = document.getElementById('save-score');
+    saveScore.addEventListener('click', function (e) {
+        if (playerName.value && saveScore.click) {
+            alert('Your score has been save!');
+            let yourstore = {
+                score: score,
+                name: playerName.value
+            };
+            highScore.push(yourstore);
+        }
+        // TO SORT SCORE BY BIGGEST TO LOWEREST
+        highScore.sort(function (a, b) {
+            return b.score - a.score;
+        });
+        // SPLICE THE LOWER SCORE OFF THE LIST IF MORE THAN FIVE SAVE SCORE
+        highScore.splice(5);
+        // TO SAVE THE YOURSTORE ARRAY ONCE YOU RESET THE GAME
+        localStorage.setItem('highScore', JSON.stringify(highScore));
+    });
+}
+
+// GOES BACK TO HOME PAGE
+function returnToStartPage() {
+    const restartBtn = document.getElementById('restart');
+    restartBtn.addEventListener('click', function (e) {
+        score = 0;
+        window.location.href = "./index.html";
+    });
+}
+
 // END OF SCRIPT
 
-/* Line 57-58, 62, 70-74, 142-144, 159-163, 177, 187-203
+/* Line 66-67, 71, 78, 82, 149-151, 166-170, 191, 201-218
 are being taken from Jamesquick see link in README.md */
