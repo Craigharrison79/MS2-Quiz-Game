@@ -140,7 +140,7 @@ Both change to PNG from SVG.
     - Right answer will be 10 points and a wrong answer will remove -5 points from the score.
     - A form (input and button) to allow the player/user to enter his/her name so he/she can save the score and maybe be enter into the high scorecard.
     - Buttons: The first one to save player/user score once a name is entered.  Second to open up the scorecard table and see who the top player/user are. And third button to enter back to the landing/menu page.
-    - All scores the highest scores table will be held in local storage.
+    - All scores and the highest scores table will be held in local storage.
 
 ### Future Features
 
